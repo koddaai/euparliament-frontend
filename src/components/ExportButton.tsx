@@ -2,13 +2,13 @@
 
 export default function ExportButton() {
   const handleExport = () => {
-    window.open('/api/export/xml', '_blank');
+    window.open('/api/export/xlsx', '_blank');
   };
 
   return (
     <button
       onClick={handleExport}
-      className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+      className="inline-flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +22,7 @@ export default function ExportButton() {
           clipRule="evenodd"
         />
       </svg>
-      Download XML
+      Download Excel
     </button>
   );
 }
