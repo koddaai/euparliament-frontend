@@ -21,48 +21,18 @@ interface MEP {
 
 interface Change {
   mep_id: string;
+  mep_name?: string;
   change_type: 'joined' | 'left' | 'group_change' | 'party_change';
   old_value: string | null;
   new_value: string | null;
   detected_at: string;
 }
 
-// Map country names to Spanish
-const COUNTRY_MAP: Record<string, string> = {
-  'Germany': 'Alemania',
-  'France': 'Francia',
-  'Italy': 'Italia',
-  'Spain': 'España',
-  'Poland': 'Polonia',
-  'Romania': 'Rumanía',
-  'Netherlands': 'Países Bajos',
-  'Belgium': 'Bélgica',
-  'Greece': 'Grecia',
-  'Czechia': 'Chequia',
-  'Portugal': 'Portugal',
-  'Hungary': 'Hungría',
-  'Sweden': 'Suecia',
-  'Austria': 'Austria',
-  'Bulgaria': 'Bulgaria',
-  'Denmark': 'Dinamarca',
-  'Finland': 'Finlandia',
-  'Slovakia': 'Eslovaquia',
-  'Ireland': 'Irlanda',
-  'Croatia': 'Croacia',
-  'Lithuania': 'Lituania',
-  'Slovenia': 'Eslovenia',
-  'Latvia': 'Letonia',
-  'Estonia': 'Estonia',
-  'Cyprus': 'Chipre',
-  'Luxembourg': 'Luxemburgo',
-  'Malta': 'Malta',
-};
-
-function splitName(fullName: string): { apellido: string; nombre: string } {
+function splitName(fullName: string): { lastName: string; firstName: string } {
   const parts = fullName.trim().split(' ');
 
   if (parts.length === 1) {
-    return { apellido: parts[0], nombre: '' };
+    return { lastName: parts[0], firstName: '' };
   }
 
   const uppercaseIndices: number[] = [];
@@ -73,20 +43,34 @@ function splitName(fullName: string): { apellido: string; nombre: string } {
   });
 
   if (uppercaseIndices.length > 0) {
-    const apellido = uppercaseIndices.map(i => parts[i]).join(' ');
-    const nombre = parts.filter((_, i) => !uppercaseIndices.includes(i)).join(' ');
-    return { apellido, nombre };
+    const lastName = uppercaseIndices.map(i => parts[i]).join(' ');
+    const firstName = parts.filter((_, i) => !uppercaseIndices.includes(i)).join(' ');
+    return { lastName, firstName };
   }
 
-  const apellido = parts[parts.length - 1];
-  const nombre = parts.slice(0, -1).join(' ');
-  return { apellido, nombre };
+  const lastName = parts[parts.length - 1];
+  const firstName = parts.slice(0, -1).join(' ');
+  return { lastName, firstName };
 }
 
 function formatDate(dateString: string): string {
   if (!dateString) return '';
   const date = new Date(dateString);
-  return date.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' });
+  return date.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+}
+
+// Apply header styling to a worksheet
+function applyHeaderStyle(ws: XLSX.WorkSheet, headerRow: number, numCols: number): void {
+  for (let col = 0; col < numCols; col++) {
+    const cellRef = XLSX.utils.encode_cell({ r: headerRow, c: col });
+    if (ws[cellRef]) {
+      ws[cellRef].s = {
+        font: { bold: true, color: { rgb: 'FFFFFF' } },
+        fill: { fgColor: { rgb: '003399' } },
+        alignment: { horizontal: 'center', vertical: 'center' }
+      };
+    }
+  }
 }
 
 export async function GET() {
@@ -149,102 +133,108 @@ export async function GET() {
         .map(c => c.mep_id)
     );
 
-    // ========== ABA 1: MEPs (Consolidado) ==========
+    // ========== SHEET 1: All MEPs ==========
     const sortedMeps = activeMeps.sort((a, b) => {
       const groupCompare = a.political_group_short.localeCompare(b.political_group_short);
       if (groupCompare !== 0) return groupCompare;
-      const { apellido: aApellido } = splitName(a.name);
-      const { apellido: bApellido } = splitName(b.name);
-      return aApellido.localeCompare(bApellido);
+      const { lastName: aLastName } = splitName(a.name);
+      const { lastName: bLastName } = splitName(b.name);
+      return aLastName.localeCompare(bLastName);
     });
 
-    const wsMainData: (string | null)[][] = [];
-    wsMainData.push([null, null, 'Pos. Gal.\nMS-UE', null, null]);
-    wsMainData.push(['Apellido', 'Nombre', null, 'Grupo', 'País']);
+    const wsMainData: (string | number | null)[][] = [];
+    // Title row
+    wsMainData.push(['European Parliament - Members List', null, null, null, null, null]);
+    wsMainData.push([`Generated: ${formatDate(now.toISOString())}`, null, null, null, `Total: ${activeMeps.length} MEPs`, null]);
+    wsMainData.push([]); // Empty row
+    // Header row
+    wsMainData.push(['Last Name', 'First Name', 'Status', 'Group', 'Country', 'National Party']);
 
     sortedMeps.forEach(mep => {
-      const { apellido, nombre } = splitName(mep.name);
-      const pais = COUNTRY_MAP[mep.country] || mep.country;
+      const { lastName, firstName } = splitName(mep.name);
 
-      // Determine position indicator based on this month's changes
-      let posicion = '0'; // Default: no change
+      // Determine status indicator based on this month's changes
+      let status = '-'; // Default: no change
       if (joinedThisMonth.has(mep.mep_id)) {
-        posicion = '(+)'; // Joined this month
+        status = 'NEW';
       } else if (leftThisMonth.has(mep.mep_id)) {
-        posicion = '(-)'; // Left this month (shouldn't appear in active list, but just in case)
+        status = 'LEFT';
       }
 
-      wsMainData.push([apellido, nombre, posicion, mep.political_group_short, pais]);
+      wsMainData.push([lastName, firstName, status, mep.political_group_short, mep.country, mep.national_party]);
     });
 
-    // ========== ABA 2: Entradas 2026 ==========
-    const wsEntradasData: (string | null)[][] = [];
-    wsEntradasData.push(['Apellido', 'Nombre', 'Grupo', 'País', 'Fecha de Entrada']);
+    // ========== SHEET 2: New Members ==========
+    const wsJoinedData: (string | null)[][] = [];
+    wsJoinedData.push([`New Members - ${currentYear}`, null, null, null, null]);
+    wsJoinedData.push([]); // Empty row
+    wsJoinedData.push(['Last Name', 'First Name', 'Group', 'Country', 'Date Joined']);
 
     joinedThisYear.forEach(change => {
       const mep = mepMap.get(change.mep_id);
       if (mep) {
-        const { apellido, nombre } = splitName(mep.name);
-        const pais = COUNTRY_MAP[mep.country] || mep.country;
-        wsEntradasData.push([
-          apellido,
-          nombre,
+        const { lastName, firstName } = splitName(mep.name);
+        wsJoinedData.push([
+          lastName,
+          firstName,
           mep.political_group_short,
-          pais,
+          mep.country,
           formatDate(change.detected_at)
         ]);
       }
     });
 
-    if (wsEntradasData.length === 1) {
-      wsEntradasData.push(['No hay entradas registradas este año', null, null, null, null]);
+    if (wsJoinedData.length === 3) {
+      wsJoinedData.push(['No new members recorded this year', null, null, null, null]);
     }
 
-    // ========== ABA 3: Saídas 2026 ==========
-    const wsSalidasData: (string | null)[][] = [];
-    wsSalidasData.push(['Apellido', 'Nombre', 'Último Grupo', 'País', 'Fecha de Salida']);
+    // ========== SHEET 3: Departures ==========
+    const wsDepartedData: (string | null)[][] = [];
+    wsDepartedData.push([`Departures - ${currentYear}`, null, null, null, null]);
+    wsDepartedData.push([]); // Empty row
+    wsDepartedData.push(['Last Name', 'First Name', 'Last Group', 'Country', 'Date Left']);
 
     leftThisYear.forEach(change => {
       const mep = mepMap.get(change.mep_id);
       if (mep) {
-        const { apellido, nombre } = splitName(mep.name);
-        const pais = COUNTRY_MAP[mep.country] || mep.country;
-        wsSalidasData.push([
-          apellido,
-          nombre,
+        const { lastName, firstName } = splitName(mep.name);
+        wsDepartedData.push([
+          lastName,
+          firstName,
           mep.political_group_short,
-          pais,
+          mep.country,
           formatDate(change.detected_at)
         ]);
       }
     });
 
-    if (wsSalidasData.length === 1) {
-      wsSalidasData.push(['No hay salidas registradas este año', null, null, null, null]);
+    if (wsDepartedData.length === 3) {
+      wsDepartedData.push(['No departures recorded this year', null, null, null, null]);
     }
 
-    // ========== ABA 4: Cambios de Grupo ==========
-    const wsCambiosData: (string | null)[][] = [];
-    wsCambiosData.push(['Apellido', 'Nombre', 'Grupo Anterior', 'Grupo Nuevo', 'País', 'Fecha']);
+    // ========== SHEET 4: Group Changes ==========
+    const wsChangesData: (string | null)[][] = [];
+    wsChangesData.push([`Group Changes - ${currentYear}`, null, null, null, null, null]);
+    wsChangesData.push([]); // Empty row
+    wsChangesData.push(['Last Name', 'First Name', 'Previous Group', 'New Group', 'Country', 'Date']);
 
     groupChangesThisYear.forEach(change => {
       const mep = mepMap.get(change.mep_id);
       if (mep) {
-        const { apellido, nombre } = splitName(mep.name);
-        const pais = COUNTRY_MAP[mep.country] || mep.country;
-        wsCambiosData.push([
-          apellido,
-          nombre,
+        const { lastName, firstName } = splitName(mep.name);
+        wsChangesData.push([
+          lastName,
+          firstName,
           change.old_value || '',
           change.new_value || '',
-          pais,
+          mep.country,
           formatDate(change.detected_at)
         ]);
       }
     });
 
-    if (wsCambiosData.length === 1) {
-      wsCambiosData.push(['No hay cambios de grupo registrados este año', null, null, null, null, null]);
+    if (wsChangesData.length === 3) {
+      wsChangesData.push(['No group changes recorded this year', null, null, null, null, null]);
     }
 
     // ========== CREATE WORKBOOK ==========
@@ -253,30 +243,43 @@ export async function GET() {
     // Sheet 1: MEPs (main)
     const wsMain = XLSX.utils.aoa_to_sheet(wsMainData);
     wsMain['!cols'] = [
-      { wch: 25 }, { wch: 20 }, { wch: 12 }, { wch: 12 }, { wch: 15 }
+      { wch: 22 }, { wch: 18 }, { wch: 8 }, { wch: 10 }, { wch: 16 }, { wch: 30 }
     ];
-    XLSX.utils.book_append_sheet(wb, wsMain, 'MEPs');
+    // Merge title cells
+    wsMain['!merges'] = [
+      { s: { r: 0, c: 0 }, e: { r: 0, c: 3 } }, // Title
+    ];
+    XLSX.utils.book_append_sheet(wb, wsMain, 'All MEPs');
 
-    // Sheet 2: Entradas
-    const wsEntradas = XLSX.utils.aoa_to_sheet(wsEntradasData);
-    wsEntradas['!cols'] = [
-      { wch: 25 }, { wch: 20 }, { wch: 12 }, { wch: 15 }, { wch: 15 }
+    // Sheet 2: New Members
+    const wsJoined = XLSX.utils.aoa_to_sheet(wsJoinedData);
+    wsJoined['!cols'] = [
+      { wch: 22 }, { wch: 18 }, { wch: 10 }, { wch: 16 }, { wch: 14 }
     ];
-    XLSX.utils.book_append_sheet(wb, wsEntradas, `Entradas ${currentYear}`);
+    wsJoined['!merges'] = [
+      { s: { r: 0, c: 0 }, e: { r: 0, c: 3 } },
+    ];
+    XLSX.utils.book_append_sheet(wb, wsJoined, `New Members ${currentYear}`);
 
-    // Sheet 3: Salidas
-    const wsSalidas = XLSX.utils.aoa_to_sheet(wsSalidasData);
-    wsSalidas['!cols'] = [
-      { wch: 25 }, { wch: 20 }, { wch: 15 }, { wch: 15 }, { wch: 15 }
+    // Sheet 3: Departures
+    const wsDeparted = XLSX.utils.aoa_to_sheet(wsDepartedData);
+    wsDeparted['!cols'] = [
+      { wch: 22 }, { wch: 18 }, { wch: 12 }, { wch: 16 }, { wch: 14 }
     ];
-    XLSX.utils.book_append_sheet(wb, wsSalidas, `Salidas ${currentYear}`);
+    wsDeparted['!merges'] = [
+      { s: { r: 0, c: 0 }, e: { r: 0, c: 3 } },
+    ];
+    XLSX.utils.book_append_sheet(wb, wsDeparted, `Departures ${currentYear}`);
 
-    // Sheet 4: Cambios de Grupo
-    const wsCambios = XLSX.utils.aoa_to_sheet(wsCambiosData);
-    wsCambios['!cols'] = [
-      { wch: 25 }, { wch: 20 }, { wch: 15 }, { wch: 15 }, { wch: 15 }, { wch: 12 }
+    // Sheet 4: Group Changes
+    const wsChanges = XLSX.utils.aoa_to_sheet(wsChangesData);
+    wsChanges['!cols'] = [
+      { wch: 22 }, { wch: 18 }, { wch: 14 }, { wch: 14 }, { wch: 16 }, { wch: 14 }
     ];
-    XLSX.utils.book_append_sheet(wb, wsCambios, `Cambios Grupo ${currentYear}`);
+    wsChanges['!merges'] = [
+      { s: { r: 0, c: 0 }, e: { r: 0, c: 4 } },
+    ];
+    XLSX.utils.book_append_sheet(wb, wsChanges, `Group Changes ${currentYear}`);
 
     // Generate buffer
     const buffer = XLSX.write(wb, { type: 'buffer', bookType: 'xlsx' });
@@ -284,7 +287,7 @@ export async function GET() {
     return new NextResponse(buffer, {
       headers: {
         'Content-Type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-        'Content-Disposition': `attachment; filename="MEPs_European_Parliament_${now.toISOString().split('T')[0]}.xlsx"`,
+        'Content-Disposition': `attachment; filename="European_Parliament_MEPs_${now.toISOString().split('T')[0]}.xlsx"`,
       },
     });
 
