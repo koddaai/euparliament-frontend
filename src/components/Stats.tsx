@@ -16,9 +16,22 @@ const GROUP_COLORS: Record<string, string> = {
   'Unknown': 'bg-gray-400',
 };
 
+const GROUP_FULL_NAMES: Record<string, string> = {
+  'EPP': 'European People\'s Party (Christian Democrats)',
+  'S&D': 'Progressive Alliance of Socialists and Democrats',
+  'RE': 'Renew Europe (Liberals)',
+  'Greens/EFA': 'The Greens–European Free Alliance',
+  'ECR': 'European Conservatives and Reformists',
+  'The Left': 'The Left in the European Parliament (GUE/NGL)',
+  'PfE': 'Patriots for Europe',
+  'ESN': 'Europe of Sovereign Nations',
+  'NI': 'Non-Inscrits (Non-attached Members)',
+};
+
 export default function Stats() {
   const [stats, setStats] = useState<StatsType | null>(null);
   const [loading, setLoading] = useState(true);
+  const [showLegend, setShowLegend] = useState(false);
 
   useEffect(() => {
     fetch('/api/stats')
@@ -62,7 +75,7 @@ export default function Stats() {
       <div className="space-y-2">
         {stats.byGroup.map(group => (
           <div key={group.name} className="flex items-center gap-3">
-            <span className="w-20 text-sm font-medium text-gray-700">
+            <span className="w-24 text-sm font-medium text-gray-700">
               {group.name}
             </span>
             <div className="flex-1 h-6 bg-gray-100 rounded-full overflow-hidden">
@@ -77,6 +90,41 @@ export default function Stats() {
           </div>
         ))}
       </div>
+
+      {/* Legend Toggle */}
+      <button
+        onClick={() => setShowLegend(!showLegend)}
+        className="mt-4 text-sm text-blue-600 hover:text-blue-800 flex items-center gap-1"
+      >
+        <svg
+          className={`w-4 h-4 transition-transform ${showLegend ? 'rotate-180' : ''}`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+        {showLegend ? 'Hide legend' : 'Show legend'}
+      </button>
+
+      {/* Legend Content */}
+      {showLegend && (
+        <div className="mt-4 pt-4 border-t border-gray-200">
+          <h3 className="text-sm font-semibold text-gray-700 mb-3">Political Groups</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            {stats.byGroup.map(group => (
+              <div key={group.name} className="flex items-center gap-2 text-sm">
+                <span
+                  className={`w-3 h-3 rounded-full ${GROUP_COLORS[group.name] || GROUP_COLORS['Unknown']}`}
+                ></span>
+                <span className="font-medium text-gray-800">{group.name}</span>
+                <span className="text-gray-500">-</span>
+                <span className="text-gray-600">{GROUP_FULL_NAMES[group.name] || group.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
