@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "EU Parliament Monitor",
-  description: "Track Members of the European Parliament - Real-time data on MEPs, political groups, and countries",
+  title: "EU Parliament Monitor | Track MEPs in Real-Time",
+  description: "Monitor Members of the European Parliament with real-time data on political groups, countries, and membership changes. Updated daily.",
+  keywords: ["European Parliament", "MEPs", "EU", "politics", "members", "political groups"],
+  openGraph: {
+    title: "EU Parliament Monitor",
+    description: "Track Members of the European Parliament in real-time",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -24,9 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${inter.variable} font-sans antialiased bg-slate-50`}>
         {children}
       </body>
     </html>
