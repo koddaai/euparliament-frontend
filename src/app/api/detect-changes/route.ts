@@ -106,9 +106,10 @@ export async function POST(request: Request) {
     }
 
     // First sync MEPs to database (upsert to prevent duplicates)
+    // Use localhost to avoid SSL issues when calling internal APIs
     if (scrapedMeps.length > 0) {
-      const syncUrl = new URL('/api/meps/sync', request.url);
-      const syncResponse = await fetch(syncUrl.toString(), {
+      const syncUrl = 'http://localhost:3000/api/meps/sync';
+      const syncResponse = await fetch(syncUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ meps: scrapedMeps }),
