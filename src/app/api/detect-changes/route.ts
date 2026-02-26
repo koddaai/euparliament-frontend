@@ -91,7 +91,35 @@ export async function POST(request: Request) {
     const now = new Date().toISOString();
     const loggedChanges: ChangeRecord[] = [];
 
-    // Get all MEPs from database
+    // Try to get scraped data from request body (optional)
+    let scrapedMeps: ScrapedMEP[] = [];
+    try {
+      const body = await request.json();
+      if (body && Array.isArray(body.meps)) {
+        scrapedMeps = body.meps;
+      } else if (Array.isArray(body)) {
+        // Also support direct array format
+        scrapedMeps = body;
+      }
+    } catch {
+      // No body or invalid JSON - use timestamp-based detection
+    }
+
+    // First sync MEPs to database (upsert to prevent duplicates)
+    if (scrapedMeps.length > 0) {
+      const syncUrl = new URL('/api/meps/sync', request.url);
+      const syncResponse = await fetch(syncUrl.toString(), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ meps: scrapedMeps }),
+      });
+
+      if (!syncResponse.ok) {
+        console.error('Failed to sync MEPs:', await syncResponse.text());
+      }
+    }
+
+    // Get all MEPs from database (after sync)
     const mepsUrl = `${NOCODB_URL}/api/v2/tables/${NOCODB_MEPS_TABLE_ID}/records?limit=1000`;
     const mepsResponse = await fetch(mepsUrl, {
       headers: { 'xc-token': NOCODB_TOKEN! },
@@ -108,17 +136,6 @@ export async function POST(request: Request) {
     // Create lookup maps
     const dbMepById = new Map<string, MEP>();
     dbMeps.forEach(mep => dbMepById.set(mep.mep_id, mep));
-
-    // Try to get scraped data from request body (optional)
-    let scrapedMeps: ScrapedMEP[] = [];
-    try {
-      const body = await request.json();
-      if (body && Array.isArray(body.meps)) {
-        scrapedMeps = body.meps;
-      }
-    } catch {
-      // No body or invalid JSON - use timestamp-based detection
-    }
 
     // Collect all changes and updates, then batch execute
     const changesToLog: ChangeRecord[] = [];

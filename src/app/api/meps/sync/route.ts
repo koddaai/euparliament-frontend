@@ -53,18 +53,30 @@ export async function POST(request: Request) {
 
     const now = new Date().toISOString();
 
-    // Fetch all existing MEPs from database
-    const mepsUrl = `${NOCODB_URL}/api/v2/tables/${NOCODB_MEPS_TABLE_ID}/records?limit=1000`;
-    const existingResponse = await fetch(mepsUrl, {
-      headers: { 'xc-token': NOCODB_TOKEN! },
-    });
+    // Fetch ALL existing MEPs from database (with pagination)
+    const existingMeps: ExistingMEP[] = [];
+    let offset = 0;
+    const pageSize = 1000;
 
-    if (!existingResponse.ok) {
-      throw new Error(`Failed to fetch existing MEPs: ${existingResponse.status}`);
+    while (true) {
+      const mepsUrl = `${NOCODB_URL}/api/v2/tables/${NOCODB_MEPS_TABLE_ID}/records?limit=${pageSize}&offset=${offset}`;
+      const existingResponse = await fetch(mepsUrl, {
+        headers: { 'xc-token': NOCODB_TOKEN! },
+      });
+
+      if (!existingResponse.ok) {
+        throw new Error(`Failed to fetch existing MEPs: ${existingResponse.status}`);
+      }
+
+      const existingData = await existingResponse.json();
+      const batch: ExistingMEP[] = existingData.list || [];
+      existingMeps.push(...batch);
+
+      if (batch.length < pageSize) {
+        break; // No more pages
+      }
+      offset += pageSize;
     }
-
-    const existingData = await existingResponse.json();
-    const existingMeps: ExistingMEP[] = existingData.list || [];
 
     // Create lookup map by mep_id
     const existingByMepId = new Map<string, ExistingMEP>();
