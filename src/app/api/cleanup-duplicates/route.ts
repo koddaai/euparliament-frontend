@@ -25,7 +25,8 @@ export async function POST() {
       });
 
       if (!mepsResponse.ok) {
-        throw new Error('Failed to fetch MEPs');
+        const errorText = await mepsResponse.text();
+        throw new Error(`Failed to fetch MEPs: ${mepsResponse.status} - ${errorText}`);
       }
 
       const mepsData = await mepsResponse.json();

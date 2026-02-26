@@ -103,7 +103,8 @@ export async function POST(request: Request) {
     });
 
     if (!mepsResponse.ok) {
-      throw new Error('Failed to fetch MEPs from database');
+      const errorText = await mepsResponse.text();
+      throw new Error(`Failed to fetch MEPs from database: ${mepsResponse.status} - ${errorText}`);
     }
 
     const mepsData = await mepsResponse.json();
