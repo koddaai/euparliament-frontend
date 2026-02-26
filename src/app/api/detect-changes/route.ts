@@ -39,8 +39,11 @@ interface ChangeRecord {
   detected_at: string;
 }
 
-async function logChange(change: ChangeRecord): Promise<boolean> {
+async function logChanges(changes: ChangeRecord[]): Promise<number> {
+  if (changes.length === 0) return 0;
+
   try {
+    // NocoDB supports bulk insert
     const response = await fetch(
       `${NOCODB_URL}/api/v2/tables/${NOCODB_CHANGES_TABLE_ID}/records`,
       {
@@ -49,30 +52,27 @@ async function logChange(change: ChangeRecord): Promise<boolean> {
           'xc-token': NOCODB_TOKEN!,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(change),
+        body: JSON.stringify(changes),
       }
     );
-    return response.ok;
+    return response.ok ? changes.length : 0;
   } catch {
-    return false;
+    return 0;
   }
 }
 
-async function updateMepStatus(mepId: number, status: string): Promise<void> {
-  await fetch(
-    `${NOCODB_URL}/api/v2/tables/${NOCODB_MEPS_TABLE_ID}/records`,
-    {
-      method: 'PATCH',
-      headers: {
-        'xc-token': NOCODB_TOKEN!,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ Id: mepId, status, last_updated: new Date().toISOString() }),
-    }
-  );
+interface MepUpdate {
+  Id: number;
+  status?: string;
+  political_group?: string;
+  political_group_short?: string;
+  last_updated: string;
 }
 
-async function updateMepGroup(mepId: number, political_group: string, political_group_short: string): Promise<void> {
+async function batchUpdateMeps(updates: MepUpdate[]): Promise<void> {
+  if (updates.length === 0) return;
+
+  // NocoDB supports bulk patch
   await fetch(
     `${NOCODB_URL}/api/v2/tables/${NOCODB_MEPS_TABLE_ID}/records`,
     {
@@ -81,12 +81,7 @@ async function updateMepGroup(mepId: number, political_group: string, political_
         'xc-token': NOCODB_TOKEN!,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        Id: mepId,
-        political_group,
-        political_group_short,
-        last_updated: new Date().toISOString()
-      }),
+      body: JSON.stringify(updates),
     }
   );
 }
@@ -125,6 +120,10 @@ export async function POST(request: Request) {
       // No body or invalid JSON - use timestamp-based detection
     }
 
+    // Collect all changes and updates, then batch execute
+    const changesToLog: ChangeRecord[] = [];
+    const mepUpdates: MepUpdate[] = [];
+
     // If we have scraped data, use it for comparison
     if (scrapedMeps.length > 0) {
       const scrapedMepIds = new Set(scrapedMeps.map(m => m.mep_id));
@@ -136,45 +135,45 @@ export async function POST(request: Request) {
         const dbMep = dbMepById.get(scraped.mep_id);
 
         if (!dbMep) {
-          // Completely new MEP
-          const change: ChangeRecord = {
+          // Completely new MEP - log join but don't update (will be inserted by sync)
+          changesToLog.push({
             mep_id: scraped.mep_id,
             mep_name: scraped.name,
             change_type: 'joined',
             new_value: scraped.political_group_short,
             detected_at: now,
-          };
-          if (await logChange(change)) {
-            loggedChanges.push(change);
-          }
+          });
         } else if (dbMep.status === 'inactive') {
           // MEP returned after leaving
-          const change: ChangeRecord = {
+          changesToLog.push({
             mep_id: scraped.mep_id,
             mep_name: scraped.name,
             change_type: 'joined',
             new_value: scraped.political_group_short,
             detected_at: now,
-          };
-          if (await logChange(change)) {
-            loggedChanges.push(change);
-            await updateMepStatus(dbMep.Id, 'active');
-          }
+          });
+          mepUpdates.push({
+            Id: dbMep.Id,
+            status: 'active',
+            last_updated: now,
+          });
         } else {
           // MEP exists and is active - check for group changes
           if (dbMep.political_group_short !== scraped.political_group_short) {
-            const change: ChangeRecord = {
+            changesToLog.push({
               mep_id: scraped.mep_id,
               mep_name: scraped.name,
               change_type: 'group_change',
               old_value: dbMep.political_group_short,
               new_value: scraped.political_group_short,
               detected_at: now,
-            };
-            if (await logChange(change)) {
-              loggedChanges.push(change);
-              await updateMepGroup(dbMep.Id, scraped.political_group, scraped.political_group_short);
-            }
+            });
+            mepUpdates.push({
+              Id: dbMep.Id,
+              political_group: scraped.political_group,
+              political_group_short: scraped.political_group_short,
+              last_updated: now,
+            });
           }
         }
       }
@@ -182,45 +181,56 @@ export async function POST(request: Request) {
       // Detect LEAVES: Active MEPs in DB but not in scrape
       for (const dbMep of dbMeps) {
         if (dbMep.status === 'active' && !scrapedMepIds.has(dbMep.mep_id)) {
-          const change: ChangeRecord = {
+          changesToLog.push({
             mep_id: dbMep.mep_id,
             mep_name: dbMep.name,
             change_type: 'left',
             old_value: dbMep.political_group_short,
             detected_at: now,
-          };
-          if (await logChange(change)) {
-            loggedChanges.push(change);
-            await updateMepStatus(dbMep.Id, 'inactive');
-          }
+          });
+          mepUpdates.push({
+            Id: dbMep.Id,
+            status: 'inactive',
+            last_updated: now,
+          });
         }
       }
     } else {
       // Fallback: timestamp-based detection (when no scraped data provided)
-      // Find the most recent update timestamp
       const updateTimes = dbMeps.map(m => new Date(m.last_updated).getTime());
       const mostRecentUpdate = Math.max(...updateTimes);
       const scrapeThreshold = mostRecentUpdate - (5 * 60 * 1000); // 5 minutes tolerance
 
-      // MEPs NOT updated recently but still active = they left
       const exitedMeps = dbMeps.filter(m =>
         m.status === 'active' &&
         new Date(m.last_updated).getTime() < scrapeThreshold
       );
 
       for (const mep of exitedMeps) {
-        const change: ChangeRecord = {
+        changesToLog.push({
           mep_id: mep.mep_id,
           mep_name: mep.name,
           change_type: 'left',
           old_value: mep.political_group_short,
           detected_at: now,
-        };
-        if (await logChange(change)) {
-          loggedChanges.push(change);
-          await updateMepStatus(mep.Id, 'inactive');
-        }
+        });
+        mepUpdates.push({
+          Id: mep.Id,
+          status: 'inactive',
+          last_updated: now,
+        });
       }
+    }
+
+    // Execute batch operations in parallel
+    const [loggedCount] = await Promise.all([
+      logChanges(changesToLog),
+      batchUpdateMeps(mepUpdates),
+    ]);
+
+    // Mark as logged only if batch succeeded
+    if (loggedCount > 0) {
+      loggedChanges.push(...changesToLog);
     }
 
     const joins = loggedChanges.filter(c => c.change_type === 'joined');
