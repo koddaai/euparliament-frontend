@@ -12,18 +12,37 @@ interface MEP {
 
 export async function POST() {
   try {
-    // Get all MEPs
-    const mepsUrl = `${NOCODB_URL}/api/v2/tables/${NOCODB_MEPS_TABLE_ID}/records?limit=2000&sort=Id`;
-    const mepsResponse = await fetch(mepsUrl, {
-      headers: { 'xc-token': NOCODB_TOKEN! },
-    });
+    // Get all MEPs with pagination
+    const allMeps: MEP[] = [];
+    let offset = 0;
+    const pageSize = 1000;
 
-    if (!mepsResponse.ok) {
-      throw new Error('Failed to fetch MEPs');
+    while (true) {
+      const mepsUrl = `${NOCODB_URL}/api/v2/tables/${NOCODB_MEPS_TABLE_ID}/records?limit=${pageSize}&offset=${offset}&sort=Id`;
+      const mepsResponse = await fetch(mepsUrl, {
+        headers: { 'xc-token': NOCODB_TOKEN! },
+        cache: 'no-store',
+      });
+
+      if (!mepsResponse.ok) {
+        throw new Error('Failed to fetch MEPs');
+      }
+
+      const mepsData = await mepsResponse.json();
+      const pageMeps: MEP[] = mepsData.list || [];
+
+      if (pageMeps.length === 0) {
+        break;
+      }
+
+      allMeps.push(...pageMeps);
+      offset += pageSize;
+
+      // Safety check to prevent infinite loop
+      if (offset > 10000) break;
     }
 
-    const mepsData = await mepsResponse.json();
-    const meps: MEP[] = mepsData.list || [];
+    const meps = allMeps;
 
     // Group by mep_id and find duplicates (keep lowest Id)
     const mepIdMap = new Map<string, MEP[]>();
