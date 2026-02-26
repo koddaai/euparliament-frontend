@@ -1,0 +1,178 @@
+{
+  "name": "EU Parliament - Social Sync",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 6
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "url": "https://raw.githubusercontent.com/eliflab/European-Parliament-Open-Data/main/meps_full_list_with_twitter_accounts.csv",
+        "options": {}
+      },
+      "id": "fetch-csv",
+      "name": "Fetch MEP Twitter CSV",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [220, 0]
+    },
+    {
+      "parameters": {
+        "operation": "csvToJson",
+        "options": {
+          "delimiter": ","
+        }
+      },
+      "id": "parse-csv",
+      "name": "Parse CSV",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 2,
+      "position": [440, 0]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "filter-twitter",
+              "leftValue": "={{ $json.Twitter }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "isNotEmpty"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "filter-with-twitter",
+      "name": "Filter MEPs with Twitter",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [660, 0]
+    },
+    {
+      "parameters": {
+        "batchSize": 10,
+        "options": {}
+      },
+      "id": "batch-meps",
+      "name": "Batch MEPs",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [880, 0]
+    },
+    {
+      "parameters": {
+        "resource": "actor",
+        "actorId": "apidojo/tweet-scraper",
+        "input": "={{ JSON.stringify({ startUrls: $json.items.map(item => ({ url: 'https://x.com/' + item.Twitter.replace('@', '') })), maxTweets: 10, addUserInfo: true }) }}",
+        "options": {
+          "waitForFinish": 120
+        }
+      },
+      "id": "apify-scraper",
+      "name": "Apify Tweet Scraper",
+      "type": "n8n-nodes-base.apify",
+      "typeVersion": 1,
+      "position": [1100, 0],
+      "credentials": {
+        "apifyApi": {
+          "id": "APIFY_CREDENTIAL_ID",
+          "name": "Apify account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Transform Apify output to our format\nconst tweets = [];\n\nfor (const item of $input.all()) {\n  const data = item.json;\n  \n  // Handle different Apify output formats\n  const tweetData = data.tweets || data.items || [data];\n  \n  for (const tweet of tweetData) {\n    if (!tweet.id && !tweet.tweet_id) continue;\n    \n    tweets.push({\n      mep_id: tweet.author?.userName || tweet.user?.screen_name || '',\n      tweet_id: tweet.id || tweet.tweet_id || tweet.id_str,\n      content: tweet.text || tweet.full_text || '',\n      created_at: tweet.createdAt || tweet.created_at,\n      likes: tweet.likeCount || tweet.favorite_count || 0,\n      retweets: tweet.retweetCount || tweet.retweet_count || 0,\n      replies: tweet.replyCount || tweet.reply_count || 0,\n      url: `https://x.com/${tweet.author?.userName || 'i'}/status/${tweet.id || tweet.tweet_id}`,\n      media_urls: tweet.media?.map(m => m.url) || []\n    });\n  }\n}\n\nreturn [{ json: { tweets } }];"
+      },
+      "id": "transform-tweets",
+      "name": "Transform Tweets",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1320, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://euparliament.kodda.ai/api/social/sync",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.tweets) }}",
+        "options": {}
+      },
+      "id": "sync-to-api",
+      "name": "Sync to API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1540, 0]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [{ "node": "Fetch MEP Twitter CSV", "type": "main", "index": 0 }]
+      ]
+    },
+    "Fetch MEP Twitter CSV": {
+      "main": [
+        [{ "node": "Parse CSV", "type": "main", "index": 0 }]
+      ]
+    },
+    "Parse CSV": {
+      "main": [
+        [{ "node": "Filter MEPs with Twitter", "type": "main", "index": 0 }]
+      ]
+    },
+    "Filter MEPs with Twitter": {
+      "main": [
+        [{ "node": "Batch MEPs", "type": "main", "index": 0 }]
+      ]
+    },
+    "Batch MEPs": {
+      "main": [
+        [{ "node": "Apify Tweet Scraper", "type": "main", "index": 0 }],
+        [{ "node": "Batch MEPs", "type": "main", "index": 0 }]
+      ]
+    },
+    "Apify Tweet Scraper": {
+      "main": [
+        [{ "node": "Transform Tweets", "type": "main", "index": 0 }]
+      ]
+    },
+    "Transform Tweets": {
+      "main": [
+        [{ "node": "Sync to API", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2026-02-26T00:00:00.000Z",
+  "versionId": "1"
+}
