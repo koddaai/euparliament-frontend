@@ -12,13 +12,13 @@ interface MEP {
 
 export async function POST() {
   try {
-    // Get all MEPs with pagination
+    // Get all MEPs with page-based pagination (NocoDB doesn't support offset > 1000)
     const allMeps: MEP[] = [];
-    let offset = 0;
-    const pageSize = 1000;
+    let currentPage = 1;
+    const pageSize = 200;
 
     while (true) {
-      const mepsUrl = `${NOCODB_URL}/api/v2/tables/${NOCODB_MEPS_TABLE_ID}/records?limit=${pageSize}&offset=${offset}&sort=Id`;
+      const mepsUrl = `${NOCODB_URL}/api/v2/tables/${NOCODB_MEPS_TABLE_ID}/records?limit=${pageSize}&page=${currentPage}&sort=Id`;
       const mepsResponse = await fetch(mepsUrl, {
         headers: { 'xc-token': NOCODB_TOKEN! },
         cache: 'no-store',
@@ -37,10 +37,17 @@ export async function POST() {
       }
 
       allMeps.push(...pageMeps);
-      offset += pageSize;
+
+      // Check if we've reached the last page
+      const pageInfo = mepsData.pageInfo;
+      if (pageInfo?.isLastPage) {
+        break;
+      }
+
+      currentPage++;
 
       // Safety check to prevent infinite loop
-      if (offset > 10000) break;
+      if (currentPage > 100) break;
     }
 
     const meps = allMeps;
