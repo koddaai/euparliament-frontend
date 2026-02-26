@@ -9,19 +9,93 @@ interface MEP {
   Id: number;
   mep_id: string;
   name: string;
+  country: string;
+  national_party: string;
+  political_group: string;
+  political_group_short: string;
+  photo_url: string;
+  profile_url: string;
   status: string;
   last_updated: string;
 }
 
+interface ScrapedMEP {
+  mep_id: string;
+  name: string;
+  country: string;
+  national_party: string;
+  political_group: string;
+  political_group_short: string;
+  photo_url: string;
+  profile_url: string;
+}
+
 interface ChangeRecord {
   mep_id: string;
-  mep_name: string;
-  change_type: 'entry' | 'exit';
+  mep_name?: string;
+  change_type: 'joined' | 'left' | 'group_change';
+  old_value?: string | null;
+  new_value?: string | null;
   detected_at: string;
 }
 
-export async function POST() {
+async function logChange(change: ChangeRecord): Promise<boolean> {
   try {
+    const response = await fetch(
+      `${NOCODB_URL}/api/v2/tables/${NOCODB_CHANGES_TABLE_ID}/records`,
+      {
+        method: 'POST',
+        headers: {
+          'xc-token': NOCODB_TOKEN!,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(change),
+      }
+    );
+    return response.ok;
+  } catch {
+    return false;
+  }
+}
+
+async function updateMepStatus(mepId: number, status: string): Promise<void> {
+  await fetch(
+    `${NOCODB_URL}/api/v2/tables/${NOCODB_MEPS_TABLE_ID}/records`,
+    {
+      method: 'PATCH',
+      headers: {
+        'xc-token': NOCODB_TOKEN!,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ Id: mepId, status, last_updated: new Date().toISOString() }),
+    }
+  );
+}
+
+async function updateMepGroup(mepId: number, political_group: string, political_group_short: string): Promise<void> {
+  await fetch(
+    `${NOCODB_URL}/api/v2/tables/${NOCODB_MEPS_TABLE_ID}/records`,
+    {
+      method: 'PATCH',
+      headers: {
+        'xc-token': NOCODB_TOKEN!,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        Id: mepId,
+        political_group,
+        political_group_short,
+        last_updated: new Date().toISOString()
+      }),
+    }
+  );
+}
+
+export async function POST(request: Request) {
+  try {
+    const now = new Date().toISOString();
+    const loggedChanges: ChangeRecord[] = [];
+
     // Get all MEPs from database
     const mepsUrl = `${NOCODB_URL}/api/v2/tables/${NOCODB_MEPS_TABLE_ID}/records?limit=1000`;
     const mepsResponse = await fetch(mepsUrl, {
@@ -29,159 +103,139 @@ export async function POST() {
     });
 
     if (!mepsResponse.ok) {
-      throw new Error('Failed to fetch MEPs');
+      throw new Error('Failed to fetch MEPs from database');
     }
 
     const mepsData = await mepsResponse.json();
-    const meps: MEP[] = mepsData.list || [];
+    const dbMeps: MEP[] = mepsData.list || [];
 
-    // Find the most recent update timestamp (this is when the scrape ran)
-    const updateTimes = meps.map(m => new Date(m.last_updated).getTime());
-    const mostRecentUpdate = Math.max(...updateTimes);
-    const scrapeThreshold = mostRecentUpdate - (5 * 60 * 1000); // 5 minutes tolerance
+    // Create lookup maps
+    const dbMepById = new Map<string, MEP>();
+    dbMeps.forEach(mep => dbMepById.set(mep.mep_id, mep));
 
-    // MEPs updated in this scrape (present in current parliament list)
-    const currentMeps = meps.filter(m =>
-      new Date(m.last_updated).getTime() >= scrapeThreshold
-    );
-    const currentMepIds = new Set(currentMeps.map(m => m.mep_id));
-
-    // MEPs NOT updated in this scrape but still marked active = they left
-    const exitedMeps = meps.filter(m =>
-      m.status === 'active' &&
-      new Date(m.last_updated).getTime() < scrapeThreshold
-    );
-
-    // Get existing changes to check for already logged changes
-    const changesUrl = `${NOCODB_URL}/api/v2/tables/${NOCODB_CHANGES_TABLE_ID}/records?limit=2000&sort=-detected_at`;
-    const changesResponse = await fetch(changesUrl, {
-      headers: { 'xc-token': NOCODB_TOKEN! },
-    });
-
-    let existingChanges: { mep_id: string; change_type: string; detected_at: string }[] = [];
-    if (changesResponse.ok) {
-      const changesData = await changesResponse.json();
-      existingChanges = changesData.list || [];
+    // Try to get scraped data from request body (optional)
+    let scrapedMeps: ScrapedMEP[] = [];
+    try {
+      const body = await request.json();
+      if (body && Array.isArray(body.meps)) {
+        scrapedMeps = body.meps;
+      }
+    } catch {
+      // No body or invalid JSON - use timestamp-based detection
     }
 
-    // Get the set of MEP IDs that have EVER had an entry logged
-    // (to distinguish between "new MEP" and "MEP that was already tracked")
-    const everLoggedAsEntry = new Set(
-      existingChanges.filter(c => c.change_type === 'entry').map(c => c.mep_id)
-    );
+    // If we have scraped data, use it for comparison
+    if (scrapedMeps.length > 0) {
+      const scrapedMepIds = new Set(scrapedMeps.map(m => m.mep_id));
+      const scrapedMepById = new Map<string, ScrapedMEP>();
+      scrapedMeps.forEach(mep => scrapedMepById.set(mep.mep_id, mep));
 
-    // Get MEPs logged as exit that haven't re-entered
-    const exitedButNotReentered = new Set(
-      existingChanges
-        .filter(c => c.change_type === 'exit')
-        .filter(c => {
-          // Check if there's a more recent entry for this MEP
-          const exitDate = new Date(c.detected_at);
-          const hasReentry = existingChanges.some(e =>
-            e.mep_id === c.mep_id &&
-            e.change_type === 'entry' &&
-            new Date(e.detected_at) > exitDate
-          );
-          return !hasReentry;
-        })
-        .map(c => c.mep_id)
-    );
+      // Detect JOINS: MEPs in scrape but not in DB (or were inactive)
+      for (const scraped of scrapedMeps) {
+        const dbMep = dbMepById.get(scraped.mep_id);
 
-    const loggedChanges: ChangeRecord[] = [];
-    const now = new Date().toISOString();
-
-    // Detect ENTRIES: MEPs in current scrape that were previously marked as exited
-    // (they came back) or completely new MEPs
-    for (const mep of currentMeps) {
-      // Case 1: MEP was previously exited and is now back
-      if (exitedButNotReentered.has(mep.mep_id)) {
-        const changeRecord: ChangeRecord = {
-          mep_id: mep.mep_id,
-          mep_name: mep.name,
-          change_type: 'entry',
-          detected_at: now,
-        };
-
-        const createResponse = await fetch(
-          `${NOCODB_URL}/api/v2/tables/${NOCODB_CHANGES_TABLE_ID}/records`,
-          {
-            method: 'POST',
-            headers: {
-              'xc-token': NOCODB_TOKEN!,
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(changeRecord),
+        if (!dbMep) {
+          // Completely new MEP
+          const change: ChangeRecord = {
+            mep_id: scraped.mep_id,
+            mep_name: scraped.name,
+            change_type: 'joined',
+            new_value: scraped.political_group_short,
+            detected_at: now,
+          };
+          if (await logChange(change)) {
+            loggedChanges.push(change);
           }
-        );
-
-        if (createResponse.ok) {
-          loggedChanges.push(changeRecord);
+        } else if (dbMep.status === 'inactive') {
+          // MEP returned after leaving
+          const change: ChangeRecord = {
+            mep_id: scraped.mep_id,
+            mep_name: scraped.name,
+            change_type: 'joined',
+            new_value: scraped.political_group_short,
+            detected_at: now,
+          };
+          if (await logChange(change)) {
+            loggedChanges.push(change);
+            await updateMepStatus(dbMep.Id, 'active');
+          }
+        } else {
+          // MEP exists and is active - check for group changes
+          if (dbMep.political_group_short !== scraped.political_group_short) {
+            const change: ChangeRecord = {
+              mep_id: scraped.mep_id,
+              mep_name: scraped.name,
+              change_type: 'group_change',
+              old_value: dbMep.political_group_short,
+              new_value: scraped.political_group_short,
+              detected_at: now,
+            };
+            if (await logChange(change)) {
+              loggedChanges.push(change);
+              await updateMepGroup(dbMep.Id, scraped.political_group, scraped.political_group_short);
+            }
+          }
         }
       }
-      // Note: We don't log "entry" for MEPs that have always been here
-      // The initial population is not a "change"
-    }
 
-    // Detect EXITS: MEPs that were active but not in current scrape
-    for (const mep of exitedMeps) {
-      // Check if already logged as exit
-      const alreadyLoggedExit = existingChanges.some(c =>
-        c.mep_id === mep.mep_id &&
-        c.change_type === 'exit' &&
-        !everLoggedAsEntry.has(mep.mep_id) // Only if no subsequent entry
+      // Detect LEAVES: Active MEPs in DB but not in scrape
+      for (const dbMep of dbMeps) {
+        if (dbMep.status === 'active' && !scrapedMepIds.has(dbMep.mep_id)) {
+          const change: ChangeRecord = {
+            mep_id: dbMep.mep_id,
+            mep_name: dbMep.name,
+            change_type: 'left',
+            old_value: dbMep.political_group_short,
+            detected_at: now,
+          };
+          if (await logChange(change)) {
+            loggedChanges.push(change);
+            await updateMepStatus(dbMep.Id, 'inactive');
+          }
+        }
+      }
+    } else {
+      // Fallback: timestamp-based detection (when no scraped data provided)
+      // Find the most recent update timestamp
+      const updateTimes = dbMeps.map(m => new Date(m.last_updated).getTime());
+      const mostRecentUpdate = Math.max(...updateTimes);
+      const scrapeThreshold = mostRecentUpdate - (5 * 60 * 1000); // 5 minutes tolerance
+
+      // MEPs NOT updated recently but still active = they left
+      const exitedMeps = dbMeps.filter(m =>
+        m.status === 'active' &&
+        new Date(m.last_updated).getTime() < scrapeThreshold
       );
 
-      if (!exitedButNotReentered.has(mep.mep_id)) {
-        const changeRecord: ChangeRecord = {
+      for (const mep of exitedMeps) {
+        const change: ChangeRecord = {
           mep_id: mep.mep_id,
           mep_name: mep.name,
-          change_type: 'exit',
+          change_type: 'left',
+          old_value: mep.political_group_short,
           detected_at: now,
         };
-
-        const createResponse = await fetch(
-          `${NOCODB_URL}/api/v2/tables/${NOCODB_CHANGES_TABLE_ID}/records`,
-          {
-            method: 'POST',
-            headers: {
-              'xc-token': NOCODB_TOKEN!,
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(changeRecord),
-          }
-        );
-
-        if (createResponse.ok) {
-          loggedChanges.push(changeRecord);
-
-          // Update MEP status to inactive
-          await fetch(
-            `${NOCODB_URL}/api/v2/tables/${NOCODB_MEPS_TABLE_ID}/records`,
-            {
-              method: 'PATCH',
-              headers: {
-                'xc-token': NOCODB_TOKEN!,
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({ Id: mep.Id, status: 'inactive' }),
-            }
-          );
+        if (await logChange(change)) {
+          loggedChanges.push(change);
+          await updateMepStatus(mep.Id, 'inactive');
         }
       }
     }
 
-    const entries = loggedChanges.filter(c => c.change_type === 'entry');
-    const exits = loggedChanges.filter(c => c.change_type === 'exit');
+    const joins = loggedChanges.filter(c => c.change_type === 'joined');
+    const leaves = loggedChanges.filter(c => c.change_type === 'left');
+    const groupChanges = loggedChanges.filter(c => c.change_type === 'group_change');
 
     return NextResponse.json({
       success: true,
-      message: `Detected ${entries.length} entries and ${exits.length} exits`,
+      message: `Detected ${joins.length} joins, ${leaves.length} leaves, ${groupChanges.length} group changes`,
       changes: loggedChanges,
       stats: {
-        totalMeps: meps.length,
-        currentActiveMeps: currentMeps.length,
-        detectedExits: exits.length,
-        detectedEntries: entries.length,
+        totalMepsInDb: dbMeps.length,
+        scrapedMepsReceived: scrapedMeps.length,
+        detectedJoins: joins.length,
+        detectedLeaves: leaves.length,
+        detectedGroupChanges: groupChanges.length,
       }
     });
 
@@ -195,6 +249,6 @@ export async function POST() {
 }
 
 // Also allow GET for easy testing
-export async function GET() {
-  return POST();
+export async function GET(request: Request) {
+  return POST(request);
 }
