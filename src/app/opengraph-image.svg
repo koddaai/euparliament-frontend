@@ -1,0 +1,39 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#003399"/>
+      <stop offset="50%" style="stop-color:#002266"/>
+      <stop offset="100%" style="stop-color:#003399"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg-gradient)"/>
+
+  <!-- EU Stars Circle -->
+  <circle cx="300" cy="315" r="140" stroke="#FFD700" stroke-width="3" fill="none"/>
+
+  <!-- 12 Stars -->
+  <g fill="#FFD700" font-size="28">
+    <text x="300" y="185" text-anchor="middle" dominant-baseline="central">★</text>
+    <text x="370" y="202" text-anchor="middle" dominant-baseline="central">★</text>
+    <text x="421" y="255" text-anchor="middle" dominant-baseline="central">★</text>
+    <text x="440" y="315" text-anchor="middle" dominant-baseline="central">★</text>
+    <text x="421" y="375" text-anchor="middle" dominant-baseline="central">★</text>
+    <text x="370" y="428" text-anchor="middle" dominant-baseline="central">★</text>
+    <text x="300" y="445" text-anchor="middle" dominant-baseline="central">★</text>
+    <text x="230" y="428" text-anchor="middle" dominant-baseline="central">★</text>
+    <text x="179" y="375" text-anchor="middle" dominant-baseline="central">★</text>
+    <text x="160" y="315" text-anchor="middle" dominant-baseline="central">★</text>
+    <text x="179" y="255" text-anchor="middle" dominant-baseline="central">★</text>
+    <text x="230" y="202" text-anchor="middle" dominant-baseline="central">★</text>
+  </g>
+
+  <!-- Text -->
+  <text x="520" y="280" fill="white" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="bold">EU Parliament</text>
+  <text x="520" y="360" fill="white" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="bold">Monitor</text>
+  <text x="520" y="420" fill="#93c5fd" font-family="system-ui, -apple-system, sans-serif" font-size="28">Track MEPs • News • Social Media</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="590" width="1200" height="40" fill="#002266"/>
+  <text x="600" y="615" fill="#93c5fd" font-family="system-ui, -apple-system, sans-serif" font-size="18" text-anchor="middle">Updated daily at 06:00 UTC</text>
+</svg>
