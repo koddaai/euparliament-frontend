@@ -199,7 +199,7 @@ function NewsCard({ article }: { article: NewsArticle }) {
       className="block group"
     >
       <div className={`bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-200 overflow-hidden hover:-translate-y-0.5 ${hasImage ? 'h-full' : ''}`}>
-        {hasImage && (
+        {hasImage && article.image_url && (
           <div className="aspect-video overflow-hidden bg-slate-100">
             <img
               src={article.image_url}
