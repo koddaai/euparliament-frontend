@@ -28,6 +28,7 @@ interface NewsArticle {
 interface ExistingArticle {
   Id: number;
   article_id: string;
+  image_url: string | null;
 }
 
 // Extract image from various RSS formats
@@ -272,11 +273,11 @@ async function handleSync() {
     }
 
     // Fetch existing articles to check for duplicates
-    const existingMap = new Map<string, number>();
+    const existingMap = new Map<string, { Id: number; image_url: string | null }>();
     let offset = 0;
 
     while (true) {
-      const url = `${NOCODB_URL}/api/v2/tables/${NOCODB_NEWS_TABLE_ID}/records?limit=1000&offset=${offset}&fields=Id,article_id`;
+      const url = `${NOCODB_URL}/api/v2/tables/${NOCODB_NEWS_TABLE_ID}/records?limit=1000&offset=${offset}&fields=Id,article_id,image_url`;
       const response = await fetch(url, {
         headers: { 'xc-token': NOCODB_TOKEN },
       });
@@ -289,19 +290,22 @@ async function handleSync() {
       const list: ExistingArticle[] = data.list || [];
 
       for (const article of list) {
-        existingMap.set(article.article_id, article.Id);
+        existingMap.set(article.article_id, { Id: article.Id, image_url: article.image_url });
       }
 
       if (list.length < 1000) break;
       offset += 1000;
     }
 
-    // Only insert new articles (skip existing ones - news doesn't change)
+    // Insert new articles and update images for existing articles without images
     const toInsert: Record<string, unknown>[] = [];
+    const toUpdateImages: { Id: number; image_url: string }[] = [];
     const now = new Date().toISOString();
 
     for (const article of articles) {
-      if (!existingMap.has(article.article_id)) {
+      const existing = existingMap.get(article.article_id);
+      if (!existing) {
+        // New article - insert
         toInsert.push({
           article_id: article.article_id,
           source: article.source,
@@ -314,10 +318,13 @@ async function handleSync() {
           published_at: article.published_at,
           fetched_at: now,
         });
+      } else if (!existing.image_url && article.image_url) {
+        // Existing article without image but new data has image - update
+        toUpdateImages.push({ Id: existing.Id, image_url: article.image_url });
       }
     }
 
-    const skipped = articles.length - toInsert.length;
+    const skipped = articles.length - toInsert.length - toUpdateImages.length;
 
     // Insert new articles
     if (toInsert.length > 0) {
@@ -337,6 +344,26 @@ async function handleSync() {
         const errorText = await insertResponse.text();
         console.error('Insert error:', errorText);
         throw new Error(`Failed to insert articles: ${insertResponse.status}`);
+      }
+    }
+
+    // Update images for existing articles that didn't have one
+    if (toUpdateImages.length > 0) {
+      console.log(`Updating images for ${toUpdateImages.length} existing articles`);
+      const updateResponse = await fetch(
+        `${NOCODB_URL}/api/v2/tables/${NOCODB_NEWS_TABLE_ID}/records`,
+        {
+          method: 'PATCH',
+          headers: {
+            'xc-token': NOCODB_TOKEN,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(toUpdateImages),
+        }
+      );
+
+      if (!updateResponse.ok) {
+        console.error('Failed to update images:', await updateResponse.text());
       }
     }
 
@@ -383,6 +410,7 @@ async function handleSync() {
       success: true,
       fetched: articles.length,
       inserted: toInsert.length,
+      imagesUpdated: toUpdateImages.length,
       skipped,
       deleted,
       sources: sourceCounts,
