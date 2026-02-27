@@ -189,6 +189,7 @@ function FeaturedCard({ article }: { article: NewsArticle }) {
 function NewsCard({ article }: { article: NewsArticle }) {
   const sourceConfig = getSourceConfig(article.source);
   const theme = THEMES[detectTheme(article)];
+  const hasImage = !!article.image_url;
 
   return (
     <a
@@ -197,8 +198,8 @@ function NewsCard({ article }: { article: NewsArticle }) {
       rel="noopener noreferrer"
       className="block group"
     >
-      <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-200 overflow-hidden h-full hover:-translate-y-0.5">
-        {article.image_url && (
+      <div className={`bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-200 overflow-hidden hover:-translate-y-0.5 ${hasImage ? 'h-full' : ''}`}>
+        {hasImage && (
           <div className="aspect-video overflow-hidden bg-slate-100">
             <img
               src={article.image_url}
@@ -216,10 +217,10 @@ function NewsCard({ article }: { article: NewsArticle }) {
               {theme.icon} {theme.name}
             </span>
           </div>
-          <h3 className="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-2 mb-2">
+          <h3 className={`font-semibold text-slate-800 group-hover:text-blue-600 transition-colors mb-2 ${hasImage ? 'line-clamp-2' : 'line-clamp-3'}`}>
             {article.title}
           </h3>
-          <p className="text-slate-600 text-sm line-clamp-2 mb-3">
+          <p className={`text-slate-600 text-sm mb-3 ${hasImage ? 'line-clamp-2' : 'line-clamp-3'}`}>
             {article.description}
           </p>
           <div className="flex items-center justify-between text-xs text-slate-400">
@@ -407,21 +408,23 @@ export default function NewsPage() {
               </div>
             )}
 
-            {/* News Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-              {remainingArticles.slice(0, 6).map((article) => (
-                <NewsCard key={article.article_id} article={article} />
+            {/* News Grid - Masonry Layout */}
+            <div className="columns-1 md:columns-2 lg:columns-3 gap-6 mb-8 [column-fill:_balance]">
+              {remainingArticles.slice(0, 12).map((article) => (
+                <div key={article.article_id} className="mb-6 break-inside-avoid">
+                  <NewsCard article={article} />
+                </div>
               ))}
             </div>
 
             {/* More News - Compact List */}
-            {remainingArticles.length > 6 && (
+            {remainingArticles.length > 12 && (
               <div className="bg-white rounded-xl shadow-md p-4">
                 <h3 className="font-semibold text-slate-800 mb-4 flex items-center gap-2">
                   <span>📋</span> More Headlines
                 </h3>
                 <div className="divide-y divide-slate-100">
-                  {remainingArticles.slice(6).map((article) => (
+                  {remainingArticles.slice(12).map((article) => (
                     <CompactCard key={article.article_id} article={article} />
                   ))}
                 </div>
