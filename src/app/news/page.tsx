@@ -107,15 +107,31 @@ function detectTheme(article: NewsArticle): ThemeKey {
   return 'eu_affairs'; // Default theme
 }
 
-// Source badge
-const SOURCE_CONFIG: Record<string, { name: string; color: string }> = {
-  politico: { name: 'POLITICO', color: 'bg-red-500' },
-  guardian: { name: 'Guardian', color: 'bg-blue-800' },
-  euronews: { name: 'Euronews', color: 'bg-indigo-500' },
+// Source badge with fallback images
+const SOURCE_CONFIG: Record<string, { name: string; color: string; fallbackImage: string }> = {
+  politico: {
+    name: 'POLITICO',
+    color: 'bg-red-500',
+    fallbackImage: 'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&h=450&fit=crop&q=80'
+  },
+  guardian: {
+    name: 'Guardian',
+    color: 'bg-blue-800',
+    fallbackImage: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=800&h=450&fit=crop&q=80'
+  },
+  euronews: {
+    name: 'Euronews',
+    color: 'bg-indigo-500',
+    fallbackImage: 'https://images.unsplash.com/photo-1519923041400-ad1d40f3cc87?w=800&h=450&fit=crop&q=80'
+  },
 };
 
 function getSourceConfig(source: string) {
-  return SOURCE_CONFIG[source.toLowerCase()] || { name: source, color: 'bg-slate-500' };
+  return SOURCE_CONFIG[source.toLowerCase()] || {
+    name: source,
+    color: 'bg-slate-500',
+    fallbackImage: 'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&h=450&fit=crop&q=80'
+  };
 }
 
 // Format relative time
@@ -138,6 +154,7 @@ function formatRelativeTime(dateString: string): string {
 function FeaturedCard({ article }: { article: NewsArticle }) {
   const sourceConfig = getSourceConfig(article.source);
   const theme = THEMES[detectTheme(article)];
+  const imageUrl = article.image_url || sourceConfig.fallbackImage;
 
   return (
     <a
@@ -147,16 +164,14 @@ function FeaturedCard({ article }: { article: NewsArticle }) {
       className="block group"
     >
       <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-        {article.image_url && (
-          <div className="absolute inset-0 opacity-30">
-            <img
-              src={article.image_url}
-              alt=""
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent" />
-          </div>
-        )}
+        <div className="absolute inset-0 opacity-30">
+          <img
+            src={imageUrl}
+            alt=""
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent" />
+        </div>
         <div className="relative p-6 md:p-8">
           <div className="flex items-center gap-2 mb-4">
             <span className={`${sourceConfig.color} text-white text-xs font-bold px-2.5 py-1 rounded`}>
