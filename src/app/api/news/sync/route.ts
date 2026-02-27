@@ -107,32 +107,46 @@ function extractImage(item: Record<string, unknown>): string | null {
 async function fetchOgImage(url: string): Promise<string | null> {
   try {
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 3000);
+    const timeout = setTimeout(() => controller.abort(), 8000);
 
     const response = await fetch(url, {
       headers: {
-        'User-Agent': 'EU Parliament Monitor/1.0',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.5',
+        'Cache-Control': 'no-cache',
       },
       signal: controller.signal,
     });
     clearTimeout(timeout);
 
-    if (!response.ok) return null;
+    if (!response.ok) {
+      console.log(`OG fetch failed for ${url}: ${response.status}`);
+      return null;
+    }
 
     const html = await response.text();
 
-    // Look for og:image meta tag
+    // Look for og:image meta tag (various formats)
     const ogMatch = html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i) ||
                     html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i);
-    if (ogMatch) return ogMatch[1];
+    if (ogMatch) {
+      console.log(`Found OG image for ${url}: ${ogMatch[1]}`);
+      return ogMatch[1];
+    }
 
     // Look for twitter:image meta tag
     const twMatch = html.match(/<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i) ||
                     html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']twitter:image["']/i);
-    if (twMatch) return twMatch[1];
+    if (twMatch) {
+      console.log(`Found Twitter image for ${url}: ${twMatch[1]}`);
+      return twMatch[1];
+    }
 
+    console.log(`No OG image found for ${url}`);
     return null;
-  } catch {
+  } catch (err) {
+    console.log(`OG fetch error for ${url}:`, err);
     return null;
   }
 }
