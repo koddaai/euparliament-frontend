@@ -1,0 +1,4012 @@
+[
+  {
+    "name": "Abir AL-SAHLANI",
+    "first_name": "Abir",
+    "last_name": "AL-SAHLANI",
+    "country": "Sweden",
+    "group": "RE",
+    "national_party": "Centerpartiet",
+    "x_handle": "AbirAlsahlani",
+    "status": "-"
+  },
+  {
+    "name": "Adam BIELAN",
+    "first_name": "Adam",
+    "last_name": "BIELAN",
+    "country": "Poland",
+    "group": "ECR",
+    "national_party": "Prawo i Sprawiedliwo\u015b\u0107",
+    "x_handle": "AdamBielan",
+    "status": "-"
+  },
+  {
+    "name": "Adam JARUBAS",
+    "first_name": "Adam",
+    "last_name": "JARUBAS",
+    "country": "Poland",
+    "group": "EPP",
+    "national_party": "Polskie Stronnictwo Ludowe",
+    "x_handle": "JarubasAdam",
+    "status": "-"
+  },
+  {
+    "name": "Adina V\u0102LEAN",
+    "first_name": "Adina",
+    "last_name": "V\u0102LEAN",
+    "country": "Romania",
+    "group": "EPP",
+    "national_party": "Partidul Na\u0163ional Liberal",
+    "x_handle": "adinavalean",
+    "status": "-"
+  },
+  {
+    "name": "Adri\u00e1n V\u00c1ZQUEZ L\u00c1ZARA",
+    "first_name": "Adri\u00e1n",
+    "last_name": "V\u00c1ZQUEZ L\u00c1ZARA",
+    "country": "Spain",
+    "group": "EPP",
+    "national_party": "Partido Popular",
+    "x_handle": "adrianvl1982",
+    "status": "-"
+  },
+  {
+    "name": "Afroditi LATINOPOULOU",
+    "first_name": "Afroditi",
+    "last_name": "LATINOPOULOU",
+    "country": "Greece",
+    "group": "PfE",
+    "national_party": "Fon\u00ed Loyik\u00eds",
+    "x_handle": "latinopoulou",
+    "status": "-"
+  },
+  {
+    "name": "Aldo PATRICIELLO",
+    "first_name": "Aldo",
+    "last_name": "PATRICIELLO",
+    "country": "Italy",
+    "group": "PfE",
+    "national_party": "Lega",
+    "x_handle": "PatricielloAldo",
+    "status": "-"
+  },
+  {
+    "name": "Alessandra MORETTI",
+    "first_name": "Alessandra",
+    "last_name": "MORETTI",
+    "country": "Italy",
+    "group": "S&D",
+    "national_party": "Partito Democratico",
+    "x_handle": "ale_moretti",
+    "status": "-"
+  },
+  {
+    "name": "Alex AGIUS SALIBA",
+    "first_name": "Alex",
+    "last_name": "AGIUS SALIBA",
+    "country": "Malta",
+    "group": "S&D",
+    "national_party": "Partit Laburista",
+    "x_handle": "alexagiussaliba",
+    "status": "-"
+  },
+  {
+    "name": "Alexandr VONDRA",
+    "first_name": "Alexandr",
+    "last_name": "VONDRA",
+    "country": "Czechia",
+    "group": "ECR",
+    "national_party": "Ob\u010dansk\u00e1 demokratick\u00e1 strana",
+    "x_handle": "AlexandrVondra",
+    "status": "-"
+  },
+  {
+    "name": "Alexandra GEESE",
+    "first_name": "Alexandra",
+    "last_name": "GEESE",
+    "country": "Germany",
+    "group": "Greens/EFA",
+    "national_party": "B\u00fcndnis 90/Die Gr\u00fcnen",
+    "x_handle": "AlexandraGeese",
+    "status": "-"
+  },
+  {
+    "name": "Alicia HOMS GINEL",
+    "first_name": "Alicia",
+    "last_name": "HOMS GINEL",
+    "country": "Spain",
+    "group": "S&D",
+    "national_party": "Partido Socialista Obrero Espa\u00f1ol",
+    "x_handle": "aliciahoms",
+    "status": "-"
+  },
+  {
+    "name": "Alvise P\u00c9REZ",
+    "first_name": "Alvise",
+    "last_name": "P\u00c9REZ",
+    "country": "Spain",
+    "group": "NI",
+    "national_party": "Se Acab\u00f3 la Fiesta",
+    "x_handle": "IratxeGarper",
+    "status": "-"
+  },
+  {
+    "name": "Ana Catarina MENDES",
+    "first_name": "Ana Catarina",
+    "last_name": "MENDES",
+    "country": "Portugal",
+    "group": "S&D",
+    "national_party": "Partido Socialista",
+    "x_handle": "acmendes73",
+    "status": "-"
+  },
+  {
+    "name": "Ana Miguel PEDRO",
+    "first_name": "Ana Miguel",
+    "last_name": "PEDRO",
+    "country": "Portugal",
+    "group": "EPP",
+    "national_party": "Partido do Centro Democr\u00e1tico Social-Partido Popular",
+    "x_handle": "PedroMarquesMEP",
+    "status": "-"
+  },
+  {
+    "name": "Anders VISTISEN",
+    "first_name": "Anders",
+    "last_name": "VISTISEN",
+    "country": "Denmark",
+    "group": "PfE",
+    "national_party": "Dansk Folkeparti",
+    "x_handle": "andersvistisen",
+    "status": "-"
+  },
+  {
+    "name": "Andrea WECHSLER",
+    "first_name": "Andrea",
+    "last_name": "WECHSLER",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "Christlich Demokratische Union Deutschlands",
+    "x_handle": "andreawechsler",
+    "status": "-"
+  },
+  {
+    "name": "Andreas GL\u00dcCK",
+    "first_name": "Andreas",
+    "last_name": "GL\u00dcCK",
+    "country": "Germany",
+    "group": "RE",
+    "national_party": "Freie Demokratische Partei",
+    "x_handle": "Andi_Glueck",
+    "status": "-"
+  },
+  {
+    "name": "Andreas SCHIEDER",
+    "first_name": "Andreas",
+    "last_name": "SCHIEDER",
+    "country": "Austria",
+    "group": "S&D",
+    "national_party": "Sozialdemokratische Partei \u00d6sterreichs",
+    "x_handle": "SCHIEDER",
+    "status": "-"
+  },
+  {
+    "name": "Andreas SCHWAB",
+    "first_name": "Andreas",
+    "last_name": "SCHWAB",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "Christlich Demokratische Union Deutschlands",
+    "x_handle": "Andreas_Schwab",
+    "status": "-"
+  },
+  {
+    "name": "Andrey KOVATCHEV",
+    "first_name": "Andrey",
+    "last_name": "KOVATCHEV",
+    "country": "Bulgaria",
+    "group": "EPP",
+    "national_party": "Citizens for European Development of Bulgaria",
+    "x_handle": "andreykovatchev",
+    "status": "-"
+  },
+  {
+    "name": "Andrey NOVAKOV",
+    "first_name": "Andrey",
+    "last_name": "NOVAKOV",
+    "country": "Bulgaria",
+    "group": "EPP",
+    "national_party": "Citizens for European Development of Bulgaria",
+    "x_handle": "AndreyNovakov",
+    "status": "-"
+  },
+  {
+    "name": "Andrzej BU\u0141A",
+    "first_name": "Andrzej",
+    "last_name": "BU\u0141A",
+    "country": "Poland",
+    "group": "EPP",
+    "national_party": "Platforma Obywatelska",
+    "x_handle": "andrzej_bula",
+    "status": "-"
+  },
+  {
+    "name": "Andrzej HALICKI",
+    "first_name": "Andrzej",
+    "last_name": "HALICKI",
+    "country": "Poland",
+    "group": "EPP",
+    "national_party": "Platforma Obywatelska",
+    "x_handle": "AndrzejHalicki",
+    "status": "-"
+  },
+  {
+    "name": "Andr\u00e1s L\u00c1SZL\u00d3",
+    "first_name": "Andr\u00e1s",
+    "last_name": "L\u00c1SZL\u00d3",
+    "country": "Hungary",
+    "group": "PfE",
+    "national_party": "Fidesz-Magyar Polg\u00e1ri Sz\u00f6vets\u00e9g-Kereszt\u00e9nydemokrata N\u00e9pp\u00e1rt",
+    "x_handle": "trocsanyi",
+    "status": "-"
+  },
+  {
+    "name": "Andr\u00e9 ROUG\u00c9",
+    "first_name": "Andr\u00e9",
+    "last_name": "ROUG\u00c9",
+    "country": "France",
+    "group": "PfE",
+    "national_party": "Rassemblement national",
+    "x_handle": "AndreRougeOff",
+    "status": "-"
+  },
+  {
+    "name": "Angelika NIEBLER",
+    "first_name": "Angelika",
+    "last_name": "NIEBLER",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "Christlich-Soziale Union in Bayern e.V.",
+    "x_handle": "ANiebler",
+    "status": "-"
+  },
+  {
+    "name": "Angelika WINZIG",
+    "first_name": "Angelika",
+    "last_name": "WINZIG",
+    "country": "Austria",
+    "group": "EPP",
+    "national_party": "\u00d6sterreichische Volkspartei",
+    "x_handle": "AngelikaWinzig",
+    "status": "-"
+  },
+  {
+    "name": "Anja HAZEKAMP",
+    "first_name": "Anja",
+    "last_name": "HAZEKAMP",
+    "country": "Netherlands",
+    "group": "The Left",
+    "national_party": "Partij voor de Dieren",
+    "x_handle": "anjahazekamp",
+    "status": "-"
+  },
+  {
+    "name": "Anna CAVAZZINI",
+    "first_name": "Anna",
+    "last_name": "CAVAZZINI",
+    "country": "Germany",
+    "group": "Greens/EFA",
+    "national_party": "B\u00fcndnis 90/Die Gr\u00fcnen",
+    "x_handle": "anna_cavazzini",
+    "status": "-"
+  },
+  {
+    "name": "Anna ZALEWSKA",
+    "first_name": "Anna",
+    "last_name": "ZALEWSKA",
+    "country": "Poland",
+    "group": "ECR",
+    "national_party": "Prawo i Sprawiedliwo\u015b\u0107",
+    "x_handle": "AnnaZalewskaMEP",
+    "status": "-"
+  },
+  {
+    "name": "Anna-Maja HENRIKSSON",
+    "first_name": "Anna-Maja",
+    "last_name": "HENRIKSSON",
+    "country": "Finland",
+    "group": "RE",
+    "national_party": "Svenska folkpartiet",
+    "x_handle": "anna_maja",
+    "status": "-"
+  },
+  {
+    "name": "Antonio L\u00d3PEZ-IST\u00daRIZ WHITE",
+    "first_name": "Antonio",
+    "last_name": "L\u00d3PEZ-IST\u00daRIZ WHITE",
+    "country": "Spain",
+    "group": "EPP",
+    "national_party": "Partido Popular",
+    "x_handle": "TonoEPP",
+    "status": "-"
+  },
+  {
+    "name": "Arba KOKALARI",
+    "first_name": "Arba",
+    "last_name": "KOKALARI",
+    "country": "Sweden",
+    "group": "EPP",
+    "national_party": "Moderaterna",
+    "x_handle": "ArbaKokalari",
+    "status": "-"
+  },
+  {
+    "name": "Asger CHRISTENSEN",
+    "first_name": "Asger",
+    "last_name": "CHRISTENSEN",
+    "country": "Denmark",
+    "group": "RE",
+    "national_party": "Venstre, Danmarks Liberale Parti",
+    "x_handle": "AsgerChristens2",
+    "status": "-"
+  },
+  {
+    "name": "Assita KANKO",
+    "first_name": "Assita",
+    "last_name": "KANKO",
+    "country": "Belgium",
+    "group": "ECR",
+    "national_party": "Nieuw-Vlaamse Alliantie",
+    "x_handle": "Assita_Kanko",
+    "status": "-"
+  },
+  {
+    "name": "Aura SALLA",
+    "first_name": "Aura",
+    "last_name": "SALLA",
+    "country": "Finland",
+    "group": "EPP",
+    "national_party": "Kansallinen Kokoomus",
+    "x_handle": "aurasalla",
+    "status": "-"
+  },
+  {
+    "name": "Aurore LALUCQ",
+    "first_name": "Aurore",
+    "last_name": "LALUCQ",
+    "country": "France",
+    "group": "S&D",
+    "national_party": "Place publique",
+    "x_handle": "AuroreLalucq",
+    "status": "-"
+  },
+  {
+    "name": "Axel VOSS",
+    "first_name": "Axel",
+    "last_name": "VOSS",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "Christlich Demokratische Union Deutschlands",
+    "x_handle": "AxelVossMdEP",
+    "status": "-"
+  },
+  {
+    "name": "Barbara BONTE",
+    "first_name": "Barbara",
+    "last_name": "BONTE",
+    "country": "Belgium",
+    "group": "PfE",
+    "national_party": "Vlaams Belang",
+    "x_handle": "barbarabonte",
+    "status": "-"
+  },
+  {
+    "name": "Barry ANDREWS",
+    "first_name": "Barry",
+    "last_name": "ANDREWS",
+    "country": "Ireland",
+    "group": "RE",
+    "national_party": "Fianna F\u00e1il Party",
+    "x_handle": "BarryAndrewsMEP",
+    "status": "-"
+  },
+  {
+    "name": "Bart GROOTHUIS",
+    "first_name": "Bart",
+    "last_name": "GROOTHUIS",
+    "country": "Netherlands",
+    "group": "RE",
+    "national_party": "Volkspartij voor Vrijheid en Democratie",
+    "x_handle": "bgroothuis",
+    "status": "-"
+  },
+  {
+    "name": "Bartosz AR\u0141UKOWICZ",
+    "first_name": "Bartosz",
+    "last_name": "AR\u0141UKOWICZ",
+    "country": "Poland",
+    "group": "EPP",
+    "national_party": "Platforma Obywatelska",
+    "x_handle": "Arlukowicz",
+    "status": "-"
+  },
+  {
+    "name": "Bart\u0142omiej SIENKIEWICZ",
+    "first_name": "Bart\u0142omiej",
+    "last_name": "SIENKIEWICZ",
+    "country": "Poland",
+    "group": "EPP",
+    "national_party": "Platforma Obywatelska",
+    "x_handle": "bartsienkiewicz",
+    "status": "-"
+  },
+  {
+    "name": "Bas EICKHOUT",
+    "first_name": "Bas",
+    "last_name": "EICKHOUT",
+    "country": "Netherlands",
+    "group": "Greens/EFA",
+    "national_party": "GroenLinks-PvdA",
+    "x_handle": "BasEickhout",
+    "status": "-"
+  },
+  {
+    "name": "Beata SZYD\u0141O",
+    "first_name": "Beata",
+    "last_name": "SZYD\u0141O",
+    "country": "Poland",
+    "group": "ECR",
+    "national_party": "Prawo i Sprawiedliwo\u015b\u0107",
+    "x_handle": "BeataSzydlo",
+    "status": "-"
+  },
+  {
+    "name": "Beatrice TIMGREN",
+    "first_name": "Beatrice",
+    "last_name": "TIMGREN",
+    "country": "Sweden",
+    "group": "ECR",
+    "national_party": "Sverigedemokraterna",
+    "x_handle": "beatricetimgren",
+    "status": "-"
+  },
+  {
+    "name": "Bernard GUETTA",
+    "first_name": "Bernard",
+    "last_name": "GUETTA",
+    "country": "France",
+    "group": "RE",
+    "national_party": "Sans parti",
+    "x_handle": "guetta_en",
+    "status": "-"
+  },
+  {
+    "name": "Bernd LANGE",
+    "first_name": "Bernd",
+    "last_name": "LANGE",
+    "country": "Germany",
+    "group": "S&D",
+    "national_party": "Sozialdemokratische Partei Deutschlands",
+    "x_handle": "berndlange",
+    "status": "-"
+  },
+  {
+    "name": "Bert-Jan RUISSEN",
+    "first_name": "Bert-Jan",
+    "last_name": "RUISSEN",
+    "country": "Netherlands",
+    "group": "ECR",
+    "national_party": "Staatkundig Gereformeerde Partij",
+    "x_handle": "hjaruissen",
+    "status": "-"
+  },
+  {
+    "name": "Biljana BORZAN",
+    "first_name": "Biljana",
+    "last_name": "BORZAN",
+    "country": "Croatia",
+    "group": "S&D",
+    "national_party": "Socijaldemokratska partija Hrvatske",
+    "x_handle": "BiljanaBorzan",
+    "status": "-"
+  },
+  {
+    "name": "Billy KELLEHER",
+    "first_name": "Billy",
+    "last_name": "KELLEHER",
+    "country": "Ireland",
+    "group": "RE",
+    "national_party": "Fianna F\u00e1il Party",
+    "x_handle": "BillyKelleherEU",
+    "status": "-"
+  },
+  {
+    "name": "Birgit SIPPEL",
+    "first_name": "Birgit",
+    "last_name": "SIPPEL",
+    "country": "Germany",
+    "group": "S&D",
+    "national_party": "Sozialdemokratische Partei Deutschlands",
+    "x_handle": "BirgitSippelMEP",
+    "status": "-"
+  },
+  {
+    "name": "Bogdan Andrzej ZDROJEWSKI",
+    "first_name": "Bogdan Andrzej",
+    "last_name": "ZDROJEWSKI",
+    "country": "Poland",
+    "group": "EPP",
+    "national_party": "Koalicja Obywatelska",
+    "x_handle": "bzdrojewski",
+    "status": "-"
+  },
+  {
+    "name": "Bogdan RZO\u0143CA",
+    "first_name": "Bogdan",
+    "last_name": "RZO\u0143CA",
+    "country": "Poland",
+    "group": "ECR",
+    "national_party": "Prawo i Sprawiedliwo\u015b\u0107",
+    "x_handle": "Bogdan_Rzonca",
+    "status": "-"
+  },
+  {
+    "name": "Borys BUDKA",
+    "first_name": "Borys",
+    "last_name": "BUDKA",
+    "country": "Poland",
+    "group": "EPP",
+    "national_party": "Platforma Obywatelska",
+    "x_handle": "bbudka",
+    "status": "-"
+  },
+  {
+    "name": "Brando BENIFEI",
+    "first_name": "Brando",
+    "last_name": "BENIFEI",
+    "country": "Italy",
+    "group": "S&D",
+    "national_party": "Partito Democratico",
+    "x_handle": "brandobenifei",
+    "status": "-"
+  },
+  {
+    "name": "Branko GRIMS",
+    "first_name": "Branko",
+    "last_name": "GRIMS",
+    "country": "Slovenia",
+    "group": "EPP",
+    "national_party": "Slovenska demokratska stranka",
+    "x_handle": "brankogrimsx1",
+    "status": "-"
+  },
+  {
+    "name": "Bruno GON\u00c7ALVES",
+    "first_name": "Bruno",
+    "last_name": "GON\u00c7ALVES",
+    "country": "Portugal",
+    "group": "S&D",
+    "national_party": "Partido Socialista",
+    "x_handle": "brunog2504",
+    "status": "-"
+  },
+  {
+    "name": "Camilla LAURETI",
+    "first_name": "Camilla",
+    "last_name": "LAURETI",
+    "country": "Italy",
+    "group": "S&D",
+    "national_party": "Partito Democratico",
+    "x_handle": "camillalaureti1",
+    "status": "-"
+  },
+  {
+    "name": "Carla TAVARES",
+    "first_name": "Carla",
+    "last_name": "TAVARES",
+    "country": "Portugal",
+    "group": "S&D",
+    "national_party": "Partido Socialista",
+    "x_handle": "carlatavares_ps",
+    "status": "-"
+  },
+  {
+    "name": "Carlo FIDANZA",
+    "first_name": "Carlo",
+    "last_name": "FIDANZA",
+    "country": "Italy",
+    "group": "ECR",
+    "national_party": "FRATELLI D' ITALIA",
+    "x_handle": "FidanzaCarlo",
+    "status": "-"
+  },
+  {
+    "name": "Catarina VIEIRA",
+    "first_name": "Catarina",
+    "last_name": "VIEIRA",
+    "country": "Netherlands",
+    "group": "Greens/EFA",
+    "national_party": "GroenLinks-PvdA",
+    "x_handle": "catarinacv",
+    "status": "-"
+  },
+  {
+    "name": "Caterina CHINNICI",
+    "first_name": "Caterina",
+    "last_name": "CHINNICI",
+    "country": "Italy",
+    "group": "EPP",
+    "national_party": "Forza Italia",
+    "x_handle": "CaterinaChinnic",
+    "status": "-"
+  },
+  {
+    "name": "Catherine GRISET",
+    "first_name": "Catherine",
+    "last_name": "GRISET",
+    "country": "France",
+    "group": "PfE",
+    "national_party": "Rassemblement national",
+    "x_handle": "GrisetCatherine",
+    "status": "-"
+  },
+  {
+    "name": "Charles GOERENS",
+    "first_name": "Charles",
+    "last_name": "GOERENS",
+    "country": "Luxembourg",
+    "group": "RE",
+    "national_party": "Parti d\u00e9mocratique",
+    "x_handle": "CharlesGoerens",
+    "status": "-"
+  },
+  {
+    "name": "Charlie WEIMERS",
+    "first_name": "Charlie",
+    "last_name": "WEIMERS",
+    "country": "Sweden",
+    "group": "ECR",
+    "national_party": "Sverigedemokraterna",
+    "x_handle": "weimers",
+    "status": "-"
+  },
+  {
+    "name": "Chiara GEMMA",
+    "first_name": "Chiara",
+    "last_name": "GEMMA",
+    "country": "Italy",
+    "group": "ECR",
+    "national_party": "FRATELLI D' ITALIA",
+    "x_handle": "chgemma68",
+    "status": "-"
+  },
+  {
+    "name": "Chlo\u00e9 RIDEL",
+    "first_name": "Chlo\u00e9",
+    "last_name": "RIDEL",
+    "country": "France",
+    "group": "S&D",
+    "national_party": "Parti socialiste",
+    "x_handle": "chloeridel",
+    "status": "-"
+  },
+  {
+    "name": "Christel SCHALDEMOSE",
+    "first_name": "Christel",
+    "last_name": "SCHALDEMOSE",
+    "country": "Denmark",
+    "group": "S&D",
+    "national_party": "Socialdemokratiet",
+    "x_handle": "SchaldemoseMEP",
+    "status": "-"
+  },
+  {
+    "name": "Christian DOLESCHAL",
+    "first_name": "Christian",
+    "last_name": "DOLESCHAL",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "Christlich-Soziale Union in Bayern e.V.",
+    "x_handle": "Doleschal",
+    "status": "-"
+  },
+  {
+    "name": "Christian EHLER",
+    "first_name": "Christian",
+    "last_name": "EHLER",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "Christlich Demokratische Union Deutschlands",
+    "x_handle": "MEP_Ehler",
+    "status": "-"
+  },
+  {
+    "name": "Christine ANDERSON",
+    "first_name": "Christine",
+    "last_name": "ANDERSON",
+    "country": "Germany",
+    "group": "ESN",
+    "national_party": "Alternative f\u00fcr Deutschland",
+    "x_handle": "AndersonAfDMdEP",
+    "status": "-"
+  },
+  {
+    "name": "Christine SCHNEIDER",
+    "first_name": "Christine",
+    "last_name": "SCHNEIDER",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "Christlich Demokratische Union Deutschlands",
+    "x_handle": "ChSchneider",
+    "status": "-"
+  },
+  {
+    "name": "Christophe BAY",
+    "first_name": "Christophe",
+    "last_name": "BAY",
+    "country": "France",
+    "group": "PfE",
+    "national_party": "Rassemblement national",
+    "x_handle": "NicolasBay_",
+    "status": "-"
+  },
+  {
+    "name": "Christophe CLERGEAU",
+    "first_name": "Christophe",
+    "last_name": "CLERGEAU",
+    "country": "France",
+    "group": "S&D",
+    "national_party": "Parti socialiste",
+    "x_handle": "clergeau",
+    "status": "-"
+  },
+  {
+    "name": "Christophe GOMART",
+    "first_name": "Christophe",
+    "last_name": "GOMART",
+    "country": "France",
+    "group": "EPP",
+    "national_party": "Les R\u00e9publicains",
+    "x_handle": "chris_gomart",
+    "status": "-"
+  },
+  {
+    "name": "Christophe GRUDLER",
+    "first_name": "Christophe",
+    "last_name": "GRUDLER",
+    "country": "France",
+    "group": "RE",
+    "national_party": "Mouvement D\u00e9mocrate",
+    "x_handle": "GrudlerCh",
+    "status": "-"
+  },
+  {
+    "name": "Claire FITA",
+    "first_name": "Claire",
+    "last_name": "FITA",
+    "country": "France",
+    "group": "S&D",
+    "national_party": "Parti socialiste",
+    "x_handle": "claire_fita",
+    "status": "-"
+  },
+  {
+    "name": "Costas MAVRIDES",
+    "first_name": "Costas",
+    "last_name": "MAVRIDES",
+    "country": "Cyprus",
+    "group": "S&D",
+    "national_party": "Democratic Party",
+    "x_handle": "MavridesCostas",
+    "status": "-"
+  },
+  {
+    "name": "Cristian TERHE\u015e",
+    "first_name": "Cristian",
+    "last_name": "TERHE\u015e",
+    "country": "Romania",
+    "group": "ECR",
+    "national_party": "Partidului Na\u021bional Conservator Rom\u00e2n (PNCR)",
+    "x_handle": "CristianTerhes",
+    "status": "-"
+  },
+  {
+    "name": "Cristina MAESTRE",
+    "first_name": "Cristina",
+    "last_name": "MAESTRE",
+    "country": "Spain",
+    "group": "S&D",
+    "national_party": "Partido Socialista Obrero Espa\u00f1ol",
+    "x_handle": "crismaestre",
+    "status": "-"
+  },
+  {
+    "name": "Csaba MOLN\u00c1R",
+    "first_name": "Csaba",
+    "last_name": "MOLN\u00c1R",
+    "country": "Hungary",
+    "group": "S&D",
+    "national_party": "Demokratikus Koal\u00edci\u00f3",
+    "x_handle": "drcsabamolnar",
+    "status": "-"
+  },
+  {
+    "name": "C\u00e9line IMART",
+    "first_name": "C\u00e9line",
+    "last_name": "IMART",
+    "country": "France",
+    "group": "EPP",
+    "national_party": "Les R\u00e9publicains",
+    "x_handle": "celineimart",
+    "status": "-"
+  },
+  {
+    "name": "C\u00e9sar LUENA",
+    "first_name": "C\u00e9sar",
+    "last_name": "LUENA",
+    "country": "Spain",
+    "group": "S&D",
+    "national_party": "Partido Socialista Obrero Espa\u00f1ol",
+    "x_handle": "cesarluena",
+    "status": "-"
+  },
+  {
+    "name": "Dainius \u017dALIMAS",
+    "first_name": "Dainius",
+    "last_name": "\u017dALIMAS",
+    "country": "Lithuania",
+    "group": "RE",
+    "national_party": "Laisv\u0117s partija",
+    "x_handle": "dzalimas40196",
+    "status": "-"
+  },
+  {
+    "name": "Damian BOESELAGER",
+    "first_name": "Damian",
+    "last_name": "BOESELAGER",
+    "country": "Germany",
+    "group": "Greens/EFA",
+    "national_party": "Volt",
+    "x_handle": "d_boeselager",
+    "status": "-"
+  },
+  {
+    "name": "Damien CAR\u00caME",
+    "first_name": "Damien",
+    "last_name": "CAR\u00caME",
+    "country": "France",
+    "group": "The Left",
+    "national_party": "La France Insoumise",
+    "x_handle": "DamienCAREME",
+    "status": "-"
+  },
+  {
+    "name": "Dan-\u015etefan MOTREANU",
+    "first_name": "Dan-\u015etefan",
+    "last_name": "MOTREANU",
+    "country": "Romania",
+    "group": "EPP",
+    "national_party": "Partidul Na\u0163ional Liberal",
+    "x_handle": "dan_motreanu",
+    "status": "-"
+  },
+  {
+    "name": "Daniel BUDA",
+    "first_name": "Daniel",
+    "last_name": "BUDA",
+    "country": "Romania",
+    "group": "EPP",
+    "national_party": "Partidul Na\u0163ional Liberal",
+    "x_handle": "MEPDanielBuda",
+    "status": "-"
+  },
+  {
+    "name": "Daniel CASPARY",
+    "first_name": "Daniel",
+    "last_name": "CASPARY",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "Christlich Demokratische Union Deutschlands",
+    "x_handle": "caspary",
+    "status": "-"
+  },
+  {
+    "name": "Daniel FREUND",
+    "first_name": "Daniel",
+    "last_name": "FREUND",
+    "country": "Germany",
+    "group": "Greens/EFA",
+    "national_party": "B\u00fcndnis 90/Die Gr\u00fcnen",
+    "x_handle": "daniel_freund",
+    "status": "-"
+  },
+  {
+    "name": "Danu\u0161e NERUDOV\u00c1",
+    "first_name": "Danu\u0161e",
+    "last_name": "NERUDOV\u00c1",
+    "country": "Czechia",
+    "group": "EPP",
+    "national_party": "Starostov\u00e9 a nez\u00e1visli",
+    "x_handle": "danusenerudova",
+    "status": "-"
+  },
+  {
+    "name": "Dariusz JO\u0143SKI",
+    "first_name": "Dariusz",
+    "last_name": "JO\u0143SKI",
+    "country": "Poland",
+    "group": "EPP",
+    "national_party": "Koalicja Obywatelska",
+    "x_handle": "dariusz_jonski",
+    "status": "-"
+  },
+  {
+    "name": "David CASA",
+    "first_name": "David",
+    "last_name": "CASA",
+    "country": "Malta",
+    "group": "EPP",
+    "national_party": "Partit Nazzjonalista",
+    "x_handle": "DavidCasaMEP",
+    "status": "-"
+  },
+  {
+    "name": "David CORMAND",
+    "first_name": "David",
+    "last_name": "CORMAND",
+    "country": "France",
+    "group": "Greens/EFA",
+    "national_party": "Les \u00c9cologistes",
+    "x_handle": "DavidCormand",
+    "status": "-"
+  },
+  {
+    "name": "David MCALLISTER",
+    "first_name": "David",
+    "last_name": "MCALLISTER",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "Christlich Demokratische Union Deutschlands",
+    "x_handle": "davidmcallister",
+    "status": "-"
+  },
+  {
+    "name": "Delara BURKHARDT",
+    "first_name": "Delara",
+    "last_name": "BURKHARDT",
+    "country": "Germany",
+    "group": "S&D",
+    "national_party": "Sozialdemokratische Partei Deutschlands",
+    "x_handle": "delarabur",
+    "status": "-"
+  },
+  {
+    "name": "Dennis RADTKE",
+    "first_name": "Dennis",
+    "last_name": "RADTKE",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "Christlich Demokratische Union Deutschlands",
+    "x_handle": "RadtkeMdEP",
+    "status": "-"
+  },
+  {
+    "name": "Diana I RIBA GINER",
+    "first_name": "Diana I",
+    "last_name": "RIBA GINER",
+    "country": "Spain",
+    "group": "Greens/EFA",
+    "national_party": "Esquerra Republicana de Catalunya",
+    "x_handle": "DianaRibaGiner",
+    "status": "-"
+  },
+  {
+    "name": "Dick ERIXON",
+    "first_name": "Dick",
+    "last_name": "ERIXON",
+    "country": "Sweden",
+    "group": "ECR",
+    "national_party": "Sverigedemokraterna",
+    "x_handle": "dickerixon",
+    "status": "-"
+  },
+  {
+    "name": "Dimitris TSIODRAS",
+    "first_name": "Dimitris",
+    "last_name": "TSIODRAS",
+    "country": "Greece",
+    "group": "EPP",
+    "national_party": "Nea Demokratia",
+    "x_handle": "dtsiodras",
+    "status": "-"
+  },
+  {
+    "name": "Dirk GOTINK",
+    "first_name": "Dirk",
+    "last_name": "GOTINK",
+    "country": "Netherlands",
+    "group": "EPP",
+    "national_party": "Nieuw Sociaal Contract",
+    "x_handle": "dirkgotink",
+    "status": "-"
+  },
+  {
+    "name": "Dolors MONTSERRAT",
+    "first_name": "Dolors",
+    "last_name": "MONTSERRAT",
+    "country": "Spain",
+    "group": "EPP",
+    "national_party": "Partido Popular",
+    "x_handle": "DolorsMM",
+    "status": "-"
+  },
+  {
+    "name": "Dominik TARCZY\u0143SKI",
+    "first_name": "Dominik",
+    "last_name": "TARCZY\u0143SKI",
+    "country": "Poland",
+    "group": "ECR",
+    "national_party": "Prawo i Sprawiedliwo\u015b\u0107",
+    "x_handle": "d_tarczynski",
+    "status": "-"
+  },
+  {
+    "name": "D\u00f3ra D\u00c1VID",
+    "first_name": "D\u00f3ra",
+    "last_name": "D\u00c1VID",
+    "country": "Hungary",
+    "group": "EPP",
+    "national_party": "Tisztelet \u00e9s Szabads\u00e1g P\u00e1rt",
+    "x_handle": "doradavid20",
+    "status": "-"
+  },
+  {
+    "name": "Eero HEIN\u00c4LUOMA",
+    "first_name": "Eero",
+    "last_name": "HEIN\u00c4LUOMA",
+    "country": "Finland",
+    "group": "S&D",
+    "national_party": "Suomen Sosialidemokraattinen Puolue/Finlands Socialdemokratiska Parti",
+    "x_handle": "EeroHeinaluoma",
+    "status": "-"
+  },
+  {
+    "name": "Elena KOUNTOURA",
+    "first_name": "Elena",
+    "last_name": "KOUNTOURA",
+    "country": "Greece",
+    "group": "The Left",
+    "national_party": "Coalition of the Radical Left",
+    "x_handle": "ElenaKountoura",
+    "status": "-"
+  },
+  {
+    "name": "Elena YONCHEVA",
+    "first_name": "Elena",
+    "last_name": "YONCHEVA",
+    "country": "Bulgaria",
+    "group": "NI",
+    "national_party": "Movement for Rights and Freedoms",
+    "x_handle": "ElenaYoncheva",
+    "status": "-"
+  },
+  {
+    "name": "Elisabetta GUALMINI",
+    "first_name": "Elisabetta",
+    "last_name": "GUALMINI",
+    "country": "Italy",
+    "group": "RE",
+    "national_party": "Partito Democratico",
+    "x_handle": "gualminielisa",
+    "status": "-"
+  },
+  {
+    "name": "Elissavet VOZEMBERG-VRIONIDI",
+    "first_name": "Elissavet",
+    "last_name": "VOZEMBERG-VRIONIDI",
+    "country": "Greece",
+    "group": "EPP",
+    "national_party": "Nea Demokratia",
+    "x_handle": "vozemberg",
+    "status": "-"
+  },
+  {
+    "name": "Elsi KATAINEN",
+    "first_name": "Elsi",
+    "last_name": "KATAINEN",
+    "country": "Finland",
+    "group": "RE",
+    "national_party": "Suomen Keskusta",
+    "x_handle": "ElsiKatainen",
+    "status": "-"
+  },
+  {
+    "name": "El\u017cbieta Katarzyna \u0141UKACIJEWSKA",
+    "first_name": "El\u017cbieta Katarzyna",
+    "last_name": "\u0141UKACIJEWSKA",
+    "country": "Poland",
+    "group": "EPP",
+    "national_party": "Platforma Obywatelska",
+    "x_handle": "elukacijewska",
+    "status": "-"
+  },
+  {
+    "name": "Emil RADEV",
+    "first_name": "Emil",
+    "last_name": "RADEV",
+    "country": "Bulgaria",
+    "group": "EPP",
+    "national_party": "Citizens for European Development of Bulgaria",
+    "x_handle": "Emil_Radev",
+    "status": "-"
+  },
+  {
+    "name": "Emma FOURREAU",
+    "first_name": "Emma",
+    "last_name": "FOURREAU",
+    "country": "France",
+    "group": "The Left",
+    "national_party": "La France Insoumise",
+    "x_handle": "emma_frr",
+    "status": "-"
+  },
+  {
+    "name": "Emma WIESNER",
+    "first_name": "Emma",
+    "last_name": "WIESNER",
+    "country": "Sweden",
+    "group": "RE",
+    "national_party": "Centerpartiet",
+    "x_handle": "emmawiesner",
+    "status": "-"
+  },
+  {
+    "name": "Emmanouil FRAGKOS",
+    "first_name": "Emmanouil",
+    "last_name": "FRAGKOS",
+    "country": "Greece",
+    "group": "ECR",
+    "national_party": "Elliniki Lusi-Greek Solution",
+    "x_handle": "e_fragkos",
+    "status": "-"
+  },
+  {
+    "name": "Emmanouil KEFALOGIANNIS",
+    "first_name": "Emmanouil",
+    "last_name": "KEFALOGIANNIS",
+    "country": "Greece",
+    "group": "EPP",
+    "national_party": "Nea Demokratia",
+    "x_handle": "M_Kefalogiannis",
+    "status": "-"
+  },
+  {
+    "name": "Engin EROGLU",
+    "first_name": "Engin",
+    "last_name": "EROGLU",
+    "country": "Germany",
+    "group": "RE",
+    "national_party": "Freie W\u00e4hler",
+    "x_handle": "EnginEroglu_FW",
+    "status": "-"
+  },
+  {
+    "name": "Enik\u0151 GY\u0150RI",
+    "first_name": "Enik\u0151",
+    "last_name": "GY\u0150RI",
+    "country": "Hungary",
+    "group": "PfE",
+    "national_party": "Fidesz-Magyar Polg\u00e1ri Sz\u00f6vets\u00e9g-Kereszt\u00e9nydemokrata N\u00e9pp\u00e1rt",
+    "x_handle": "GyoriEniko",
+    "status": "-"
+  },
+  {
+    "name": "Eric SARGIACOMO",
+    "first_name": "Eric",
+    "last_name": "SARGIACOMO",
+    "country": "France",
+    "group": "S&D",
+    "national_party": "Parti socialiste",
+    "x_handle": "ericsargiacomo",
+    "status": "-"
+  },
+  {
+    "name": "Erik MARQUARDT",
+    "first_name": "Erik",
+    "last_name": "MARQUARDT",
+    "country": "Germany",
+    "group": "Greens/EFA",
+    "national_party": "B\u00fcndnis 90/Die Gr\u00fcnen",
+    "x_handle": "ErikMarquardt",
+    "status": "-"
+  },
+  {
+    "name": "Esteban GONZ\u00c1LEZ PONS",
+    "first_name": "Esteban",
+    "last_name": "GONZ\u00c1LEZ PONS",
+    "country": "Spain",
+    "group": "EPP",
+    "national_party": "Partido Popular",
+    "x_handle": "gonzalezpons",
+    "status": "-"
+  },
+  {
+    "name": "Eugen TOMAC",
+    "first_name": "Eugen",
+    "last_name": "TOMAC",
+    "country": "Romania",
+    "group": "RE",
+    "national_party": "Partidul Mi\u0219carea Popular\u0103",
+    "x_handle": "eugen_tomac",
+    "status": "-"
+  },
+  {
+    "name": "Eva MAYDELL",
+    "first_name": "Eva",
+    "last_name": "MAYDELL",
+    "country": "Bulgaria",
+    "group": "EPP",
+    "national_party": "Citizens for European Development of Bulgaria",
+    "x_handle": "EvaMaydell",
+    "status": "-"
+  },
+  {
+    "name": "Evelyn REGNER",
+    "first_name": "Evelyn",
+    "last_name": "REGNER",
+    "country": "Austria",
+    "group": "S&D",
+    "national_party": "Sozialdemokratische Partei \u00d6sterreichs",
+    "x_handle": "Evelyn_Regner",
+    "status": "-"
+  },
+  {
+    "name": "Evin INCIR",
+    "first_name": "Evin",
+    "last_name": "INCIR",
+    "country": "Sweden",
+    "group": "S&D",
+    "national_party": "Arbetarepartiet- Socialdemokraterna",
+    "x_handle": "EvinIncir",
+    "status": "-"
+  },
+  {
+    "name": "Ewa KOPACZ",
+    "first_name": "Ewa",
+    "last_name": "KOPACZ",
+    "country": "Poland",
+    "group": "EPP",
+    "national_party": "Platforma Obywatelska",
+    "x_handle": "EwaKopacz",
+    "status": "-"
+  },
+  {
+    "name": "Ewa ZAJ\u0104CZKOWSKA-HERNIK",
+    "first_name": "Ewa",
+    "last_name": "ZAJ\u0104CZKOWSKA-HERNIK",
+    "country": "Poland",
+    "group": "ESN",
+    "national_party": "Konfederacja Wolno\u015b\u0107 i Niepodleg\u0142o\u015b\u0107",
+    "x_handle": "ewazajaczkowska",
+    "status": "-"
+  },
+  {
+    "name": "Fabienne KELLER",
+    "first_name": "Fabienne",
+    "last_name": "KELLER",
+    "country": "France",
+    "group": "RE",
+    "national_party": "Renaissance",
+    "x_handle": "fabienne_keller",
+    "status": "-"
+  },
+  {
+    "name": "Fernand KARTHEISER",
+    "first_name": "Fernand",
+    "last_name": "KARTHEISER",
+    "country": "Luxembourg",
+    "group": "NI",
+    "national_party": "Alternativ Demokratesch Reformpartei",
+    "x_handle": "fernkartheiser",
+    "status": "-"
+  },
+  {
+    "name": "Fidias PANAYIOTOU",
+    "first_name": "Fidias",
+    "last_name": "PANAYIOTOU",
+    "country": "Cyprus",
+    "group": "NI",
+    "national_party": "Direct Democracy Cyprus",
+    "x_handle": "fidias0",
+    "status": "-"
+  },
+  {
+    "name": "Flavio TOSI",
+    "first_name": "Flavio",
+    "last_name": "TOSI",
+    "country": "Italy",
+    "group": "EPP",
+    "national_party": "Forza Italia",
+    "x_handle": "flaviotositw",
+    "status": "-"
+  },
+  {
+    "name": "France JAMET",
+    "first_name": "France",
+    "last_name": "JAMET",
+    "country": "France",
+    "group": "PfE",
+    "national_party": "Rassemblement national",
+    "x_handle": "FranceJamet",
+    "status": "-"
+  },
+  {
+    "name": "Francisco Jos\u00e9 MILL\u00c1N MON",
+    "first_name": "Francisco Jos\u00e9",
+    "last_name": "MILL\u00c1N MON",
+    "country": "Spain",
+    "group": "EPP",
+    "national_party": "Partido Popular",
+    "x_handle": "PacoMillanMon",
+    "status": "-"
+  },
+  {
+    "name": "Fran\u00e7ois KALFON",
+    "first_name": "Fran\u00e7ois",
+    "last_name": "KALFON",
+    "country": "France",
+    "group": "S&D",
+    "national_party": "Parti socialiste",
+    "x_handle": "francoiskalfon",
+    "status": "-"
+  },
+  {
+    "name": "Fran\u00e7ois-Xavier BELLAMY",
+    "first_name": "Fran\u00e7ois-Xavier",
+    "last_name": "BELLAMY",
+    "country": "France",
+    "group": "EPP",
+    "national_party": "Les R\u00e9publicains",
+    "x_handle": "fxbellamy",
+    "status": "-"
+  },
+  {
+    "name": "Fredis BELERIS",
+    "first_name": "Fredis",
+    "last_name": "BELERIS",
+    "country": "Greece",
+    "group": "EPP",
+    "national_party": "Nea Demokratia",
+    "x_handle": "fredisbeleris",
+    "status": "-"
+  },
+  {
+    "name": "Friedrich P\u00dcRNER",
+    "first_name": "Friedrich",
+    "last_name": "P\u00dcRNER",
+    "country": "Germany",
+    "group": "NI",
+    "national_party": "Independent",
+    "x_handle": "drpuerner",
+    "status": "-"
+  },
+  {
+    "name": "Fulvio MARTUSCIELLO",
+    "first_name": "Fulvio",
+    "last_name": "MARTUSCIELLO",
+    "country": "Italy",
+    "group": "EPP",
+    "national_party": "Forza Italia",
+    "x_handle": "fulviomartuscie",
+    "status": "-"
+  },
+  {
+    "name": "Gabriel MATO",
+    "first_name": "Gabriel",
+    "last_name": "MATO",
+    "country": "Spain",
+    "group": "EPP",
+    "national_party": "Partido Popular",
+    "x_handle": "GabrielMatoA",
+    "status": "-"
+  },
+  {
+    "name": "Gabriele BISCHOFF",
+    "first_name": "Gabriele",
+    "last_name": "BISCHOFF",
+    "country": "Germany",
+    "group": "S&D",
+    "national_party": "Sozialdemokratische Partei Deutschlands",
+    "x_handle": "gabischoff",
+    "status": "-"
+  },
+  {
+    "name": "Gabriella GERZSENYI",
+    "first_name": "Gabriella",
+    "last_name": "GERZSENYI",
+    "country": "Hungary",
+    "group": "EPP",
+    "national_party": "Tisztelet \u00e9s Szabads\u00e1g P\u00e1rt",
+    "x_handle": "gerzsenyigabi",
+    "status": "-"
+  },
+  {
+    "name": "Geadis GEADI",
+    "first_name": "Geadis",
+    "last_name": "GEADI",
+    "country": "Cyprus",
+    "group": "ECR",
+    "national_party": "\u0395\u03b8\u03bd\u03b9\u03ba\u03cc \u039b\u03b1\u03ca\u03ba\u03cc \u039c\u03ad\u03c4\u03c9\u03c0\u03bf",
+    "x_handle": "geadisgeadi",
+    "status": "-"
+  },
+  {
+    "name": "Georg MAYER",
+    "first_name": "Georg",
+    "last_name": "MAYER",
+    "country": "Austria",
+    "group": "PfE",
+    "national_party": "Freiheitliche Partei \u00d6sterreichs",
+    "x_handle": "georgmayermep",
+    "status": "-"
+  },
+  {
+    "name": "Gerolf ANNEMANS",
+    "first_name": "Gerolf",
+    "last_name": "ANNEMANS",
+    "country": "Belgium",
+    "group": "PfE",
+    "national_party": "Vlaams Belang",
+    "x_handle": "gannemans",
+    "status": "-"
+  },
+  {
+    "name": "Gheorghe FALC\u0102",
+    "first_name": "Gheorghe",
+    "last_name": "FALC\u0102",
+    "country": "Romania",
+    "group": "EPP",
+    "national_party": "Partidul Na\u0163ional Liberal",
+    "x_handle": "GheorgheFalca",
+    "status": "-"
+  },
+  {
+    "name": "Gilles BOYER",
+    "first_name": "Gilles",
+    "last_name": "BOYER",
+    "country": "France",
+    "group": "RE",
+    "national_party": "Horizons",
+    "x_handle": "GillesBoyer",
+    "status": "-"
+  },
+  {
+    "name": "Giorgos GEORGIOU",
+    "first_name": "Giorgos",
+    "last_name": "GEORGIOU",
+    "country": "Cyprus",
+    "group": "The Left",
+    "national_party": "Progressive Party of Working People - Left - New Forces",
+    "x_handle": "ggeorgiouMEP",
+    "status": "-"
+  },
+  {
+    "name": "Giuseppe MILAZZO",
+    "first_name": "Giuseppe",
+    "last_name": "MILAZZO",
+    "country": "Italy",
+    "group": "ECR",
+    "national_party": "FRATELLI D' ITALIA",
+    "x_handle": "giuseppemilaz11",
+    "status": "-"
+  },
+  {
+    "name": "Gordan BOSANAC",
+    "first_name": "Gordan",
+    "last_name": "BOSANAC",
+    "country": "Croatia",
+    "group": "Greens/EFA",
+    "national_party": "Mo\u017eemo!",
+    "x_handle": "gordanbosanac",
+    "status": "-"
+  },
+  {
+    "name": "Gy\u00f6rgy H\u00d6LV\u00c9NYI",
+    "first_name": "Gy\u00f6rgy",
+    "last_name": "H\u00d6LV\u00c9NYI",
+    "country": "Hungary",
+    "group": "PfE",
+    "national_party": "Kereszt\u00e9nydemokrata N\u00e9pp\u00e1rt",
+    "x_handle": "HolvenyiGyorgy",
+    "status": "-"
+  },
+  {
+    "name": "Hannah NEUMANN",
+    "first_name": "Hannah",
+    "last_name": "NEUMANN",
+    "country": "Germany",
+    "group": "Greens/EFA",
+    "national_party": "B\u00fcndnis 90/Die Gr\u00fcnen",
+    "x_handle": "HNeumannMEP",
+    "status": "-"
+  },
+  {
+    "name": "Hannes HEIDE",
+    "first_name": "Hannes",
+    "last_name": "HEIDE",
+    "country": "Austria",
+    "group": "S&D",
+    "national_party": "Sozialdemokratische Partei \u00d6sterreichs",
+    "x_handle": "HannesHeide",
+    "status": "-"
+  },
+  {
+    "name": "Harald VILIMSKY",
+    "first_name": "Harald",
+    "last_name": "VILIMSKY",
+    "country": "Austria",
+    "group": "PfE",
+    "national_party": "Freiheitliche Partei \u00d6sterreichs",
+    "x_handle": "vilimsky",
+    "status": "-"
+  },
+  {
+    "name": "Hel\u00e9ne FRITZON",
+    "first_name": "Hel\u00e9ne",
+    "last_name": "FRITZON",
+    "country": "Sweden",
+    "group": "S&D",
+    "national_party": "Arbetarepartiet- Socialdemokraterna",
+    "x_handle": "fritzon_h",
+    "status": "-"
+  },
+  {
+    "name": "Henrik DAHL",
+    "first_name": "Henrik",
+    "last_name": "DAHL",
+    "country": "Denmark",
+    "group": "EPP",
+    "national_party": "Liberal Alliance",
+    "x_handle": "sociologenhd",
+    "status": "-"
+  },
+  {
+    "name": "Herbert DORFMANN",
+    "first_name": "Herbert",
+    "last_name": "DORFMANN",
+    "country": "Italy",
+    "group": "EPP",
+    "national_party": "S\u00fcdtiroler Volkspartei",
+    "x_handle": "HerbertDorfmann",
+    "status": "-"
+  },
+  {
+    "name": "Hermann TERTSCH",
+    "first_name": "Hermann",
+    "last_name": "TERTSCH",
+    "country": "Spain",
+    "group": "PfE",
+    "national_party": "VOX",
+    "x_handle": "hermanntertsch",
+    "status": "-"
+  },
+  {
+    "name": "Hilde VAUTMANS",
+    "first_name": "Hilde",
+    "last_name": "VAUTMANS",
+    "country": "Belgium",
+    "group": "RE",
+    "national_party": "Anders",
+    "x_handle": "hildevautmans",
+    "status": "-"
+  },
+  {
+    "name": "Hildegard BENTELE",
+    "first_name": "Hildegard",
+    "last_name": "BENTELE",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "Christlich Demokratische Union Deutschlands",
+    "x_handle": "hildebentele",
+    "status": "-"
+  },
+  {
+    "name": "Idoia MENDIA",
+    "first_name": "Idoia",
+    "last_name": "MENDIA",
+    "country": "Spain",
+    "group": "S&D",
+    "national_party": "Partido Socialista Obrero Espa\u00f1ol",
+    "x_handle": "idoiamendia",
+    "status": "-"
+  },
+  {
+    "name": "Ignazio Roberto MARINO",
+    "first_name": "Ignazio Roberto",
+    "last_name": "MARINO",
+    "country": "Italy",
+    "group": "Greens/EFA",
+    "national_party": "Independent",
+    "x_handle": "ignaziomarino",
+    "status": "-"
+  },
+  {
+    "name": "Ilhan KYUCHYUK",
+    "first_name": "Ilhan",
+    "last_name": "KYUCHYUK",
+    "country": "Bulgaria",
+    "group": "RE",
+    "national_party": "Movement for Rights and Freedoms",
+    "x_handle": "ilhankyuchyuk",
+    "status": "-"
+  },
+  {
+    "name": "Inese VAIDERE",
+    "first_name": "Inese",
+    "last_name": "VAIDERE",
+    "country": "Latvia",
+    "group": "EPP",
+    "national_party": "Jaun\u0101 Vienot\u012bba",
+    "x_handle": "IneseVaidere",
+    "status": "-"
+  },
+  {
+    "name": "Irena JOVEVA",
+    "first_name": "Irena",
+    "last_name": "JOVEVA",
+    "country": "Slovenia",
+    "group": "RE",
+    "national_party": "Gibanje Svoboda",
+    "x_handle": "IJoveva",
+    "status": "-"
+  },
+  {
+    "name": "Irene TINAGLI",
+    "first_name": "Irene",
+    "last_name": "TINAGLI",
+    "country": "Italy",
+    "group": "S&D",
+    "national_party": "Partito Democratico",
+    "x_handle": "itinagli",
+    "status": "-"
+  },
+  {
+    "name": "Isabel BENJUMEA BENJUMEA",
+    "first_name": "Isabel",
+    "last_name": "BENJUMEA BENJUMEA",
+    "country": "Spain",
+    "group": "EPP",
+    "national_party": "Partido Popular",
+    "x_handle": "IsabelBenjumea",
+    "status": "-"
+  },
+  {
+    "name": "Isabel WISELER-LIMA",
+    "first_name": "Isabel",
+    "last_name": "WISELER-LIMA",
+    "country": "Luxembourg",
+    "group": "EPP",
+    "national_party": "Parti chr\u00e9tien social luxembourgeois",
+    "x_handle": "iwiseler",
+    "status": "-"
+  },
+  {
+    "name": "Isabella TOVAGLIERI",
+    "first_name": "Isabella",
+    "last_name": "TOVAGLIERI",
+    "country": "Italy",
+    "group": "PfE",
+    "national_party": "Lega",
+    "x_handle": "isatovaglieri",
+    "status": "-"
+  },
+  {
+    "name": "Iuliu WINKLER",
+    "first_name": "Iuliu",
+    "last_name": "WINKLER",
+    "country": "Romania",
+    "group": "EPP",
+    "national_party": "Uniunea Democrat\u0103 Maghiar\u0103 din Rom\u00e2nia",
+    "x_handle": "IuliuWinkler",
+    "status": "-"
+  },
+  {
+    "name": "Ivan DAVID",
+    "first_name": "Ivan",
+    "last_name": "DAVID",
+    "country": "Czechia",
+    "group": "ESN",
+    "national_party": "Svoboda a p\u0159\u00edm\u00e1 demokracie",
+    "x_handle": "IvanDav73523299",
+    "status": "-"
+  },
+  {
+    "name": "Ivars IJABS",
+    "first_name": "Ivars",
+    "last_name": "IJABS",
+    "country": "Latvia",
+    "group": "RE",
+    "national_party": "Latvijas att\u012bst\u012bbai",
+    "x_handle": "ijabs",
+    "status": "-"
+  },
+  {
+    "name": "Jaak MADISON",
+    "first_name": "Jaak",
+    "last_name": "MADISON",
+    "country": "Estonia",
+    "group": "ECR",
+    "national_party": "Eesti Keskerakond",
+    "x_handle": "JaakMadison",
+    "status": "-"
+  },
+  {
+    "name": "Jacek PROTAS",
+    "first_name": "Jacek",
+    "last_name": "PROTAS",
+    "country": "Poland",
+    "group": "EPP",
+    "national_party": "Platforma Obywatelska",
+    "x_handle": "jacek_protas",
+    "status": "-"
+  },
+  {
+    "name": "Jadwiga WI\u015aNIEWSKA",
+    "first_name": "Jadwiga",
+    "last_name": "WI\u015aNIEWSKA",
+    "country": "Poland",
+    "group": "ECR",
+    "national_party": "Prawo i Sprawiedliwo\u015b\u0107",
+    "x_handle": "j_wisniewska",
+    "status": "-"
+  },
+  {
+    "name": "Jagna MARCZU\u0141AJTIS-WALCZAK",
+    "first_name": "Jagna",
+    "last_name": "MARCZU\u0141AJTIS-WALCZAK",
+    "country": "Poland",
+    "group": "EPP",
+    "national_party": "Platforma Obywatelska",
+    "x_handle": "jagnamarczulajt",
+    "status": "-"
+  },
+  {
+    "name": "Jan FARSK\u00dd",
+    "first_name": "Jan",
+    "last_name": "FARSK\u00dd",
+    "country": "Czechia",
+    "group": "EPP",
+    "national_party": "Starostov\u00e9 a nez\u00e1visli",
+    "x_handle": "janfar_sky",
+    "status": "-"
+  },
+  {
+    "name": "Jan-Christoph OETJEN",
+    "first_name": "Jan-Christoph",
+    "last_name": "OETJEN",
+    "country": "Germany",
+    "group": "RE",
+    "national_party": "Freie Demokratische Partei",
+    "x_handle": "jcoetjen",
+    "status": "-"
+  },
+  {
+    "name": "Jana TOOM",
+    "first_name": "Jana",
+    "last_name": "TOOM",
+    "country": "Estonia",
+    "group": "RE",
+    "national_party": "Eesti Keskerakond",
+    "x_handle": "YanaToom",
+    "status": "-"
+  },
+  {
+    "name": "Janusz LEWANDOWSKI",
+    "first_name": "Janusz",
+    "last_name": "LEWANDOWSKI",
+    "country": "Poland",
+    "group": "EPP",
+    "national_party": "Platforma Obywatelska",
+    "x_handle": "J_Lewandowski",
+    "status": "-"
+  },
+  {
+    "name": "Javi L\u00d3PEZ",
+    "first_name": "Javi",
+    "last_name": "L\u00d3PEZ",
+    "country": "Spain",
+    "group": "S&D",
+    "national_party": "Partit dels Socialistes de Catalunya (PSC-PSOE)",
+    "x_handle": "javilopezEU",
+    "status": "-"
+  },
+  {
+    "name": "Javier MORENO S\u00c1NCHEZ",
+    "first_name": "Javier",
+    "last_name": "MORENO S\u00c1NCHEZ",
+    "country": "Spain",
+    "group": "S&D",
+    "national_party": "Partido Socialista Obrero Espa\u00f1ol",
+    "x_handle": "J_MorenoSanchez",
+    "status": "-"
+  },
+  {
+    "name": "Javier ZARZALEJOS",
+    "first_name": "Javier",
+    "last_name": "ZARZALEJOS",
+    "country": "Spain",
+    "group": "EPP",
+    "national_party": "Partido Popular",
+    "x_handle": "FZarzalejos",
+    "status": "-"
+  },
+  {
+    "name": "Jean-Paul GARRAUD",
+    "first_name": "Jean-Paul",
+    "last_name": "GARRAUD",
+    "country": "France",
+    "group": "PfE",
+    "national_party": "Rassemblement national",
+    "x_handle": "JPGarraud",
+    "status": "-"
+  },
+  {
+    "name": "Jens GEIER",
+    "first_name": "Jens",
+    "last_name": "GEIER",
+    "country": "Germany",
+    "group": "S&D",
+    "national_party": "Sozialdemokratische Partei Deutschlands",
+    "x_handle": "EuropaJens",
+    "status": "-"
+  },
+  {
+    "name": "Jeroen LENAERS",
+    "first_name": "Jeroen",
+    "last_name": "LENAERS",
+    "country": "Netherlands",
+    "group": "EPP",
+    "national_party": "Christen Democratisch App\u00e8l",
+    "x_handle": "jeroen_lenaers",
+    "status": "-"
+  },
+  {
+    "name": "Jessica POLFJ\u00c4RD",
+    "first_name": "Jessica",
+    "last_name": "POLFJ\u00c4RD",
+    "country": "Sweden",
+    "group": "EPP",
+    "national_party": "Moderaterna",
+    "x_handle": "jessicapolfjard",
+    "status": "-"
+  },
+  {
+    "name": "Joachim Stanis\u0142aw BRUDZI\u0143SKI",
+    "first_name": "Joachim Stanis\u0142aw",
+    "last_name": "BRUDZI\u0143SKI",
+    "country": "Poland",
+    "group": "ECR",
+    "national_party": "Prawo i Sprawiedliwo\u015b\u0107",
+    "x_handle": "jbrudzinski",
+    "status": "-"
+  },
+  {
+    "name": "Joanna SCHEURING-WIELGUS",
+    "first_name": "Joanna",
+    "last_name": "SCHEURING-WIELGUS",
+    "country": "Poland",
+    "group": "S&D",
+    "national_party": "Nowa Lewica",
+    "x_handle": "joankasw",
+    "status": "-"
+  },
+  {
+    "name": "Johan VAN OVERTVELDT",
+    "first_name": "Johan",
+    "last_name": "VAN OVERTVELDT",
+    "country": "Belgium",
+    "group": "ECR",
+    "national_party": "Nieuw-Vlaamse Alliantie",
+    "x_handle": "jvanovertveldt",
+    "status": "-"
+  },
+  {
+    "name": "Jon\u00e1s FERN\u00c1NDEZ",
+    "first_name": "Jon\u00e1s",
+    "last_name": "FERN\u00c1NDEZ",
+    "country": "Spain",
+    "group": "S&D",
+    "national_party": "Partido Socialista Obrero Espa\u00f1ol",
+    "x_handle": "jonasfernandez",
+    "status": "-"
+  },
+  {
+    "name": "Jordan BARDELLA",
+    "first_name": "Jordan",
+    "last_name": "BARDELLA",
+    "country": "France",
+    "group": "PfE",
+    "national_party": "Rassemblement national",
+    "x_handle": "J_Bardella",
+    "status": "-"
+  },
+  {
+    "name": "Jorge BUXAD\u00c9 VILLALBA",
+    "first_name": "Jorge",
+    "last_name": "BUXAD\u00c9 VILLALBA",
+    "country": "Spain",
+    "group": "PfE",
+    "national_party": "VOX",
+    "x_handle": "Jorgebuxade",
+    "status": "-"
+  },
+  {
+    "name": "Juan Fernando L\u00d3PEZ AGUILAR",
+    "first_name": "Juan Fernando",
+    "last_name": "L\u00d3PEZ AGUILAR",
+    "country": "Spain",
+    "group": "S&D",
+    "national_party": "Partido Socialista Obrero Espa\u00f1ol",
+    "x_handle": "JFLopezAguilar",
+    "status": "-"
+  },
+  {
+    "name": "Juan Ignacio ZOIDO \u00c1LVAREZ",
+    "first_name": "Juan Ignacio",
+    "last_name": "ZOIDO \u00c1LVAREZ",
+    "country": "Spain",
+    "group": "EPP",
+    "national_party": "Partido Popular",
+    "x_handle": "zoidoJI",
+    "status": "-"
+  },
+  {
+    "name": "Jussi SARAMO",
+    "first_name": "Jussi",
+    "last_name": "SARAMO",
+    "country": "Finland",
+    "group": "The Left",
+    "national_party": "Vasemmistoliitto",
+    "x_handle": "jussisaramo",
+    "status": "-"
+  },
+  {
+    "name": "Jutta PAULUS",
+    "first_name": "Jutta",
+    "last_name": "PAULUS",
+    "country": "Germany",
+    "group": "Greens/EFA",
+    "national_party": "B\u00fcndnis 90/Die Gr\u00fcnen",
+    "x_handle": "JuttaPaulusRLP",
+    "status": "-"
+  },
+  {
+    "name": "J\u00e9r\u00e9my DECERLE",
+    "first_name": "J\u00e9r\u00e9my",
+    "last_name": "DECERLE",
+    "country": "France",
+    "group": "RE",
+    "national_party": "Renaissance",
+    "x_handle": "JDecerle",
+    "status": "-"
+  },
+  {
+    "name": "J\u00f6rgen WARBORN",
+    "first_name": "J\u00f6rgen",
+    "last_name": "WARBORN",
+    "country": "Sweden",
+    "group": "EPP",
+    "national_party": "Moderaterna",
+    "x_handle": "jorgenwarborn",
+    "status": "-"
+  },
+  {
+    "name": "J\u00fcri RATAS",
+    "first_name": "J\u00fcri",
+    "last_name": "RATAS",
+    "country": "Estonia",
+    "group": "EPP",
+    "national_party": "Isamaa",
+    "x_handle": "ratasjuri",
+    "status": "-"
+  },
+  {
+    "name": "Kamila GASIUK-PIHOWICZ",
+    "first_name": "Kamila",
+    "last_name": "GASIUK-PIHOWICZ",
+    "country": "Poland",
+    "group": "EPP",
+    "national_party": "Platforma Obywatelska",
+    "x_handle": "gasiuk_pihowicz",
+    "status": "-"
+  },
+  {
+    "name": "Karin KARLSBRO",
+    "first_name": "Karin",
+    "last_name": "KARLSBRO",
+    "country": "Sweden",
+    "group": "RE",
+    "national_party": "Liberalerna",
+    "x_handle": "KarinKarlsbro",
+    "status": "-"
+  },
+  {
+    "name": "Karlo RESSLER",
+    "first_name": "Karlo",
+    "last_name": "RESSLER",
+    "country": "Croatia",
+    "group": "EPP",
+    "national_party": "Hrvatska demokratska zajednica",
+    "x_handle": "KarloRessler",
+    "status": "-"
+  },
+  {
+    "name": "Katarina BARLEY",
+    "first_name": "Katarina",
+    "last_name": "BARLEY",
+    "country": "Germany",
+    "group": "S&D",
+    "national_party": "Sozialdemokratische Partei Deutschlands",
+    "x_handle": "katarinabarley",
+    "status": "-"
+  },
+  {
+    "name": "Kate\u0159ina KONE\u010cN\u00c1",
+    "first_name": "Kate\u0159ina",
+    "last_name": "KONE\u010cN\u00c1",
+    "country": "Czechia",
+    "group": "NI",
+    "national_party": "Komunistick\u00e1 strana \u010cech a Moravy",
+    "x_handle": "Konecna_K",
+    "status": "-"
+  },
+  {
+    "name": "Kathleen VAN BREMPT",
+    "first_name": "Kathleen",
+    "last_name": "VAN BREMPT",
+    "country": "Belgium",
+    "group": "S&D",
+    "national_party": "Vooruit",
+    "x_handle": "kvanbrempt",
+    "status": "-"
+  },
+  {
+    "name": "Katrin LANGENSIEPEN",
+    "first_name": "Katrin",
+    "last_name": "LANGENSIEPEN",
+    "country": "Germany",
+    "group": "Greens/EFA",
+    "national_party": "B\u00fcndnis 90/Die Gr\u00fcnen",
+    "x_handle": "k_langensiepen",
+    "status": "-"
+  },
+  {
+    "name": "Kim VAN SPARRENTAK",
+    "first_name": "Kim",
+    "last_name": "VAN SPARRENTAK",
+    "country": "Netherlands",
+    "group": "Greens/EFA",
+    "national_party": "GroenLinks-PvdA",
+    "x_handle": "kimvsparrentak",
+    "status": "-"
+  },
+  {
+    "name": "Kira Marie PETER-HANSEN",
+    "first_name": "Kira Marie",
+    "last_name": "PETER-HANSEN",
+    "country": "Denmark",
+    "group": "Greens/EFA",
+    "national_party": "Socialistisk Folkeparti",
+    "x_handle": "Kira_MPH",
+    "status": "-"
+  },
+  {
+    "name": "Kl\u00e1ra DOBREV",
+    "first_name": "Kl\u00e1ra",
+    "last_name": "DOBREV",
+    "country": "Hungary",
+    "group": "S&D",
+    "national_party": "Demokratikus Koal\u00edci\u00f3",
+    "x_handle": "DobrevKlara",
+    "status": "-"
+  },
+  {
+    "name": "Kosma Z\u0141OTOWSKI",
+    "first_name": "Kosma",
+    "last_name": "Z\u0141OTOWSKI",
+    "country": "Poland",
+    "group": "ECR",
+    "national_party": "Prawo i Sprawiedliwo\u015b\u0107",
+    "x_handle": "KosmaZlotowski",
+    "status": "-"
+  },
+  {
+    "name": "Kristoffer STORM",
+    "first_name": "Kristoffer",
+    "last_name": "STORM",
+    "country": "Denmark",
+    "group": "ECR",
+    "national_party": "Danmarksdemokraterne",
+    "x_handle": "kristofferstorm",
+    "status": "-"
+  },
+  {
+    "name": "Krzysztof BREJZA",
+    "first_name": "Krzysztof",
+    "last_name": "BREJZA",
+    "country": "Poland",
+    "group": "EPP",
+    "national_party": "Platforma Obywatelska",
+    "x_handle": "krzysztofbrejza",
+    "status": "-"
+  },
+  {
+    "name": "Krzysztof HETMAN",
+    "first_name": "Krzysztof",
+    "last_name": "HETMAN",
+    "country": "Poland",
+    "group": "EPP",
+    "national_party": "Polskie Stronnictwo Ludowe",
+    "x_handle": "Hetman_K",
+    "status": "-"
+  },
+  {
+    "name": "Lara WOLTERS",
+    "first_name": "Lara",
+    "last_name": "WOLTERS",
+    "country": "Netherlands",
+    "group": "S&D",
+    "national_party": "GroenLinks-PvdA",
+    "x_handle": "larawoltersEU",
+    "status": "-"
+  },
+  {
+    "name": "Laurence FARRENG",
+    "first_name": "Laurence",
+    "last_name": "FARRENG",
+    "country": "France",
+    "group": "RE",
+    "national_party": "Mouvement D\u00e9mocrate",
+    "x_handle": "laurencefarreng",
+    "status": "-"
+  },
+  {
+    "name": "Laurent CASTILLO",
+    "first_name": "Laurent",
+    "last_name": "CASTILLO",
+    "country": "France",
+    "group": "PfE",
+    "national_party": "Union des droites pour la R\u00e9publique",
+    "x_handle": "prlcastillo",
+    "status": "-"
+  },
+  {
+    "name": "Leila CHAIBI",
+    "first_name": "Leila",
+    "last_name": "CHAIBI",
+    "country": "France",
+    "group": "The Left",
+    "national_party": "La France Insoumise",
+    "x_handle": "leilachaibi",
+    "status": "-"
+  },
+  {
+    "name": "Lena D\u00dcPONT",
+    "first_name": "Lena",
+    "last_name": "D\u00dcPONT",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "Christlich Demokratische Union Deutschlands",
+    "x_handle": "lenaduepontmdep",
+    "status": "-"
+  },
+  {
+    "name": "Letizia MORATTI",
+    "first_name": "Letizia",
+    "last_name": "MORATTI",
+    "country": "Italy",
+    "group": "EPP",
+    "national_party": "Forza Italia",
+    "x_handle": "letiziamoratti",
+    "status": "-"
+  },
+  {
+    "name": "Liesbet SOMMEN",
+    "first_name": "Liesbet",
+    "last_name": "SOMMEN",
+    "country": "Belgium",
+    "group": "EPP",
+    "national_party": "Christen-Democratisch & Vlaams",
+    "x_handle": "liesbetsommen",
+    "status": "-"
+  },
+  {
+    "name": "Lina G\u00c1LVEZ",
+    "first_name": "Lina",
+    "last_name": "G\u00c1LVEZ",
+    "country": "Spain",
+    "group": "S&D",
+    "national_party": "Partido Socialista Obrero Espa\u00f1ol",
+    "x_handle": "linagalvezmunoz",
+    "status": "-"
+  },
+  {
+    "name": "Lor\u00e1nt VINCZE",
+    "first_name": "Lor\u00e1nt",
+    "last_name": "VINCZE",
+    "country": "Romania",
+    "group": "EPP",
+    "national_party": "Uniunea Democrat\u0103 Maghiar\u0103 din Rom\u00e2nia",
+    "x_handle": "vinczelorant",
+    "status": "-"
+  },
+  {
+    "name": "Loucas FOURLAS",
+    "first_name": "Loucas",
+    "last_name": "FOURLAS",
+    "country": "Cyprus",
+    "group": "EPP",
+    "national_party": "Democratic Rally",
+    "x_handle": "loucas_fourlas",
+    "status": "-"
+  },
+  {
+    "name": "Lud\u011bk NIEDERMAYER",
+    "first_name": "Lud\u011bk",
+    "last_name": "NIEDERMAYER",
+    "country": "Czechia",
+    "group": "EPP",
+    "national_party": "Czechia \u2013 TOP 09",
+    "x_handle": "LudekNie",
+    "status": "-"
+  },
+  {
+    "name": "Lukas MANDL",
+    "first_name": "Lukas",
+    "last_name": "MANDL",
+    "country": "Austria",
+    "group": "EPP",
+    "national_party": "\u00d6sterreichische Volkspartei",
+    "x_handle": "lukasmandl",
+    "status": "-"
+  },
+  {
+    "name": "Lukas SIEPER",
+    "first_name": "Lukas",
+    "last_name": "SIEPER",
+    "country": "Germany",
+    "group": "NI",
+    "national_party": "Partei des Fortschritts",
+    "x_handle": "lukassiepermdep",
+    "status": "-"
+  },
+  {
+    "name": "Luke Ming FLANAGAN",
+    "first_name": "Luke Ming",
+    "last_name": "FLANAGAN",
+    "country": "Ireland",
+    "group": "The Left",
+    "national_party": "Independent",
+    "x_handle": "lukeming",
+    "status": "-"
+  },
+  {
+    "name": "L\u00eddia PEREIRA",
+    "first_name": "L\u00eddia",
+    "last_name": "PEREIRA",
+    "country": "Portugal",
+    "group": "EPP",
+    "national_party": "Partido Social Democrata",
+    "x_handle": "lidiafopereira",
+    "status": "-"
+  },
+  {
+    "name": "Magdalena ADAMOWICZ",
+    "first_name": "Magdalena",
+    "last_name": "ADAMOWICZ",
+    "country": "Poland",
+    "group": "EPP",
+    "national_party": "Independent",
+    "x_handle": "Adamowicz_Magda",
+    "status": "-"
+  },
+  {
+    "name": "Malik AZMANI",
+    "first_name": "Malik",
+    "last_name": "AZMANI",
+    "country": "Netherlands",
+    "group": "RE",
+    "national_party": "Volkspartij voor Vrijheid en Democratie",
+    "x_handle": "MalikAzmani",
+    "status": "-"
+  },
+  {
+    "name": "Manfred WEBER",
+    "first_name": "Manfred",
+    "last_name": "WEBER",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "Christlich-Soziale Union in Bayern e.V.",
+    "x_handle": "ManfredWeber",
+    "status": "-"
+  },
+  {
+    "name": "Manon AUBRY",
+    "first_name": "Manon",
+    "last_name": "AUBRY",
+    "country": "France",
+    "group": "The Left",
+    "national_party": "La France Insoumise",
+    "x_handle": "ManonAubryFr",
+    "status": "-"
+  },
+  {
+    "name": "Manuela RIPA",
+    "first_name": "Manuela",
+    "last_name": "RIPA",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "\u00d6kologisch-Demokratische Partei",
+    "x_handle": "RipaManuela",
+    "status": "-"
+  },
+  {
+    "name": "Marc ANGEL",
+    "first_name": "Marc",
+    "last_name": "ANGEL",
+    "country": "Luxembourg",
+    "group": "S&D",
+    "national_party": "Parti ouvrier socialiste luxembourgeois",
+    "x_handle": "marcangel_lu",
+    "status": "-"
+  },
+  {
+    "name": "Marc BOTENGA",
+    "first_name": "Marc",
+    "last_name": "BOTENGA",
+    "country": "Belgium",
+    "group": "The Left",
+    "national_party": "PVDA-PTB",
+    "x_handle": "BotengaM",
+    "status": "-"
+  },
+  {
+    "name": "Marcos ROS SEMPERE",
+    "first_name": "Marcos",
+    "last_name": "ROS SEMPERE",
+    "country": "Spain",
+    "group": "S&D",
+    "national_party": "Partido Socialista Obrero Espa\u00f1ol",
+    "x_handle": "mrossemp",
+    "status": "-"
+  },
+  {
+    "name": "Margarita DE LA PISA CARRI\u00d3N",
+    "first_name": "Margarita",
+    "last_name": "DE LA PISA CARRI\u00d3N",
+    "country": "Spain",
+    "group": "PfE",
+    "national_party": "VOX",
+    "x_handle": "MargaPisa",
+    "status": "-"
+  },
+  {
+    "name": "Maria GRAPINI",
+    "first_name": "Maria",
+    "last_name": "GRAPINI",
+    "country": "Romania",
+    "group": "S&D",
+    "national_party": "Partidul Umanist Social Liberal",
+    "x_handle": "MariaGrapini",
+    "status": "-"
+  },
+  {
+    "name": "Maria GUZENINA",
+    "first_name": "Maria",
+    "last_name": "GUZENINA",
+    "country": "Finland",
+    "group": "S&D",
+    "national_party": "Suomen Sosialidemokraattinen Puolue/Finlands Socialdemokratiska Parti",
+    "x_handle": "guzenina",
+    "status": "-"
+  },
+  {
+    "name": "Maria NOICHL",
+    "first_name": "Maria",
+    "last_name": "NOICHL",
+    "country": "Germany",
+    "group": "S&D",
+    "national_party": "Sozialdemokratische Partei Deutschlands",
+    "x_handle": "MariaNoichl",
+    "status": "-"
+  },
+  {
+    "name": "Maria WALSH",
+    "first_name": "Maria",
+    "last_name": "WALSH",
+    "country": "Ireland",
+    "group": "EPP",
+    "national_party": "Fine Gael Party",
+    "x_handle": "MariaWalshEU",
+    "status": "-"
+  },
+  {
+    "name": "Marianne VIND",
+    "first_name": "Marianne",
+    "last_name": "VIND",
+    "country": "Denmark",
+    "group": "S&D",
+    "national_party": "Socialdemokratiet",
+    "x_handle": "MarianneVind",
+    "status": "-"
+  },
+  {
+    "name": "Marie DAUCHY",
+    "first_name": "Marie",
+    "last_name": "DAUCHY",
+    "country": "France",
+    "group": "PfE",
+    "national_party": "Rassemblement national",
+    "x_handle": "M_Dauchy",
+    "status": "-"
+  },
+  {
+    "name": "Marie TOUSSAINT",
+    "first_name": "Marie",
+    "last_name": "TOUSSAINT",
+    "country": "France",
+    "group": "Greens/EFA",
+    "national_party": "Les \u00c9cologistes",
+    "x_handle": "marietouss1",
+    "status": "-"
+  },
+  {
+    "name": "Marie-Agnes STRACK-ZIMMERMANN",
+    "first_name": "Marie-Agnes",
+    "last_name": "STRACK-ZIMMERMANN",
+    "country": "Germany",
+    "group": "RE",
+    "national_party": "Freie Demokratische Partei",
+    "x_handle": "mastrackzi",
+    "status": "-"
+  },
+  {
+    "name": "Marina KALJURAND",
+    "first_name": "Marina",
+    "last_name": "KALJURAND",
+    "country": "Estonia",
+    "group": "S&D",
+    "national_party": "Sotsiaaldemokraatlik Erakond",
+    "x_handle": "MarinaKaljurand",
+    "status": "-"
+  },
+  {
+    "name": "Marina MESURE",
+    "first_name": "Marina",
+    "last_name": "MESURE",
+    "country": "France",
+    "group": "The Left",
+    "national_party": "La France Insoumise",
+    "x_handle": "MarinaMesure",
+    "status": "-"
+  },
+  {
+    "name": "Mario FURORE",
+    "first_name": "Mario",
+    "last_name": "FURORE",
+    "country": "Italy",
+    "group": "The Left",
+    "national_party": "Movimento 5 Stelle",
+    "x_handle": "MarioFurore",
+    "status": "-"
+  },
+  {
+    "name": "Marion WALSMANN",
+    "first_name": "Marion",
+    "last_name": "WALSMANN",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "Christlich Demokratische Union Deutschlands",
+    "x_handle": "MarionWalsmann",
+    "status": "-"
+  },
+  {
+    "name": "Markus BUCHHEIT",
+    "first_name": "Markus",
+    "last_name": "BUCHHEIT",
+    "country": "Germany",
+    "group": "ESN",
+    "national_party": "Alternative f\u00fcr Deutschland",
+    "x_handle": "BuchheitMarkus",
+    "status": "-"
+  },
+  {
+    "name": "Markus FERBER",
+    "first_name": "Markus",
+    "last_name": "FERBER",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "Christlich-Soziale Union in Bayern e.V.",
+    "x_handle": "MarkusFerber",
+    "status": "-"
+  },
+  {
+    "name": "Mark\u00e9ta GREGOROV\u00c1",
+    "first_name": "Mark\u00e9ta",
+    "last_name": "GREGOROV\u00c1",
+    "country": "Czechia",
+    "group": "Greens/EFA",
+    "national_party": "PIR\u00c1TI",
+    "x_handle": "MarketkaG",
+    "status": "-"
+  },
+  {
+    "name": "Marlena MAL\u0104G",
+    "first_name": "Marlena",
+    "last_name": "MAL\u0104G",
+    "country": "Poland",
+    "group": "ECR",
+    "national_party": "Prawo i Sprawiedliwo\u015b\u0107",
+    "x_handle": "marlenamalag",
+    "status": "-"
+  },
+  {
+    "name": "Marta WCIS\u0141O",
+    "first_name": "Marta",
+    "last_name": "WCIS\u0141O",
+    "country": "Poland",
+    "group": "EPP",
+    "national_party": "Platforma Obywatelska",
+    "x_handle": "wcislomarta123",
+    "status": "-"
+  },
+  {
+    "name": "Martin HOJS\u00cdK",
+    "first_name": "Martin",
+    "last_name": "HOJS\u00cdK",
+    "country": "Slovakia",
+    "group": "RE",
+    "national_party": "Progres\u00edvne Slovensko",
+    "x_handle": "mhojsik",
+    "status": "-"
+  },
+  {
+    "name": "Martin H\u00c4USLING",
+    "first_name": "Martin",
+    "last_name": "H\u00c4USLING",
+    "country": "Germany",
+    "group": "Greens/EFA",
+    "national_party": "B\u00fcndnis 90/Die Gr\u00fcnen",
+    "x_handle": "MartinHaeusling",
+    "status": "-"
+  },
+  {
+    "name": "Martin SCHIRDEWAN",
+    "first_name": "Martin",
+    "last_name": "SCHIRDEWAN",
+    "country": "Germany",
+    "group": "The Left",
+    "national_party": "DIE LINKE.",
+    "x_handle": "schirdewan",
+    "status": "-"
+  },
+  {
+    "name": "Martin SONNEBORN",
+    "first_name": "Martin",
+    "last_name": "SONNEBORN",
+    "country": "Germany",
+    "group": "NI",
+    "national_party": "Die PARTEI",
+    "x_handle": "MartinSonneborn",
+    "status": "-"
+  },
+  {
+    "name": "Massimiliano SALINI",
+    "first_name": "Massimiliano",
+    "last_name": "SALINI",
+    "country": "Italy",
+    "group": "EPP",
+    "national_party": "Forza Italia",
+    "x_handle": "MaxSalini",
+    "status": "-"
+  },
+  {
+    "name": "Matej TONIN",
+    "first_name": "Matej",
+    "last_name": "TONIN",
+    "country": "Slovenia",
+    "group": "EPP",
+    "national_party": "Nova Slovenija \u2013 Kr\u0161\u010danski demokrati",
+    "x_handle": "matejtonin",
+    "status": "-"
+  },
+  {
+    "name": "Mathilde ANDROU\u00cbT",
+    "first_name": "Mathilde",
+    "last_name": "ANDROU\u00cbT",
+    "country": "France",
+    "group": "PfE",
+    "national_party": "Rassemblement national",
+    "x_handle": "MAndrouet",
+    "status": "-"
+  },
+  {
+    "name": "Matja\u017e NEMEC",
+    "first_name": "Matja\u017e",
+    "last_name": "NEMEC",
+    "country": "Slovenia",
+    "group": "S&D",
+    "national_party": "Socialni demokrati",
+    "x_handle": "matjanemec",
+    "status": "-"
+  },
+  {
+    "name": "Matthias ECKE",
+    "first_name": "Matthias",
+    "last_name": "ECKE",
+    "country": "Germany",
+    "group": "S&D",
+    "national_party": "Sozialdemokratische Partei Deutschlands",
+    "x_handle": "mattecke",
+    "status": "-"
+  },
+  {
+    "name": "Matthieu VALET",
+    "first_name": "Matthieu",
+    "last_name": "VALET",
+    "country": "France",
+    "group": "PfE",
+    "national_party": "Rassemblement national",
+    "x_handle": "mvalet_officiel",
+    "status": "-"
+  },
+  {
+    "name": "Michael BLOSS",
+    "first_name": "Michael",
+    "last_name": "BLOSS",
+    "country": "Germany",
+    "group": "Greens/EFA",
+    "national_party": "B\u00fcndnis 90/Die Gr\u00fcnen",
+    "x_handle": "micha_bloss",
+    "status": "-"
+  },
+  {
+    "name": "Michael GAHLER",
+    "first_name": "Michael",
+    "last_name": "GAHLER",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "Christlich Demokratische Union Deutschlands",
+    "x_handle": "gahler_michael",
+    "status": "-"
+  },
+  {
+    "name": "Michal WIEZIK",
+    "first_name": "Michal",
+    "last_name": "WIEZIK",
+    "country": "Slovakia",
+    "group": "RE",
+    "national_party": "Progres\u00edvne Slovensko",
+    "x_handle": "MichalWiezik",
+    "status": "-"
+  },
+  {
+    "name": "Michalis HADJIPANTELA",
+    "first_name": "Michalis",
+    "last_name": "HADJIPANTELA",
+    "country": "Cyprus",
+    "group": "EPP",
+    "national_party": "Democratic Rally",
+    "x_handle": "hadjipantela",
+    "status": "-"
+  },
+  {
+    "name": "Micha\u0142 KOBOSKO",
+    "first_name": "Micha\u0142",
+    "last_name": "KOBOSKO",
+    "country": "Poland",
+    "group": "RE",
+    "national_party": "Independent",
+    "x_handle": "michalkobosko",
+    "status": "-"
+  },
+  {
+    "name": "Micha\u0142 SZCZERBA",
+    "first_name": "Micha\u0142",
+    "last_name": "SZCZERBA",
+    "country": "Poland",
+    "group": "EPP",
+    "national_party": "Platforma Obywatelska",
+    "x_handle": "michalszczerba",
+    "status": "-"
+  },
+  {
+    "name": "Mika AALTOLA",
+    "first_name": "Mika",
+    "last_name": "AALTOLA",
+    "country": "Finland",
+    "group": "EPP",
+    "national_party": "Kansallinen Kokoomus",
+    "x_handle": "mikaaaltola",
+    "status": "-"
+  },
+  {
+    "name": "Milan UHR\u00cdK",
+    "first_name": "Milan",
+    "last_name": "UHR\u00cdK",
+    "country": "Slovakia",
+    "group": "ESN",
+    "national_party": "Hnutie Republika",
+    "x_handle": "MilanUhrik",
+    "status": "-"
+  },
+  {
+    "name": "Milan ZVER",
+    "first_name": "Milan",
+    "last_name": "ZVER",
+    "country": "Slovenia",
+    "group": "EPP",
+    "national_party": "Slovenska demokratska stranka",
+    "x_handle": "MilanZver",
+    "status": "-"
+  },
+  {
+    "name": "Mircea-Gheorghe HAVA",
+    "first_name": "Mircea-Gheorghe",
+    "last_name": "HAVA",
+    "country": "Romania",
+    "group": "EPP",
+    "national_party": "Partidul Na\u0163ional Liberal",
+    "x_handle": "mirceahava",
+    "status": "-"
+  },
+  {
+    "name": "Miriam LEXMANN",
+    "first_name": "Miriam",
+    "last_name": "LEXMANN",
+    "country": "Slovakia",
+    "group": "EPP",
+    "national_party": "Kres\u0165anskodemokratick\u00e9 hnutie",
+    "x_handle": "MiriamMLex",
+    "status": "-"
+  },
+  {
+    "name": "Miros\u0142awa NYKIEL",
+    "first_name": "Miros\u0142awa",
+    "last_name": "NYKIEL",
+    "country": "Poland",
+    "group": "EPP",
+    "national_party": "Platforma Obywatelska",
+    "x_handle": "miroslawanykiel",
+    "status": "-"
+  },
+  {
+    "name": "Mohammed CHAHIM",
+    "first_name": "Mohammed",
+    "last_name": "CHAHIM",
+    "country": "Netherlands",
+    "group": "S&D",
+    "national_party": "GroenLinks-PvdA",
+    "x_handle": "MChahim",
+    "status": "-"
+  },
+  {
+    "name": "Monika BE\u0147OV\u00c1",
+    "first_name": "Monika",
+    "last_name": "BE\u0147OV\u00c1",
+    "country": "Slovakia",
+    "group": "NI",
+    "national_party": "SMER-Soci\u00e1lna demokracia",
+    "x_handle": "monika_benova",
+    "status": "-"
+  },
+  {
+    "name": "Monika HOHLMEIER",
+    "first_name": "Monika",
+    "last_name": "HOHLMEIER",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "Christlich-Soziale Union in Bayern e.V.",
+    "x_handle": "MHohlmeier",
+    "status": "-"
+  },
+  {
+    "name": "Moritz K\u00d6RNER",
+    "first_name": "Moritz",
+    "last_name": "K\u00d6RNER",
+    "country": "Germany",
+    "group": "RE",
+    "national_party": "Freie Demokratische Partei",
+    "x_handle": "moritzkoerner",
+    "status": "-"
+  },
+  {
+    "name": "Morten L\u00d8KKEGAARD",
+    "first_name": "Morten",
+    "last_name": "L\u00d8KKEGAARD",
+    "country": "Denmark",
+    "group": "RE",
+    "national_party": "Venstre, Danmarks Liberale Parti",
+    "x_handle": "Loekkegaard_MEP",
+    "status": "-"
+  },
+  {
+    "name": "Mounir SATOURI",
+    "first_name": "Mounir",
+    "last_name": "SATOURI",
+    "country": "France",
+    "group": "Greens/EFA",
+    "national_party": "Les \u00c9cologistes",
+    "x_handle": "MounirSatouri",
+    "status": "-"
+  },
+  {
+    "name": "Nacho S\u00c1NCHEZ AMOR",
+    "first_name": "Nacho",
+    "last_name": "S\u00c1NCHEZ AMOR",
+    "country": "Spain",
+    "group": "S&D",
+    "national_party": "Partido Socialista Obrero Espa\u00f1ol",
+    "x_handle": "NachoSAmor",
+    "status": "-"
+  },
+  {
+    "name": "Nadine MORANO",
+    "first_name": "Nadine",
+    "last_name": "MORANO",
+    "country": "France",
+    "group": "EPP",
+    "national_party": "Les R\u00e9publicains",
+    "x_handle": "nadine__morano",
+    "status": "-"
+  },
+  {
+    "name": "Nathalie LOISEAU",
+    "first_name": "Nathalie",
+    "last_name": "LOISEAU",
+    "country": "France",
+    "group": "RE",
+    "national_party": "Horizons",
+    "x_handle": "NathalieLoiseau",
+    "status": "-"
+  },
+  {
+    "name": "Niclas HERBST",
+    "first_name": "Niclas",
+    "last_name": "HERBST",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "Christlich Demokratische Union Deutschlands",
+    "x_handle": "NiclasHerbst",
+    "status": "-"
+  },
+  {
+    "name": "Nicola PROCACCINI",
+    "first_name": "Nicola",
+    "last_name": "PROCACCINI",
+    "country": "Italy",
+    "group": "ECR",
+    "national_party": "FRATELLI D' ITALIA",
+    "x_handle": "NProcaccini",
+    "status": "-"
+  },
+  {
+    "name": "Nicolae \u0218TEF\u0102NU\u021a\u0102",
+    "first_name": "Nicolae",
+    "last_name": "\u0218TEF\u0102NU\u021a\u0102",
+    "country": "Romania",
+    "group": "Greens/EFA",
+    "national_party": "Independent",
+    "x_handle": "nicustefanuta",
+    "status": "-"
+  },
+  {
+    "name": "Nicol\u00e1s GONZ\u00c1LEZ CASARES",
+    "first_name": "Nicol\u00e1s",
+    "last_name": "GONZ\u00c1LEZ CASARES",
+    "country": "Spain",
+    "group": "S&D",
+    "national_party": "Partido Socialista Obrero Espa\u00f1ol",
+    "x_handle": "nicogoncas",
+    "status": "-"
+  },
+  {
+    "name": "Niels FUGLSANG",
+    "first_name": "Niels",
+    "last_name": "FUGLSANG",
+    "country": "Denmark",
+    "group": "S&D",
+    "national_party": "Socialdemokratiet",
+    "x_handle": "NielsFuglsang",
+    "status": "-"
+  },
+  {
+    "name": "Niels GEUKING",
+    "first_name": "Niels",
+    "last_name": "GEUKING",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "Familien-Partei Deutschlands",
+    "x_handle": "GeukingHelmut",
+    "status": "-"
+  },
+  {
+    "name": "Nikola BART\u016e\u0160EK",
+    "first_name": "Nikola",
+    "last_name": "BART\u016e\u0160EK",
+    "country": "Czechia",
+    "group": "NI",
+    "national_party": "P\u0159\u00edsaha",
+    "x_handle": "nikola_bartusek",
+    "status": "-"
+  },
+  {
+    "name": "Nikolina BRNJAC",
+    "first_name": "Nikolina",
+    "last_name": "BRNJAC",
+    "country": "Croatia",
+    "group": "EPP",
+    "national_party": "Hrvatska demokratska zajednica",
+    "x_handle": "nbrnjac",
+    "status": "-"
+  },
+  {
+    "name": "Nils U\u0160AKOVS",
+    "first_name": "Nils",
+    "last_name": "U\u0160AKOVS",
+    "country": "Latvia",
+    "group": "S&D",
+    "national_party": "\"Saska\u0146a\" soci\u0101ldemokr\u0101tisk\u0101 partija",
+    "x_handle": "nilsusakovs",
+    "status": "-"
+  },
+  {
+    "name": "Nina CARBERRY",
+    "first_name": "Nina",
+    "last_name": "CARBERRY",
+    "country": "Ireland",
+    "group": "EPP",
+    "national_party": "Fine Gael Party",
+    "x_handle": "ninacarberry",
+    "status": "-"
+  },
+  {
+    "name": "Nora MEBAREK",
+    "first_name": "Nora",
+    "last_name": "MEBAREK",
+    "country": "France",
+    "group": "S&D",
+    "national_party": "Parti socialiste",
+    "x_handle": "MebarekNora",
+    "status": "-"
+  },
+  {
+    "name": "Norbert LINS",
+    "first_name": "Norbert",
+    "last_name": "LINS",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "Christlich Demokratische Union Deutschlands",
+    "x_handle": "linsnorbert",
+    "status": "-"
+  },
+  {
+    "name": "Olivier CHASTEL",
+    "first_name": "Olivier",
+    "last_name": "CHASTEL",
+    "country": "Belgium",
+    "group": "RE",
+    "national_party": "Mouvement R\u00e9formateur",
+    "x_handle": "OChastel",
+    "status": "-"
+  },
+  {
+    "name": "Ond\u0159ej KNOTEK",
+    "first_name": "Ond\u0159ej",
+    "last_name": "KNOTEK",
+    "country": "Czechia",
+    "group": "PfE",
+    "national_party": "ANO 2011",
+    "x_handle": "KnotekOndrej",
+    "status": "-"
+  },
+  {
+    "name": "Ond\u0159ej KOL\u00c1\u0158",
+    "first_name": "Ond\u0159ej",
+    "last_name": "KOL\u00c1\u0158",
+    "country": "Czechia",
+    "group": "EPP",
+    "national_party": "Czechia \u2013 TOP 09",
+    "x_handle": "ondrejkolar6",
+    "status": "-"
+  },
+  {
+    "name": "Ond\u0159ej KRUT\u00cdLEK",
+    "first_name": "Ond\u0159ej",
+    "last_name": "KRUT\u00cdLEK",
+    "country": "Czechia",
+    "group": "ECR",
+    "national_party": "Ob\u010dansk\u00e1 demokratick\u00e1 strana",
+    "x_handle": "ondrejkrutilek",
+    "status": "-"
+  },
+  {
+    "name": "Paolo BORCHIA",
+    "first_name": "Paolo",
+    "last_name": "BORCHIA",
+    "country": "Italy",
+    "group": "PfE",
+    "national_party": "Lega",
+    "x_handle": "PaoloBorchia",
+    "status": "-"
+  },
+  {
+    "name": "Pascal ARIMONT",
+    "first_name": "Pascal",
+    "last_name": "ARIMONT",
+    "country": "Belgium",
+    "group": "EPP",
+    "national_party": "Christlich Soziale Partei",
+    "x_handle": "pascal_arimont",
+    "status": "-"
+  },
+  {
+    "name": "Pascal CANFIN",
+    "first_name": "Pascal",
+    "last_name": "CANFIN",
+    "country": "France",
+    "group": "RE",
+    "national_party": "Renaissance",
+    "x_handle": "pcanfin",
+    "status": "-"
+  },
+  {
+    "name": "Patryk JAKI",
+    "first_name": "Patryk",
+    "last_name": "JAKI",
+    "country": "Poland",
+    "group": "ECR",
+    "national_party": "Prawo i Sprawiedliwo\u015b\u0107",
+    "x_handle": "PatrykJaki",
+    "status": "-"
+  },
+  {
+    "name": "Paulo CUNHA",
+    "first_name": "Paulo",
+    "last_name": "CUNHA",
+    "country": "Portugal",
+    "group": "EPP",
+    "national_party": "Partido Social Democrata",
+    "x_handle": "paulocunhavnf",
+    "status": "-"
+  },
+  {
+    "name": "Pekka TOVERI",
+    "first_name": "Pekka",
+    "last_name": "TOVERI",
+    "country": "Finland",
+    "group": "EPP",
+    "national_party": "Kansallinen Kokoomus",
+    "x_handle": "ptoveri",
+    "status": "-"
+  },
+  {
+    "name": "Peter LIESE",
+    "first_name": "Peter",
+    "last_name": "LIESE",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "Christlich Demokratische Union Deutschlands",
+    "x_handle": "peterliese",
+    "status": "-"
+  },
+  {
+    "name": "Petras AU\u0160TREVI\u010cIUS",
+    "first_name": "Petras",
+    "last_name": "AU\u0160TREVI\u010cIUS",
+    "country": "Lithuania",
+    "group": "RE",
+    "national_party": "Liberal\u0173 s\u0105j\u016bdis",
+    "x_handle": "petras_petras",
+    "status": "-"
+  },
+  {
+    "name": "Philippe OLIVIER",
+    "first_name": "Philippe",
+    "last_name": "OLIVIER",
+    "country": "France",
+    "group": "PfE",
+    "national_party": "Rassemblement national",
+    "x_handle": "PhOlivierRN",
+    "status": "-"
+  },
+  {
+    "name": "Pierfrancesco MARAN",
+    "first_name": "Pierfrancesco",
+    "last_name": "MARAN",
+    "country": "Italy",
+    "group": "S&D",
+    "national_party": "Partito Democratico",
+    "x_handle": "piermaran",
+    "status": "-"
+  },
+  {
+    "name": "Pietro FIOCCHI",
+    "first_name": "Pietro",
+    "last_name": "FIOCCHI",
+    "country": "Italy",
+    "group": "ECR",
+    "national_party": "FRATELLI D' ITALIA",
+    "x_handle": "FiocchiPietro",
+    "status": "-"
+  },
+  {
+    "name": "Pilar DEL CASTILLO VERA",
+    "first_name": "Pilar",
+    "last_name": "DEL CASTILLO VERA",
+    "country": "Spain",
+    "group": "EPP",
+    "national_party": "Partido Popular",
+    "x_handle": "delcastillop",
+    "status": "-"
+  },
+  {
+    "name": "Pina PICIERNO",
+    "first_name": "Pina",
+    "last_name": "PICIERNO",
+    "country": "Italy",
+    "group": "S&D",
+    "national_party": "Partito Democratico",
+    "x_handle": "pinapic",
+    "status": "-"
+  },
+  {
+    "name": "Piotr M\u00dcLLER",
+    "first_name": "Piotr",
+    "last_name": "M\u00dcLLER",
+    "country": "Poland",
+    "group": "ECR",
+    "national_party": "Prawo i Sprawiedliwo\u015b\u0107",
+    "x_handle": "piotrmuller",
+    "status": "-"
+  },
+  {
+    "name": "P\u00e4r HOLMGREN",
+    "first_name": "P\u00e4r",
+    "last_name": "HOLMGREN",
+    "country": "Sweden",
+    "group": "Greens/EFA",
+    "national_party": "Milj\u00f6partiet de gr\u00f6na",
+    "x_handle": "ParHolmgren",
+    "status": "-"
+  },
+  {
+    "name": "Radan KANEV",
+    "first_name": "Radan",
+    "last_name": "KANEV",
+    "country": "Bulgaria",
+    "group": "EPP",
+    "national_party": "Democrats for Strong Bulgaria",
+    "x_handle": "rmkanev",
+    "status": "-"
+  },
+  {
+    "name": "Raffaele STANCANELLI",
+    "first_name": "Raffaele",
+    "last_name": "STANCANELLI",
+    "country": "Italy",
+    "group": "PfE",
+    "national_party": "Lega",
+    "x_handle": "r_stancanelli",
+    "status": "-"
+  },
+  {
+    "name": "Rapha\u00ebl GLUCKSMANN",
+    "first_name": "Rapha\u00ebl",
+    "last_name": "GLUCKSMANN",
+    "country": "France",
+    "group": "S&D",
+    "national_party": "Place publique",
+    "x_handle": "rglucks1",
+    "status": "-"
+  },
+  {
+    "name": "Rasa JUKNEVI\u010cIEN\u0116",
+    "first_name": "Rasa",
+    "last_name": "JUKNEVI\u010cIEN\u0116",
+    "country": "Lithuania",
+    "group": "EPP",
+    "national_party": "T\u0117vyn\u0117s s\u0105junga-Lietuvos krik\u0161\u010dionys demokratai",
+    "x_handle": "RJukneviciene",
+    "status": "-"
+  },
+  {
+    "name": "Rasmus ANDRESEN",
+    "first_name": "Rasmus",
+    "last_name": "ANDRESEN",
+    "country": "Germany",
+    "group": "Greens/EFA",
+    "national_party": "B\u00fcndnis 90/Die Gr\u00fcnen",
+    "x_handle": "RasmusAndresen",
+    "status": "-"
+  },
+  {
+    "name": "Regina DOHERTY",
+    "first_name": "Regina",
+    "last_name": "DOHERTY",
+    "country": "Ireland",
+    "group": "EPP",
+    "national_party": "Fine Gael Party",
+    "x_handle": "reginado",
+    "status": "-"
+  },
+  {
+    "name": "Reinhold LOPATKA",
+    "first_name": "Reinhold",
+    "last_name": "LOPATKA",
+    "country": "Austria",
+    "group": "EPP",
+    "national_party": "\u00d6sterreichische Volkspartei",
+    "x_handle": "reinholdlopatka",
+    "status": "-"
+  },
+  {
+    "name": "Ren\u00e9 REPASI",
+    "first_name": "Ren\u00e9",
+    "last_name": "REPASI",
+    "country": "Germany",
+    "group": "S&D",
+    "national_party": "Sozialdemokratische Partei Deutschlands",
+    "x_handle": "repasi",
+    "status": "-"
+  },
+  {
+    "name": "Rihards KOLS",
+    "first_name": "Rihards",
+    "last_name": "KOLS",
+    "country": "Latvia",
+    "group": "ECR",
+    "national_party": "Nacion\u0101l\u0101 apvien\u012bba \"Visu Latvijai!\" - \"T\u0113vzemei un Br\u012bv\u012bbai/LNNK\"",
+    "x_handle": "rihardskols",
+    "status": "-"
+  },
+  {
+    "name": "Riho TERRAS",
+    "first_name": "Riho",
+    "last_name": "TERRAS",
+    "country": "Estonia",
+    "group": "EPP",
+    "national_party": "Isamaa",
+    "x_handle": "RihoTerras",
+    "status": "-"
+  },
+  {
+    "name": "Rima HASSAN",
+    "first_name": "Rima",
+    "last_name": "HASSAN",
+    "country": "France",
+    "group": "The Left",
+    "national_party": "La France Insoumise",
+    "x_handle": "rimahas",
+    "status": "-"
+  },
+  {
+    "name": "Robert BIEDRO\u0143",
+    "first_name": "Robert",
+    "last_name": "BIEDRO\u0143",
+    "country": "Poland",
+    "group": "S&D",
+    "national_party": "Nowa Lewica",
+    "x_handle": "RobertBiedron",
+    "status": "-"
+  },
+  {
+    "name": "Roberta METSOLA",
+    "first_name": "Roberta",
+    "last_name": "METSOLA",
+    "country": "Malta",
+    "group": "EPP",
+    "national_party": "Partit Nazzjonalista",
+    "x_handle": "RobertaMetsola",
+    "status": "-"
+  },
+  {
+    "name": "Roberts Z\u012aLE",
+    "first_name": "Roberts",
+    "last_name": "Z\u012aLE",
+    "country": "Latvia",
+    "group": "ECR",
+    "national_party": "Nacion\u0101l\u0101 apvien\u012bba \"Visu Latvijai!\" - \"T\u0113vzemei un Br\u012bv\u012bbai/LNNK\"",
+    "x_handle": "robertszile",
+    "status": "-"
+  },
+  {
+    "name": "Romana JERKOVI\u0106",
+    "first_name": "Romana",
+    "last_name": "JERKOVI\u0106",
+    "country": "Croatia",
+    "group": "S&D",
+    "national_party": "Socijaldemokratska partija Hrvatske",
+    "x_handle": "JerkovicRomana",
+    "status": "-"
+  },
+  {
+    "name": "Romana TOMC",
+    "first_name": "Romana",
+    "last_name": "TOMC",
+    "country": "Slovenia",
+    "group": "EPP",
+    "national_party": "Slovenska demokratska stranka",
+    "x_handle": "RomanaTomc",
+    "status": "-"
+  },
+  {
+    "name": "Rudi KENNES",
+    "first_name": "Rudi",
+    "last_name": "KENNES",
+    "country": "Belgium",
+    "group": "The Left",
+    "national_party": "Independent",
+    "x_handle": "rudikennes",
+    "status": "-"
+  },
+  {
+    "name": "Sabine VERHEYEN",
+    "first_name": "Sabine",
+    "last_name": "VERHEYEN",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "Christlich Demokratische Union Deutschlands",
+    "x_handle": "sabineverheyen",
+    "status": "-"
+  },
+  {
+    "name": "Sakis ARNAOUTOGLOU",
+    "first_name": "Sakis",
+    "last_name": "ARNAOUTOGLOU",
+    "country": "Greece",
+    "group": "S&D",
+    "national_party": "PASOK-KINAL",
+    "x_handle": "s_arnaoutoglou",
+    "status": "-"
+  },
+  {
+    "name": "Salvatore DE MEO",
+    "first_name": "Salvatore",
+    "last_name": "DE MEO",
+    "country": "Italy",
+    "group": "EPP",
+    "national_party": "Forza Italia",
+    "x_handle": "salv_de_meo",
+    "status": "-"
+  },
+  {
+    "name": "Sander SMIT",
+    "first_name": "Sander",
+    "last_name": "SMIT",
+    "country": "Netherlands",
+    "group": "EPP",
+    "national_party": "BoerBurgerBeweging",
+    "x_handle": "sandersmitwzn",
+    "status": "-"
+  },
+  {
+    "name": "Sandra KALNIETE",
+    "first_name": "Sandra",
+    "last_name": "KALNIETE",
+    "country": "Latvia",
+    "group": "EPP",
+    "national_party": "Jaun\u0101 Vienot\u012bba",
+    "x_handle": "Kalniete",
+    "status": "-"
+  },
+  {
+    "name": "Sandro GOZI",
+    "first_name": "Sandro",
+    "last_name": "GOZI",
+    "country": "France",
+    "group": "RE",
+    "national_party": "Mouvement D\u00e9mocrate",
+    "x_handle": "sandrogozi",
+    "status": "-"
+  },
+  {
+    "name": "Sandro RUOTOLO",
+    "first_name": "Sandro",
+    "last_name": "RUOTOLO",
+    "country": "Italy",
+    "group": "S&D",
+    "national_party": "Partito Democratico",
+    "x_handle": "sruotolo1",
+    "status": "-"
+  },
+  {
+    "name": "Sara MATTHIEU",
+    "first_name": "Sara",
+    "last_name": "MATTHIEU",
+    "country": "Belgium",
+    "group": "Greens/EFA",
+    "national_party": "Groen",
+    "x_handle": "msaraswati",
+    "status": "-"
+  },
+  {
+    "name": "Saskia BRICMONT",
+    "first_name": "Saskia",
+    "last_name": "BRICMONT",
+    "country": "Belgium",
+    "group": "Greens/EFA",
+    "national_party": "Ecologistes Conf\u00e9d\u00e9r\u00e9s pour l'Organisation de Luttes Originales",
+    "x_handle": "saskiabricmont",
+    "status": "-"
+  },
+  {
+    "name": "Sebastian TYNKKYNEN",
+    "first_name": "Sebastian",
+    "last_name": "TYNKKYNEN",
+    "country": "Finland",
+    "group": "ECR",
+    "national_party": "Perussuomalaiset",
+    "x_handle": "sebastiantyne",
+    "status": "-"
+  },
+  {
+    "name": "Sebasti\u00e3o BUGALHO",
+    "first_name": "Sebasti\u00e3o",
+    "last_name": "BUGALHO",
+    "country": "Portugal",
+    "group": "EPP",
+    "national_party": "Partido Social Democrata",
+    "x_handle": "reis_bugalho",
+    "status": "-"
+  },
+  {
+    "name": "Sergey LAGODINSKY",
+    "first_name": "Sergey",
+    "last_name": "LAGODINSKY",
+    "country": "Germany",
+    "group": "Greens/EFA",
+    "national_party": "B\u00fcndnis 90/Die Gr\u00fcnen",
+    "x_handle": "SLagodinsky",
+    "status": "-"
+  },
+  {
+    "name": "Sergio BERLATO",
+    "first_name": "Sergio",
+    "last_name": "BERLATO",
+    "country": "Italy",
+    "group": "ECR",
+    "national_party": "FRATELLI D' ITALIA",
+    "x_handle": "SERGIOBERLATO",
+    "status": "-"
+  },
+  {
+    "name": "Se\u00e1n KELLY",
+    "first_name": "Se\u00e1n",
+    "last_name": "KELLY",
+    "country": "Ireland",
+    "group": "EPP",
+    "national_party": "Fine Gael Party",
+    "x_handle": "SeanKellyMEP",
+    "status": "-"
+  },
+  {
+    "name": "Sibylle BERG",
+    "first_name": "Sibylle",
+    "last_name": "BERG",
+    "country": "Germany",
+    "group": "NI",
+    "national_party": "Die PARTEI",
+    "x_handle": "LarsPatrickBerg",
+    "status": "-"
+  },
+  {
+    "name": "Siegfried MURE\u015eAN",
+    "first_name": "Siegfried",
+    "last_name": "MURE\u015eAN",
+    "country": "Romania",
+    "group": "EPP",
+    "national_party": "Partidul Na\u0163ional Liberal",
+    "x_handle": "SMuresan",
+    "status": "-"
+  },
+  {
+    "name": "Sigrid FRIIS",
+    "first_name": "Sigrid",
+    "last_name": "FRIIS",
+    "country": "Denmark",
+    "group": "RE",
+    "national_party": "Det Radikale Venstre",
+    "x_handle": "sigridfriis",
+    "status": "-"
+  },
+  {
+    "name": "Silvia SARDONE",
+    "first_name": "Silvia",
+    "last_name": "SARDONE",
+    "country": "Italy",
+    "group": "PfE",
+    "national_party": "Lega",
+    "x_handle": "SardoneSilvia",
+    "status": "-"
+  },
+  {
+    "name": "Sirpa PIETIK\u00c4INEN",
+    "first_name": "Sirpa",
+    "last_name": "PIETIK\u00c4INEN",
+    "country": "Finland",
+    "group": "EPP",
+    "national_party": "Kansallinen Kokoomus",
+    "x_handle": "spietikainen",
+    "status": "-"
+  },
+  {
+    "name": "Sophia KIRCHER",
+    "first_name": "Sophia",
+    "last_name": "KIRCHER",
+    "country": "Austria",
+    "group": "EPP",
+    "national_party": "\u00d6sterreichische Volkspartei",
+    "x_handle": "sophia_kircher",
+    "status": "-"
+  },
+  {
+    "name": "Sophie WILM\u00c8S",
+    "first_name": "Sophie",
+    "last_name": "WILM\u00c8S",
+    "country": "Belgium",
+    "group": "RE",
+    "national_party": "Mouvement R\u00e9formateur",
+    "x_handle": "sophie_wilmes",
+    "status": "-"
+  },
+  {
+    "name": "Stanislav STOYANOV",
+    "first_name": "Stanislav",
+    "last_name": "STOYANOV",
+    "country": "Bulgaria",
+    "group": "ESN",
+    "national_party": "Revival",
+    "x_handle": "stn_stoyanov",
+    "status": "-"
+  },
+  {
+    "name": "Stefan BERGER",
+    "first_name": "Stefan",
+    "last_name": "BERGER",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "Christlich Demokratische Union Deutschlands",
+    "x_handle": "DrStefanBerger",
+    "status": "-"
+  },
+  {
+    "name": "Stefan K\u00d6HLER",
+    "first_name": "Stefan",
+    "last_name": "K\u00d6HLER",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "Christlich-Soziale Union in Bayern e.V.",
+    "x_handle": "koehlers9",
+    "status": "-"
+  },
+  {
+    "name": "Stephen Nikola BARTULICA",
+    "first_name": "Stephen Nikola",
+    "last_name": "BARTULICA",
+    "country": "Croatia",
+    "group": "ECR",
+    "national_party": "Dom i nacionalno okupljanje",
+    "x_handle": "stjepobartulica",
+    "status": "-"
+  },
+  {
+    "name": "St\u00e9phanie YON-COURTIN",
+    "first_name": "St\u00e9phanie",
+    "last_name": "YON-COURTIN",
+    "country": "France",
+    "group": "RE",
+    "national_party": "Renaissance",
+    "x_handle": "s_yoncourtin",
+    "status": "-"
+  },
+  {
+    "name": "Sun\u010dana GLAVAK",
+    "first_name": "Sun\u010dana",
+    "last_name": "GLAVAK",
+    "country": "Croatia",
+    "group": "EPP",
+    "national_party": "Hrvatska demokratska zajednica",
+    "x_handle": "SuncanaGlavak",
+    "status": "-"
+  },
+  {
+    "name": "Susana SOL\u00cdS P\u00c9REZ",
+    "first_name": "Susana",
+    "last_name": "SOL\u00cdS P\u00c9REZ",
+    "country": "Spain",
+    "group": "EPP",
+    "national_party": "Partido Popular",
+    "x_handle": "susanasolisp",
+    "status": "-"
+  },
+  {
+    "name": "Susanna CECCARDI",
+    "first_name": "Susanna",
+    "last_name": "CECCARDI",
+    "country": "Italy",
+    "group": "PfE",
+    "national_party": "Lega",
+    "x_handle": "SusannaCeccardi",
+    "status": "-"
+  },
+  {
+    "name": "Sven MIKSER",
+    "first_name": "Sven",
+    "last_name": "MIKSER",
+    "country": "Estonia",
+    "group": "S&D",
+    "national_party": "Sotsiaaldemokraatlik Erakond",
+    "x_handle": "svenmikser",
+    "status": "-"
+  },
+  {
+    "name": "Sven SIMON",
+    "first_name": "Sven",
+    "last_name": "SIMON",
+    "country": "Germany",
+    "group": "EPP",
+    "national_party": "Christlich Demokratische Union Deutschlands",
+    "x_handle": "svensimon",
+    "status": "-"
+  },
+  {
+    "name": "Svenja HAHN",
+    "first_name": "Svenja",
+    "last_name": "HAHN",
+    "country": "Germany",
+    "group": "RE",
+    "national_party": "Freie Demokratische Partei",
+    "x_handle": "svenja_hahn",
+    "status": "-"
+  },
+  {
+    "name": "S\u00e9rgio HUMBERTO",
+    "first_name": "S\u00e9rgio",
+    "last_name": "HUMBERTO",
+    "country": "Portugal",
+    "group": "EPP",
+    "national_party": "Alian\u00e7a Democr\u00e1tica",
+    "x_handle": "sergiohumberto_",
+    "status": "-"
+  },
+  {
+    "name": "Tam\u00e1s DEUTSCH",
+    "first_name": "Tam\u00e1s",
+    "last_name": "DEUTSCH",
+    "country": "Hungary",
+    "group": "PfE",
+    "national_party": "Fidesz-Magyar Polg\u00e1ri Sz\u00f6vets\u00e9g-Kereszt\u00e9nydemokrata N\u00e9pp\u00e1rt",
+    "x_handle": "dajcstomi",
+    "status": "-"
+  },
+  {
+    "name": "Terry REINTKE",
+    "first_name": "Terry",
+    "last_name": "REINTKE",
+    "country": "Germany",
+    "group": "Greens/EFA",
+    "national_party": "B\u00fcndnis 90/Die Gr\u00fcnen",
+    "x_handle": "TerryReintke",
+    "status": "-"
+  },
+  {
+    "name": "Thierry MARIANI",
+    "first_name": "Thierry",
+    "last_name": "MARIANI",
+    "country": "France",
+    "group": "PfE",
+    "national_party": "Rassemblement national",
+    "x_handle": "ThierryMARIANI",
+    "status": "-"
+  },
+  {
+    "name": "Thijs REUTEN",
+    "first_name": "Thijs",
+    "last_name": "REUTEN",
+    "country": "Netherlands",
+    "group": "S&D",
+    "national_party": "GroenLinks-PvdA",
+    "x_handle": "thijsreuten",
+    "status": "-"
+  },
+  {
+    "name": "Thomas PELLERIN-CARLIN",
+    "first_name": "Thomas",
+    "last_name": "PELLERIN-CARLIN",
+    "country": "France",
+    "group": "S&D",
+    "national_party": "Place publique",
+    "x_handle": "thpellerin",
+    "status": "-"
+  },
+  {
+    "name": "Thomas WAITZ",
+    "first_name": "Thomas",
+    "last_name": "WAITZ",
+    "country": "Austria",
+    "group": "Greens/EFA",
+    "national_party": "Die Gr\u00fcnen - Die Gr\u00fcne Alternative",
+    "x_handle": "thomaswaitz",
+    "status": "-"
+  },
+  {
+    "name": "Tiemo W\u00d6LKEN",
+    "first_name": "Tiemo",
+    "last_name": "W\u00d6LKEN",
+    "country": "Germany",
+    "group": "S&D",
+    "national_party": "Sozialdemokratische Partei Deutschlands",
+    "x_handle": "woelken",
+    "status": "-"
+  },
+  {
+    "name": "Tilly METZ",
+    "first_name": "Tilly",
+    "last_name": "METZ",
+    "country": "Luxembourg",
+    "group": "Greens/EFA",
+    "national_party": "D\u00e9i Gr\u00e9ng - Les Verts",
+    "x_handle": "MetzTilly",
+    "status": "-"
+  },
+  {
+    "name": "Tineke STRIK",
+    "first_name": "Tineke",
+    "last_name": "STRIK",
+    "country": "Netherlands",
+    "group": "Greens/EFA",
+    "national_party": "GroenLinks-PvdA",
+    "x_handle": "Tineke_Strik",
+    "status": "-"
+  },
+  {
+    "name": "Tom VANDENDRIESSCHE",
+    "first_name": "Tom",
+    "last_name": "VANDENDRIESSCHE",
+    "country": "Belgium",
+    "group": "PfE",
+    "national_party": "Vlaams Belang",
+    "x_handle": "TomVandendriese",
+    "status": "-"
+  },
+  {
+    "name": "Tomas TOB\u00c9",
+    "first_name": "Tomas",
+    "last_name": "TOB\u00c9",
+    "country": "Sweden",
+    "group": "EPP",
+    "national_party": "Moderaterna",
+    "x_handle": "tomastobe",
+    "status": "-"
+  },
+  {
+    "name": "Tomasz FROELICH",
+    "first_name": "Tomasz",
+    "last_name": "FROELICH",
+    "country": "Germany",
+    "group": "ESN",
+    "national_party": "Alternative f\u00fcr Deutschland",
+    "x_handle": "tomaszfroelich",
+    "status": "-"
+  },
+  {
+    "name": "Tomislav SOKOL",
+    "first_name": "Tomislav",
+    "last_name": "SOKOL",
+    "country": "Croatia",
+    "group": "EPP",
+    "national_party": "Hrvatska demokratska zajednica",
+    "x_handle": "TomislavSokol",
+    "status": "-"
+  },
+  {
+    "name": "Tom\u00e1\u0161 ZDECHOVSK\u00dd",
+    "first_name": "Tom\u00e1\u0161",
+    "last_name": "ZDECHOVSK\u00dd",
+    "country": "Czechia",
+    "group": "EPP",
+    "national_party": "K\u0159es\u0165ansk\u00e1 a demokratick\u00e1 unie - \u010ceskoslovensk\u00e1 strana lidov\u00e1",
+    "x_handle": "TomasZdechovsky",
+    "status": "-"
+  },
+  {
+    "name": "Tonino PICULA",
+    "first_name": "Tonino",
+    "last_name": "PICULA",
+    "country": "Croatia",
+    "group": "S&D",
+    "national_party": "Socijaldemokratska partija Hrvatske",
+    "x_handle": "TPicula",
+    "status": "-"
+  },
+  {
+    "name": "Tsvetelina PENKOVA",
+    "first_name": "Tsvetelina",
+    "last_name": "PENKOVA",
+    "country": "Bulgaria",
+    "group": "S&D",
+    "national_party": "Bulgarian Socialist Party",
+    "x_handle": "tsvetypenkova",
+    "status": "-"
+  },
+  {
+    "name": "Udo BULLMANN",
+    "first_name": "Udo",
+    "last_name": "BULLMANN",
+    "country": "Germany",
+    "group": "S&D",
+    "national_party": "Sozialdemokratische Partei Deutschlands",
+    "x_handle": "UdoBullmann",
+    "status": "-"
+  },
+  {
+    "name": "Urmas PAET",
+    "first_name": "Urmas",
+    "last_name": "PAET",
+    "country": "Estonia",
+    "group": "RE",
+    "national_party": "Eesti Reformierakond",
+    "x_handle": "Urmaspaet",
+    "status": "-"
+  },
+  {
+    "name": "Val\u00e9rie DELOGE",
+    "first_name": "Val\u00e9rie",
+    "last_name": "DELOGE",
+    "country": "France",
+    "group": "PfE",
+    "national_party": "Rassemblement national",
+    "x_handle": "valeriedeloge",
+    "status": "-"
+  },
+  {
+    "name": "Val\u00e9rie HAYER",
+    "first_name": "Val\u00e9rie",
+    "last_name": "HAYER",
+    "country": "France",
+    "group": "RE",
+    "national_party": "Renaissance",
+    "x_handle": "valeriehayer",
+    "status": "-"
+  },
+  {
+    "name": "Vangelis MEIMARAKIS",
+    "first_name": "Vangelis",
+    "last_name": "MEIMARAKIS",
+    "country": "Greece",
+    "group": "EPP",
+    "national_party": "Nea Demokratia",
+    "x_handle": "v_meimarakis",
+    "status": "-"
+  },
+  {
+    "name": "Veronika VRECIONOV\u00c1",
+    "first_name": "Veronika",
+    "last_name": "VRECIONOV\u00c1",
+    "country": "Czechia",
+    "group": "ECR",
+    "national_party": "Ob\u010dansk\u00e1 demokratick\u00e1 strana",
+    "x_handle": "vrecionova",
+    "status": "-"
+  },
+  {
+    "name": "Victor NEGRESCU",
+    "first_name": "Victor",
+    "last_name": "NEGRESCU",
+    "country": "Romania",
+    "group": "S&D",
+    "national_party": "Partidul Social Democrat",
+    "x_handle": "negrescuvictor",
+    "status": "-"
+  },
+  {
+    "name": "Ville NIINIST\u00d6",
+    "first_name": "Ville",
+    "last_name": "NIINIST\u00d6",
+    "country": "Finland",
+    "group": "Greens/EFA",
+    "national_party": "Vihre\u00e4 liitto",
+    "x_handle": "VilleNiinisto",
+    "status": "-"
+  },
+  {
+    "name": "Virgil-Daniel POPESCU",
+    "first_name": "Virgil-Daniel",
+    "last_name": "POPESCU",
+    "country": "Romania",
+    "group": "EPP",
+    "national_party": "Partidul Na\u0163ional Liberal",
+    "x_handle": "vpopescu68",
+    "status": "-"
+  },
+  {
+    "name": "Virginie JORON",
+    "first_name": "Virginie",
+    "last_name": "JORON",
+    "country": "France",
+    "group": "PfE",
+    "national_party": "Rassemblement national",
+    "x_handle": "v_joron",
+    "status": "-"
+  },
+  {
+    "name": "Yannis MANIATIS",
+    "first_name": "Yannis",
+    "last_name": "MANIATIS",
+    "country": "Greece",
+    "group": "S&D",
+    "national_party": "PASOK-KINAL",
+    "x_handle": "yannis_maniatis",
+    "status": "-"
+  },
+  {
+    "name": "Younous OMARJEE",
+    "first_name": "Younous",
+    "last_name": "OMARJEE",
+    "country": "France",
+    "group": "The Left",
+    "national_party": "La France Insoumise",
+    "x_handle": "younousomarjee",
+    "status": "-"
+  },
+  {
+    "name": "Yvan VEROUGSTRAETE",
+    "first_name": "Yvan",
+    "last_name": "VEROUGSTRAETE",
+    "country": "Belgium",
+    "group": "RE",
+    "national_party": "Les Engag\u00e9s",
+    "x_handle": "yverougstraete",
+    "status": "-"
+  },
+  {
+    "name": "Zala TOMA\u0160I\u010c",
+    "first_name": "Zala",
+    "last_name": "TOMA\u0160I\u010c",
+    "country": "Slovenia",
+    "group": "EPP",
+    "national_party": "Slovenska demokratska stranka",
+    "x_handle": "zalatomasic",
+    "status": "-"
+  },
+  {
+    "name": "\u00d6zlem DEMIREL",
+    "first_name": "\u00d6zlem",
+    "last_name": "DEMIREL",
+    "country": "Germany",
+    "group": "The Left",
+    "national_party": "DIE LINKE.",
+    "x_handle": "OezlemADemirel",
+    "status": "-"
+  },
+  {
+    "name": "\u0141ukasz KOHUT",
+    "first_name": "\u0141ukasz",
+    "last_name": "KOHUT",
+    "country": "Poland",
+    "group": "EPP",
+    "national_party": "Independent",
+    "x_handle": "LukaszKohut",
+    "status": "-"
+  },
+  {
+    "name": "\u017deljana ZOVKO",
+    "first_name": "\u017deljana",
+    "last_name": "ZOVKO",
+    "country": "Croatia",
+    "group": "EPP",
+    "national_party": "Hrvatska demokratska zajednica",
+    "x_handle": "ZovkoEU",
+    "status": "-"
+  }
+]

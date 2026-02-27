@@ -1,0 +1,180 @@
+{
+  "name": "EU Parliament - Social Sync",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 6
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "url": "https://raw.githubusercontent.com/eliflab/European-Parliament-Open-Data/main/meps_full_list_with_twitter_accounts.csv",
+        "options": {}
+      },
+      "id": "fetch-csv",
+      "name": "Fetch MEP Twitter CSV",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [220, 0]
+    },
+    {
+      "parameters": {
+        "operation": "csvToJson",
+        "options": {
+          "delimiter": ","
+        }
+      },
+      "id": "parse-csv",
+      "name": "Parse CSV",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 2,
+      "position": [440, 0]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "filter-twitter",
+              "leftValue": "={{ $json.Twitter }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "isNotEmpty"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "filter-with-twitter",
+      "name": "Filter MEPs with Twitter",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [660, 0]
+    },
+    {
+      "parameters": {
+        "batchSize": 10,
+        "options": {}
+      },
+      "id": "batch-meps",
+      "name": "Batch MEPs",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [880, 0]
+    },
+    {
+      "parameters": {
+        "url": "=https://api.twitter.com/2/users/by/username/{{ $json.Twitter.replace('@', '') }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer AAAAAAAAAAAAAAAAAAAAAOGH7wEAAAAAgkZE9%2F6mQk7aZgeJibgGfy7%2BKR0%3DSi3LYZwXMvR4U7eHjrrxWppNC61181fg5HBxrU6LSShgyVJG4i"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "x-api-user-lookup",
+      "name": "X API User Lookup",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1100, 0]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Transform X API v2 output to our format\nconst BEARER_TOKEN = 'AAAAAAAAAAAAAAAAAAAAAOGH7wEAAAAAgkZE9%2F6mQk7aZgeJibgGfy7%2BKR0%3DSi3LYZwXMvR4U7eHjrrxWppNC61181fg5HBxrU6LSShgyVJG4i';\n\nconst tweets = [];\n\nfor (const item of $input.all()) {\n  const userData = item.json.data;\n  if (!userData || !userData.id) continue;\n  \n  // Fetch tweets for this user\n  const response = await fetch(\n    `https://api.twitter.com/2/users/${userData.id}/tweets?max_results=10&tweet.fields=created_at,public_metrics,author_id`,\n    {\n      headers: {\n        'Authorization': `Bearer ${BEARER_TOKEN}`\n      }\n    }\n  );\n  \n  const data = await response.json();\n  if (!data.data) continue;\n  \n  for (const tweet of data.data) {\n    tweets.push({\n      mep_id: userData.username,\n      tweet_id: tweet.id,\n      content: tweet.text,\n      created_at: tweet.created_at,\n      likes: tweet.public_metrics?.like_count || 0,\n      retweets: tweet.public_metrics?.retweet_count || 0,\n      replies: tweet.public_metrics?.reply_count || 0,\n      url: `https://x.com/${userData.username}/status/${tweet.id}`,\n      media_urls: []\n    });\n  }\n}\n\nreturn tweets.map(t => ({ json: t }));"
+      },
+      "id": "transform-tweets",
+      "name": "Transform Tweets",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1320, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://euparliament.kodda.ai/api/social/sync",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($input.all().map(i => i.json)) }}",
+        "options": {}
+      },
+      "id": "sync-to-api",
+      "name": "Sync to API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1540, 0]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [{ "node": "Fetch MEP Twitter CSV", "type": "main", "index": 0 }]
+      ]
+    },
+    "Fetch MEP Twitter CSV": {
+      "main": [
+        [{ "node": "Parse CSV", "type": "main", "index": 0 }]
+      ]
+    },
+    "Parse CSV": {
+      "main": [
+        [{ "node": "Filter MEPs with Twitter", "type": "main", "index": 0 }]
+      ]
+    },
+    "Filter MEPs with Twitter": {
+      "main": [
+        [{ "node": "Batch MEPs", "type": "main", "index": 0 }]
+      ]
+    },
+    "Batch MEPs": {
+      "main": [
+        [{ "node": "X API User Lookup", "type": "main", "index": 0 }],
+        [{ "node": "Batch MEPs", "type": "main", "index": 0 }]
+      ]
+    },
+    "X API User Lookup": {
+      "main": [
+        [{ "node": "Transform Tweets", "type": "main", "index": 0 }]
+      ]
+    },
+    "Transform Tweets": {
+      "main": [
+        [{ "node": "Sync to API", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2026-02-26T00:00:00.000Z",
+  "versionId": "2"
+}
