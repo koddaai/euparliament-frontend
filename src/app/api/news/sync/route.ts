@@ -32,40 +32,108 @@ interface ExistingArticle {
 
 // Extract image from various RSS formats
 function extractImage(item: Record<string, unknown>): string | null {
-  // media:content
+  // media:content (can be array or single object)
   if (item['media:content']) {
-    const media = item['media:content'] as Record<string, unknown>[];
+    const media = item['media:content'];
     if (Array.isArray(media) && media[0]?.['$']) {
       return (media[0]['$'] as Record<string, string>).url || null;
     }
-    if ((media as unknown as Record<string, unknown>)['$']) {
-      return ((media as unknown as Record<string, unknown>)['$'] as Record<string, string>).url || null;
+    if ((media as Record<string, unknown>)['$']) {
+      return ((media as Record<string, unknown>)['$'] as Record<string, string>).url || null;
     }
   }
 
-  // enclosure
+  // media:thumbnail
+  if (item['media:thumbnail']) {
+    const thumb = item['media:thumbnail'];
+    if (Array.isArray(thumb) && thumb[0]?.['$']) {
+      return (thumb[0]['$'] as Record<string, string>).url || null;
+    }
+    if ((thumb as Record<string, unknown>)['$']) {
+      return ((thumb as Record<string, unknown>)['$'] as Record<string, string>).url || null;
+    }
+  }
+
+  // media:group containing media:content
+  if (item['media:group']) {
+    const group = item['media:group'] as Record<string, unknown>;
+    if (group['media:content']) {
+      const content = group['media:content'];
+      if (Array.isArray(content) && content[0]?.['$']) {
+        return (content[0]['$'] as Record<string, string>).url || null;
+      }
+      if ((content as Record<string, unknown>)['$']) {
+        return ((content as Record<string, unknown>)['$'] as Record<string, string>).url || null;
+      }
+    }
+  }
+
+  // enclosure (common in podcasts and some news feeds)
   if (item.enclosure) {
-    const enclosure = item.enclosure as Record<string, unknown>[];
+    const enclosure = item.enclosure;
     if (Array.isArray(enclosure) && enclosure[0]?.['$']) {
-      return (enclosure[0]['$'] as Record<string, string>).url || null;
+      const attrs = enclosure[0]['$'] as Record<string, string>;
+      if (attrs.type?.startsWith('image/') || attrs.url?.match(/\.(jpg|jpeg|png|gif|webp)/i)) {
+        return attrs.url || null;
+      }
+    }
+    if ((enclosure as Record<string, unknown>)['$']) {
+      const attrs = (enclosure as Record<string, unknown>)['$'] as Record<string, string>;
+      if (attrs.type?.startsWith('image/') || attrs.url?.match(/\.(jpg|jpeg|png|gif|webp)/i)) {
+        return attrs.url || null;
+      }
     }
   }
 
   // content:encoded - extract img src
   if (item['content:encoded']) {
     const content = String(item['content:encoded']);
-    const imgMatch = content.match(/<img[^>]+src="([^"]+)"/);
+    const imgMatch = content.match(/<img[^>]+src=["']([^"']+)["']/);
     if (imgMatch) return imgMatch[1];
   }
 
-  // description - extract img src
+  // description - extract img src (handle both quotes)
   if (item.description) {
     const desc = String(Array.isArray(item.description) ? item.description[0] : item.description);
-    const imgMatch = desc.match(/<img[^>]+src="([^"]+)"/);
+    const imgMatch = desc.match(/<img[^>]+src=["']([^"']+)["']/);
     if (imgMatch) return imgMatch[1];
   }
 
   return null;
+}
+
+// Fetch Open Graph image from article URL
+async function fetchOgImage(url: string): Promise<string | null> {
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 3000);
+
+    const response = await fetch(url, {
+      headers: {
+        'User-Agent': 'EU Parliament Monitor/1.0',
+      },
+      signal: controller.signal,
+    });
+    clearTimeout(timeout);
+
+    if (!response.ok) return null;
+
+    const html = await response.text();
+
+    // Look for og:image meta tag
+    const ogMatch = html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i) ||
+                    html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i);
+    if (ogMatch) return ogMatch[1];
+
+    // Look for twitter:image meta tag
+    const twMatch = html.match(/<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i) ||
+                    html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']twitter:image["']/i);
+    if (twMatch) return twMatch[1];
+
+    return null;
+  } catch {
+    return null;
+  }
 }
 
 // Parse RSS feed
@@ -96,7 +164,8 @@ async function parseRssFeed(feedConfig: { source: string; url: string; name: str
     const items = channel.item || channel.entry || [];
     const itemArray = Array.isArray(items) ? items : [items];
 
-    return itemArray.slice(0, 30).map((item: Record<string, unknown>) => {
+    // First pass: extract basic data
+    const articles = itemArray.slice(0, 30).map((item: Record<string, unknown>) => {
       const title = String(item.title || '').trim();
       const link = item.link || item.guid;
       const url = typeof link === 'string' ? link : (link as Record<string, string>)?.['_'] || String(link);
@@ -150,6 +219,17 @@ async function parseRssFeed(feedConfig: { source: string; url: string; name: str
         published_at: publishedAt,
       };
     });
+
+    // Fetch OG image only for the first article (featured) if no image from RSS
+    if (articles.length > 0 && !articles[0].image_url) {
+      console.log(`Fetching OG image for featured article from ${feedConfig.name}`);
+      const ogImage = await fetchOgImage(articles[0].url);
+      if (ogImage) {
+        articles[0].image_url = ogImage;
+      }
+    }
+
+    return articles;
   } catch (error) {
     console.error(`Error parsing ${feedConfig.name}:`, error);
     return [];
