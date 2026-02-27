@@ -1,8 +1,18 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function AIBanner() {
+  const [mepCount, setMepCount] = useState<number | null>(null);
+
+  useEffect(() => {
+    fetch('/api/stats')
+      .then(res => res.json())
+      .then(data => setMepCount(data.totalMEPs))
+      .catch(() => setMepCount(null));
+  }, []);
+
   const openChat = () => {
     window.dispatchEvent(new Event('openChat'));
   };
@@ -87,7 +97,7 @@ export default function AIBanner() {
               </div>
               <div>
                 <p className="text-white text-sm font-medium group-hover:text-blue-400 transition-colors">All MEPs</p>
-                <p className="text-slate-500 text-xs">705 profiles</p>
+                <p className="text-slate-500 text-xs">{mepCount ? `${mepCount} profiles` : 'Browse all'}</p>
               </div>
             </a>
 
