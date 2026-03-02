@@ -154,12 +154,20 @@ async function fetchOgImage(url: string): Promise<string | null> {
 // Parse RSS feed
 async function parseRssFeed(feedConfig: { source: string; url: string; name: string }): Promise<NewsArticle[]> {
   try {
-    const response = await fetch(feedConfig.url, {
+    // Add cache buster to ensure fresh data
+    const cacheBuster = `_cb=${Date.now()}`;
+    const urlWithCacheBuster = feedConfig.url.includes('?')
+      ? `${feedConfig.url}&${cacheBuster}`
+      : `${feedConfig.url}?${cacheBuster}`;
+
+    const response = await fetch(urlWithCacheBuster, {
       headers: {
-        'User-Agent': 'EU Parliament Monitor/1.0',
+        'User-Agent': 'Mozilla/5.0 (compatible; EU Parliament Monitor/1.0)',
         'Accept': 'application/rss+xml, application/xml, text/xml',
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Pragma': 'no-cache',
       },
-      next: { revalidate: 0 },
+      cache: 'no-store',
     });
 
     if (!response.ok) {
@@ -234,6 +242,11 @@ async function parseRssFeed(feedConfig: { source: string; url: string; name: str
         published_at: publishedAt,
       };
     });
+
+    // Log first article for debugging
+    if (articles.length > 0) {
+      console.log(`[${feedConfig.name}] First article: "${articles[0].title.slice(0, 50)}..." - ${articles[0].published_at}`);
+    }
 
     // Fetch OG image only for the first article (featured) if no image from RSS
     if (articles.length > 0 && !articles[0].image_url) {
