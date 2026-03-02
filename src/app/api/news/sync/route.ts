@@ -12,7 +12,8 @@ const NOCODB_NEWS_TABLE_ID = process.env.NOCODB_NEWS_TABLE_ID;
 
 // RSS Feed sources
 const RSS_FEEDS = [
-  { source: 'politico', url: 'https://www.politico.eu/feed/', name: 'POLITICO' },
+  { source: 'bbc', url: 'https://feeds.bbci.co.uk/news/world/europe/rss.xml', name: 'BBC Europe' },
+  { source: 'france24', url: 'https://www.france24.com/en/europe/rss', name: 'France 24' },
   { source: 'guardian', url: 'https://www.theguardian.com/world/eu/rss', name: 'The Guardian' },
   { source: 'euronews', url: 'https://www.euronews.com/rss?level=theme&name=news', name: 'Euronews' },
 ];

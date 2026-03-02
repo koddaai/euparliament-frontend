@@ -109,10 +109,15 @@ function detectTheme(article: NewsArticle): ThemeKey {
 
 // Source badge with fallback images
 const SOURCE_CONFIG: Record<string, { name: string; color: string; fallbackImage: string }> = {
-  politico: {
-    name: 'POLITICO',
-    color: 'bg-red-500',
+  bbc: {
+    name: 'BBC Europe',
+    color: 'bg-red-600',
     fallbackImage: 'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&h=450&fit=crop&q=80'
+  },
+  france24: {
+    name: 'France 24',
+    color: 'bg-sky-600',
+    fallbackImage: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&h=450&fit=crop&q=80'
   },
   guardian: {
     name: 'Guardian',
