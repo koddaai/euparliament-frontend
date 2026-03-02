@@ -2,6 +2,10 @@ import { NextResponse } from 'next/server';
 import { parseStringPromise } from 'xml2js';
 import crypto from 'crypto';
 
+// Force this route to be dynamic - never cache
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 const NOCODB_URL = process.env.NOCODB_URL;
 const NOCODB_TOKEN = process.env.NOCODB_TOKEN;
 const NOCODB_NEWS_TABLE_ID = process.env.NOCODB_NEWS_TABLE_ID;

@@ -1,5 +1,9 @@
 import { NextResponse } from 'next/server';
 
+// Force this route to be dynamic - never cache
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 const NOCODB_URL = process.env.NOCODB_URL;
 const NOCODB_TOKEN = process.env.NOCODB_TOKEN;
 const NOCODB_NEWS_TABLE_ID = process.env.NOCODB_NEWS_TABLE_ID;
@@ -111,12 +115,23 @@ export async function GET(request: Request) {
       sources: sourceCounts,
       limit,
       offset,
+    }, {
+      headers: {
+        'Cache-Control': 'no-store, no-cache, must-revalidate, max-age=0',
+        'Pragma': 'no-cache',
+        'Expires': '0',
+      },
     });
   } catch (error) {
     console.error('Error fetching news:', error);
     return NextResponse.json(
       { error: 'Failed to fetch news', details: String(error), articles: [], total: 0, sources: {} },
-      { status: 500 }
+      {
+        status: 500,
+        headers: {
+          'Cache-Control': 'no-store, no-cache, must-revalidate, max-age=0',
+        },
+      }
     );
   }
 }
