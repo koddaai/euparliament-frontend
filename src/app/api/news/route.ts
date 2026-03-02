@@ -59,7 +59,7 @@ export async function GET(request: Request) {
       headers: {
         'xc-token': NOCODB_TOKEN,
       },
-      next: { revalidate: 300 }, // Cache for 5 minutes
+      cache: 'no-store', // Always fetch fresh data
     });
 
     if (!response.ok) {
@@ -79,7 +79,7 @@ export async function GET(request: Request) {
       headers: {
         'xc-token': NOCODB_TOKEN,
       },
-      next: { revalidate: 300 },
+      cache: 'no-store',
     });
 
     const countData = await countResponse.json();
@@ -94,7 +94,7 @@ export async function GET(request: Request) {
       headers: {
         'xc-token': NOCODB_TOKEN,
       },
-      next: { revalidate: 300 },
+      cache: 'no-store',
     });
 
     const sourceData = await sourceResponse.json();
