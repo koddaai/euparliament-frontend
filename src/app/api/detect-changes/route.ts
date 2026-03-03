@@ -33,7 +33,7 @@ interface ScrapedMEP {
 interface ChangeRecord {
   mep_id: string;
   mep_name?: string;
-  change_type: 'joined' | 'left' | 'group_change';
+  change_type: 'entry' | 'exit' | 'group_change';
   old_value?: string | null;
   new_value?: string | null;
   detected_at: string;
@@ -158,7 +158,7 @@ export async function POST(request: Request) {
           changesToLog.push({
             mep_id: scraped.mep_id,
             mep_name: scraped.name,
-            change_type: 'joined',
+            change_type: 'entry',
             new_value: scraped.political_group_short,
             detected_at: now,
           });
@@ -167,7 +167,7 @@ export async function POST(request: Request) {
           changesToLog.push({
             mep_id: scraped.mep_id,
             mep_name: scraped.name,
-            change_type: 'joined',
+            change_type: 'entry',
             new_value: scraped.political_group_short,
             detected_at: now,
           });
@@ -203,7 +203,7 @@ export async function POST(request: Request) {
           changesToLog.push({
             mep_id: dbMep.mep_id,
             mep_name: dbMep.name,
-            change_type: 'left',
+            change_type: 'exit',
             old_value: dbMep.political_group_short,
             detected_at: now,
           });
@@ -229,7 +229,7 @@ export async function POST(request: Request) {
         changesToLog.push({
           mep_id: mep.mep_id,
           mep_name: mep.name,
-          change_type: 'left',
+          change_type: 'exit',
           old_value: mep.political_group_short,
           detected_at: now,
         });
@@ -252,8 +252,8 @@ export async function POST(request: Request) {
       loggedChanges.push(...changesToLog);
     }
 
-    const joins = loggedChanges.filter(c => c.change_type === 'joined');
-    const leaves = loggedChanges.filter(c => c.change_type === 'left');
+    const joins = loggedChanges.filter(c => c.change_type === 'entry');
+    const leaves = loggedChanges.filter(c => c.change_type === 'exit');
     const groupChanges = loggedChanges.filter(c => c.change_type === 'group_change');
 
     return NextResponse.json({

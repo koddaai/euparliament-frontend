@@ -6,7 +6,7 @@ interface Change {
   id: number;
   mep_id: string;
   mep_name: string;
-  change_type: 'joined' | 'left' | 'group_change';
+  change_type: 'entry' | 'exit' | 'group_change';
   old_value?: string;
   new_value?: string;
   detected_at: string;
@@ -59,8 +59,8 @@ export default function Changes() {
     );
   }
 
-  const entries = changes.filter(c => c.change_type === 'joined');
-  const exits = changes.filter(c => c.change_type === 'left');
+  const entries = changes.filter(c => c.change_type === 'entry');
+  const exits = changes.filter(c => c.change_type === 'exit');
   const groupChanges = changes.filter(c => c.change_type === 'group_change');
 
   const totalChanges = entries.length + exits.length + groupChanges.length;
