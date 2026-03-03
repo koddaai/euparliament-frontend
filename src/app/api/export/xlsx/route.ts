@@ -22,7 +22,7 @@ interface MEP {
 interface Change {
   mep_id: string;
   mep_name?: string;
-  change_type: 'joined' | 'left' | 'group_change' | 'party_change';
+  change_type: 'entry' | 'exit' | 'group_change' | 'party_change';
   old_value: string | null;
   new_value: string | null;
   detected_at: string;
@@ -117,19 +117,19 @@ export async function GET() {
     }
 
     // Separate changes by type
-    const joinedThisYear = changes.filter(c => c.change_type === 'joined');
-    const leftThisYear = changes.filter(c => c.change_type === 'left');
+    const joinedThisYear = changes.filter(c => c.change_type === 'entry');
+    const leftThisYear = changes.filter(c => c.change_type === 'exit');
     const groupChangesThisYear = changes.filter(c => c.change_type === 'group_change');
 
     // Changes this month (for +/- indicator)
     const joinedThisMonth = new Set(
       changes
-        .filter(c => c.change_type === 'joined' && new Date(c.detected_at) >= new Date(monthStart))
+        .filter(c => c.change_type === 'entry' && new Date(c.detected_at) >= new Date(monthStart))
         .map(c => c.mep_id)
     );
     const leftThisMonth = new Set(
       changes
-        .filter(c => c.change_type === 'left' && new Date(c.detected_at) >= new Date(monthStart))
+        .filter(c => c.change_type === 'exit' && new Date(c.detected_at) >= new Date(monthStart))
         .map(c => c.mep_id)
     );
 
