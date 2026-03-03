@@ -134,9 +134,9 @@ export async function POST(request: Request) {
     const mepsData = await mepsResponse.json();
     const dbMeps: MEP[] = mepsData.list || [];
 
-    // Create lookup maps
+    // Create lookup maps - ensure mep_id is always a string for consistent comparison
     const dbMepById = new Map<string, MEP>();
-    dbMeps.forEach(mep => dbMepById.set(mep.mep_id, mep));
+    dbMeps.forEach(mep => dbMepById.set(String(mep.mep_id), mep));
 
     // Collect all changes and updates, then batch execute
     const changesToLog: ChangeRecord[] = [];
@@ -144,13 +144,14 @@ export async function POST(request: Request) {
 
     // If we have scraped data, use it for comparison
     if (scrapedMeps.length > 0) {
-      const scrapedMepIds = new Set(scrapedMeps.map(m => m.mep_id));
+      // Ensure mep_id is always a string for consistent comparison
+      const scrapedMepIds = new Set(scrapedMeps.map(m => String(m.mep_id)));
       const scrapedMepById = new Map<string, ScrapedMEP>();
-      scrapedMeps.forEach(mep => scrapedMepById.set(mep.mep_id, mep));
+      scrapedMeps.forEach(mep => scrapedMepById.set(String(mep.mep_id), mep));
 
       // Detect JOINS: MEPs in scrape but not in DB (or were inactive)
       for (const scraped of scrapedMeps) {
-        const dbMep = dbMepById.get(scraped.mep_id);
+        const dbMep = dbMepById.get(String(scraped.mep_id));
 
         if (!dbMep) {
           // Completely new MEP - log join but don't update (will be inserted by sync)
@@ -198,7 +199,7 @@ export async function POST(request: Request) {
 
       // Detect LEAVES: Active MEPs in DB but not in scrape
       for (const dbMep of dbMeps) {
-        if (dbMep.status === 'active' && !scrapedMepIds.has(dbMep.mep_id)) {
+        if (dbMep.status === 'active' && !scrapedMepIds.has(String(dbMep.mep_id))) {
           changesToLog.push({
             mep_id: dbMep.mep_id,
             mep_name: dbMep.name,

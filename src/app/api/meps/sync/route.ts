@@ -78,16 +78,16 @@ export async function POST(request: Request) {
       offset += pageSize;
     }
 
-    // Create lookup map by mep_id
+    // Create lookup map by mep_id - ensure string comparison for consistency
     const existingByMepId = new Map<string, ExistingMEP>();
-    existingMeps.forEach(mep => existingByMepId.set(mep.mep_id, mep));
+    existingMeps.forEach(mep => existingByMepId.set(String(mep.mep_id), mep));
 
     // Separate MEPs into updates and inserts
     const toUpdate: Array<{ Id: number } & Partial<ScrapedMEP> & { status: string; last_updated: string }> = [];
     const toInsert: Array<ScrapedMEP & { status: string; last_updated: string }> = [];
 
     for (const scraped of scrapedMeps) {
-      const existing = existingByMepId.get(scraped.mep_id);
+      const existing = existingByMepId.get(String(scraped.mep_id));
 
       if (existing) {
         // MEP exists - update it
