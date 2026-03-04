@@ -105,22 +105,7 @@ export async function POST(request: Request) {
       // No body or invalid JSON - use timestamp-based detection
     }
 
-    // First sync MEPs to database (upsert to prevent duplicates)
-    // Use localhost to avoid SSL issues when calling internal APIs
-    if (scrapedMeps.length > 0) {
-      const syncUrl = 'http://localhost:3000/api/meps/sync';
-      const syncResponse = await fetch(syncUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ meps: scrapedMeps }),
-      });
-
-      if (!syncResponse.ok) {
-        console.error('Failed to sync MEPs:', await syncResponse.text());
-      }
-    }
-
-    // Get all MEPs from database (after sync)
+    // IMPORTANT: Get all MEPs from database BEFORE sync to detect new entries
     const mepsUrl = `${NOCODB_URL}/api/v2/tables/${NOCODB_MEPS_TABLE_ID}/records?limit=1000`;
     const mepsResponse = await fetch(mepsUrl, {
       headers: { 'xc-token': NOCODB_TOKEN! },
@@ -137,6 +122,21 @@ export async function POST(request: Request) {
     // Create lookup maps - ensure mep_id is always a string for consistent comparison
     const dbMepById = new Map<string, MEP>();
     dbMeps.forEach(mep => dbMepById.set(String(mep.mep_id), mep));
+
+    // Now sync MEPs to database (upsert to prevent duplicates)
+    // Use localhost to avoid SSL issues when calling internal APIs
+    if (scrapedMeps.length > 0) {
+      const syncUrl = 'http://localhost:3000/api/meps/sync';
+      const syncResponse = await fetch(syncUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ meps: scrapedMeps }),
+      });
+
+      if (!syncResponse.ok) {
+        console.error('Failed to sync MEPs:', await syncResponse.text());
+      }
+    }
 
     // Collect all changes and updates, then batch execute
     const changesToLog: ChangeRecord[] = [];
