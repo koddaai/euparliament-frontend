@@ -20,9 +20,19 @@
 | Tabela | Table ID | Status |
 |--------|----------|--------|
 | meps | mlfaa9jzkg1fhtg | OK - 719 registros (718 ativos, 1 inativo) |
-| changes_log | mckqnd62x5hf49w | OK - 2 registros |
+| changes_log | mckqnd62x5hf49w | OK - 4 registros (entry, exit, group_change) |
 | mep_committees | - | NAO CRIADA |
 | mep_delegations | - | NAO CRIADA |
+
+### Schema changes_log
+| Campo | Tipo | Descricao |
+|-------|------|-----------|
+| mep_id | SingleLineText | ID do MEP |
+| mep_name | SingleLineText | Nome do MEP |
+| change_type | SingleSelect | entry, exit, group_change |
+| old_value | SingleLineText | Valor anterior (ex: grupo politico antigo) |
+| new_value | SingleLineText | Novo valor (ex: grupo politico novo) |
+| detected_at | SingleLineText | Data/hora da deteccao |
 
 ### API Tokens
 - `euparliament-sync` - usado pelo n8n
@@ -68,6 +78,8 @@
 
 | Data | MEP | Tipo | Detalhe |
 |------|-----|------|---------|
+| 2026-03-11 | Sander SMIT | Mudanca de Grupo | EPP → ECR |
+| 2026-03-11 | Jessika VAN LEEUWEN | Mudanca de Grupo | EPP → ECR |
 | 2026-03-04 | Willemien KONING | Entrada | EPP, Netherlands, CDA |
 | 2026-03-02 | Daniel CASPARY | Saida | EPP |
 
@@ -188,6 +200,25 @@ cd /opt/stacks/euparliament/app && git pull && cd .. && docker stack deploy -c d
 
 ## Notas
 - Iniciado em: 2026-02-25
-- Ultima atualizacao: 2026-03-04
+- Ultima atualizacao: 2026-03-12
 - Deploy fix: NODE_ENV=production requer `npm install --include=dev` para instalar typescript
 - Bug fix (2026-03-04): Corrigido ordem de operacoes em /api/detect-changes para detectar novos MEPs corretamente
+- Bug fix (2026-03-12): Adicionado `cache: 'no-store'` em /api/detect-changes, /api/meps/sync e /api/export/xlsx para evitar dados stale do Next.js e garantir deteccao correta de group_change
+- Schema fix (2026-03-12): Adicionada opcao `group_change` no campo change_type e criada coluna `new_value` na tabela changes_log
+
+## Deteccao de Mudancas
+
+O sistema detecta automaticamente 3 tipos de mudancas quando o workflow n8n roda (6h UTC):
+
+| Tipo | Descricao | Exemplo |
+|------|-----------|---------|
+| entry | MEP novo aparece no scrape | Novo membro entra no Parlamento |
+| exit | MEP ativo desaparece do scrape | Membro deixa o Parlamento |
+| group_change | MEP muda de grupo politico | EPP → ECR |
+
+### Fluxo de Deteccao
+1. n8n faz scrape do site oficial do Parlamento Europeu
+2. Envia dados para `/api/detect-changes`
+3. API compara dados scraped vs banco de dados (com `cache: 'no-store'`)
+4. Detecta e registra mudancas na tabela `changes_log`
+5. Atualiza status dos MEPs na tabela `meps`
