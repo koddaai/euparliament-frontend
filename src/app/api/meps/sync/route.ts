@@ -62,6 +62,7 @@ export async function POST(request: Request) {
       const mepsUrl = `${NOCODB_URL}/api/v2/tables/${NOCODB_MEPS_TABLE_ID}/records?limit=${pageSize}&offset=${offset}`;
       const existingResponse = await fetch(mepsUrl, {
         headers: { 'xc-token': NOCODB_TOKEN! },
+        cache: 'no-store',
       });
 
       if (!existingResponse.ok) {

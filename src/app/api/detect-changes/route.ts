@@ -106,9 +106,13 @@ export async function POST(request: Request) {
     }
 
     // IMPORTANT: Get all MEPs from database BEFORE sync to detect new entries
+    // CRITICAL: Use cache: 'no-store' to prevent Next.js from caching the response
+    // Without this, the fetch may return stale data from a previous execution,
+    // causing group changes to go undetected
     const mepsUrl = `${NOCODB_URL}/api/v2/tables/${NOCODB_MEPS_TABLE_ID}/records?limit=1000`;
     const mepsResponse = await fetch(mepsUrl, {
       headers: { 'xc-token': NOCODB_TOKEN! },
+      cache: 'no-store',
     });
 
     if (!mepsResponse.ok) {
