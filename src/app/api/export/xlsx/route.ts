@@ -84,11 +84,11 @@ export async function GET() {
     // Start of current year
     const yearStart = new Date(currentYear, 0, 1).toISOString();
 
-    // Fetch all MEPs (active and left)
+    // Fetch all MEPs (active and left) - use no-store to ensure fresh data
     const mepsUrl = `${NOCODB_URL}/api/v2/tables/${NOCODB_MEPS_TABLE_ID}/records?limit=1000&sort=name`;
     const mepsResponse = await fetch(mepsUrl, {
       headers: { 'xc-token': NOCODB_TOKEN! },
-      next: { revalidate: 300 }
+      cache: 'no-store',
     });
 
     if (!mepsResponse.ok) {
@@ -107,7 +107,7 @@ export async function GET() {
     const changesUrl = `${NOCODB_URL}/api/v2/tables/${NOCODB_CHANGES_TABLE_ID}/records?where=(detected_at,gte,${yearStart})&limit=1000&sort=-detected_at`;
     const changesResponse = await fetch(changesUrl, {
       headers: { 'xc-token': NOCODB_TOKEN! },
-      next: { revalidate: 300 }
+      cache: 'no-store',
     });
 
     let changes: Change[] = [];
